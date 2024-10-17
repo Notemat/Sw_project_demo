@@ -116,6 +116,11 @@ html {
   margin: 10px 15px; /* Отступ от элементов */
   width: 100%; /* Установить 100% ширины контейнера */
 }
+.menu_link i {
+  font-size: 24px;
+  margin-bottom: 5px;
+  display: none; /* Скрываем иконки по умолчанию */
+}
 /* Ссылка внутри меню */
 .menu_link {
   width: 100%; /* Установить 100% ширины контейнера */
@@ -138,10 +143,6 @@ html {
   border-radius: 20px 20px 20px 20px; /* Оставляем округление с обеих сторон */
   transition: all 0.3s ease; /* Плавная анимация */
 }
-/* Иконка внутри меню */
-.menu_link i {
-  margin-right: 10px; /* Расстояние между иконкой и текстом */
-}
 /* Эффекты для активных или наведённых ссылок */
 /* Иконка при активном состоянии */
 .menu_link.active .icon {
@@ -158,6 +159,11 @@ html {
   /* Контейнер навигации */
   .nav-container {
     display: flex; /* Фиксировано по центру */
+  }
+  .menu_link i {
+    font-size: 24px;
+    margin-bottom: 5px;
+    display: inline-block;
   }
   /* Логотип в шапке */
   .logo {
@@ -189,6 +195,10 @@ html {
    /* При нажатии на кнопку */
   .bar_menu.open .menu_link.active {
     background-color: #f8b400; /* Заливка до боковой стенки */
+  }
+  /* Скрываем текст */
+  .bar_menu.open .menu-text {
+    display: none;
   }
 }
 
