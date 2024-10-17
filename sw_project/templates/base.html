@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Южный Ветер</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="icon", type="image/png" sizes="32x32"  href="{% static 'img/icon.png' %}">  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick-theme.css"/>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% block head %}{% endblock %}
+  </head>
+  <body>
+    
+  <header class="header">
+    <div class="nav-container">
+      <div class="logo_nav">
+        <a href="{% url 'home:home' %}#home">
+          <img class="logo" alt="logo" src="{% static 'img/logo.png' %}">
+        </a>
+      </div>
+      <div class="burger-menu">☰</div>
+      <div class="bar_menu">
+        <ul class="menu vertical-menu">
+          <li class="menu_item">
+            <a href="{% url 'home:home' %}#home" class="menu_link"><img src="{% static 'img/eggsicon.png' %}" class="icon"> Главная</a>
+          </li>
+          <li class="menu_item">
+            <a href="{% url 'home:home' %}#categories" class="menu_link {% if request.path == 'grocery' or '#categories' in request.path %}active{% endif %}">
+              <img src="{% static 'img/eggsicon.png' %}" class="icon">
+              Продукция
+            </a>
+          </li>
+          <li class="menu_item">
+            <a href="{% url 'home:home' %}#about" class="menu_link"><img src="{% static 'img/eggsicon.png' %}" class="icon"> О нас</a>
+          </li>
+          <li class="menu_item">
+            <a href="{% url 'home:home' %}#contact" class="menu_link"><img src="{% static 'img/eggsicon.png' %}" class="icon"> Контакты</a>
+          </li>
+          <li class="menu_item">
+            <a href="{% url 'home:home' %}#partner" class="menu_link"><img src="{% static 'img/eggsicon.png' %}" class="icon"> Партнеры</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+    <!-- Блок для вставки контента -->
+    <div id="content">
+      {% block content %}
+      {% endblock %}
+      <div class="whatsapp-widget">
+        <div class="whatsapp-container" onclick="openWhatsAppChat()">
+            <img class="whatsapp-logo" src="{% static 'img/whatsapp_icon.png' %}" alt="WhatsApp" />
+            <div class="whatsapp-text">Свяжитесь с нами</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Футер -->
+    <footer>
+    </footer>
+    {% block scripts %}
+      <!-- Скрипты -->
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script src="{% static 'js/main.js' %}"></script>
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    {% endblock %}
+  </body>
+</html>

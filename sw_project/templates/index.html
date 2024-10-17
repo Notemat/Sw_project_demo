@@ -1,0 +1,195 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Главная - Южный Ветер{% endblock %}
+{% block head %}
+  <link rel="stylesheet" href="{% static 'css/index.css' %}">
+  <link rel="stylesheet" href="{% static 'css/mobile_index.css' %}">
+{% endblock %}
+{% block content %}
+<section id="home" class="bg-light py-5">
+  <div class="container">
+    <div class="row align-items-center" data-aos="fade-down">
+      <h1>Добро пожаловать в компанию<br>Южный Ветер!</h1>
+      <!-- Блоки с анимацией по скроллу -->
+      <div class="element-list">
+        {% for element in elements %}
+          <div class="element-item" data-aos="fade-up" data-aos-offset="600" data-aos-delay="{{ forloop.counter0|add:100 }}">
+            <!-- Анимация для каждого блока -->
+            <div class="element-image">
+              <img src="{{ element.image.url }}" alt="{{ element.name }}">
+            </div>
+            <div class="element-details">
+              <p>{{ element.description }}</p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="categories">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="section-title text-center" data-aos="fade-up">Продукты</h1>
+        <p class="text-center" data-aos="fade-up">Наша компания предлагает широкий ассортимент товаров бакалейной группы. В нашем каталоге вы найдете:</p>
+      </div>
+    </div>
+
+    <div class="category-list">
+      {% for category in categories %}
+          <div class="category-item {% if forloop.counter0|divisibleby:2 %}category-left{% else %}category-right{% endif %}" data-aos="fade-right" data-aos-offset="600" data-aos-delay="{{ forloop.counter0|add:100 }}">
+              <div class="category-image">
+                  {% if category.grocery_detail %}
+                      <a href="{% url 'home:grocery-detail' slug=category.grocery_detail.slug %}">
+                          <img src="{{ category.image.url }}" alt="{{ category.name }}">
+                      </a>
+                  {% else %}
+                      <span>Нет доступных продуктов</span>
+                  {% endif %}
+              </div>
+              <div class="category-details">
+                  <div class="category-title">
+                      {% if category.grocery_detail %}
+                          <a href="{% url 'home:grocery-detail' slug=category.grocery_detail.slug %}">
+                              <h4>{{ category.name }}</h4>
+                          </a>
+                      {% else %}
+                          <h4>{{ category.name }}</h4>
+                      {% endif %}
+                  </div>
+                  <div class="category-description">
+                      <p>{{ category.description }}</p>
+                  </div>
+              </div>
+          </div>
+      {% endfor %}
+  </div>
+
+    <div class="col-12 text-center" data-aos="fade-up">
+      <p>Для получения более подробной информации и актуального прайс-листа, пожалуйста, скачайте документ по ссылке ниже:</p>
+      <a href="{% static 'docs/price_list.pdf' %}" class="btn btn-primary">Скачать прайс-лист</a>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <h1 data-aos="fade-up">О нас</h1>
+    <p data-aos="fade-up">
+      Наша компания уже более двадцати лет работает напрямую с ведущими производителями мукомольной промышленности, круп, консервации и яичной продукции. Мы гордимся нашими долгосрочными партнёрскими отношениями с Таганрогской и Свердловской птицефабриками, Старооскольским мучным заводом и мельничным хозяйством "Лада". Наша продукция востребована в ресторанах, кафе и санаториях по всему городу Сочи.
+    </p>
+    <h2 data-aos="fade-up" data-aos-offset="600" data-aos-delay="{{ forloop.counter0|add:100 }}">Преимущества нашей компании</h2>
+    <div class="advantages">
+      <div class="advantage"  data-aos="zoom-in" data-aos-offset="600" data-aos-delay="{{ forloop.counter0|add:100 }}">
+        <img src="{% static 'img/experience.png' %}" alt="Опыт">
+        <div>
+          <h3>Большой опыт работы</h3>
+          <p>Многолетний опыт работы в городе Сочи.</p>
+        </div>
+      </div>
+      <div class="advantage" data-aos="zoom-in"data-aos-offset="600" data-aos-delay="{{ forloop.counter0|add:100 }}">
+        <img src="{% static 'img/free-delivery.png' %}" alt="Бесплатная доставка">
+        <div>
+          <h3>Бесплатная доставка</h3>
+          <p>Бесплатная доставка от определенной суммы заказа на следующий день после подачи заявки по всему городу Сочи.</p>
+        </div>
+      </div>
+      <div class="advantage"  data-aos="zoom-in"data-aos-offset="600" data-aos-delay="{{ forloop.counter0|add:100 }}">
+        <img src="{% static 'img/modern-vehicles.png' %}" alt="Современные автомобили">
+        <div>
+          <h3>Современные автомобили</h3>
+          <p>Автомобили оборудованы регулированием температуры.</p>
+        </div>
+      </div>
+      <div class="advantage" data-aos="zoom-in" data-aos-offset="600" data-aos-delay="{{ forloop.counter0|add:100 }}">
+        <img src="{% static 'img/best-prices.png' %}" alt="Оптовые цены">
+        <div>
+          <h3>Оптовые цены</h3>
+          <p>Самые низкие цены в городе на товары дистрибьюции. Сотрудничество с ведущими заводами-производителями.</p>
+        </div>
+      </div>
+      <div class="advantage" data-aos="zoom-in" data-aos-offset="600" data-aos-delay="{{ forloop.counter0|add:100 }}">
+        <img src="{% static 'img/high-quality.png' %}" alt="Высокое качество">
+        <div>
+          <h3>Высокое качество продукции</h3>
+          <p>Наивысшее качество продукции. Возможен обмен в течение трех дней при возникновении спорных моментов.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="row">
+      <div class="col-5">
+        <h2 data-aos="fade-up">Контакты</h2>
+        <p data-aos="fade-up">Наша компания находится по адресу ул. Кипарисовая д. 8В</p>
+        <p data-aos="fade-up">Вы можете связаться с нами, позвонив или оставив сообщение в WhatsApp.</p>
+        <p>
+          <a class="whatsapp-button" onclick="openWhatsAppChat()" data-aos="zoom-in">
+            <img class="watsapp_logo" src="{% static 'img/whatsapp_icon.png' %}">
+            +7-918-200-02-07
+          </a>
+        </p>
+        <p>
+          <a class="whatsapp-button" href="https://api.whatsapp.com/send?phone=79183044300" data-aos="zoom-in">
+            <img class="watsapp_logo" src="{% static 'img/whatsapp_icon.png' %}">
+            +7-918-304-43-00
+          </a>
+        </p>
+        <h3 data-aos="fade-up" >Часы работы</h3>
+        <p data-aos="fade-up">Понедельник - Суббота: 08:00 - 16:30</p>
+        <p data-aos="fade-up">Воскресенье - Выходной</p>
+        <h3 data-aos="fade-up">Электронная почта</h3>
+        <p data-aos="fade-up"><a href="mailto:swsochi@gmail.ru">office@swsochi.ru</a></p>
+      </div>
+      <div class="col-7">
+        <div class="widget-map">
+          <a class="dg-widget-link" href="http://2gis.ru/sochi/firm/4222652931725170/center/39.7447156906128,43.63355928829732/zoom/16?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=bigMap">Посмотреть на карте Сочи</a>
+          <div class="dg-widget-link">
+            <a href="http://2gis.ru/sochi/firm/4222652931725170/photos/4222652931725170/center/39.7447156906128,43.63355928829732/zoom/17?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=photos">Фотографии компании</a>
+          </div>
+          <div class="dg-widget-link">
+            <a href="http://2gis.ru/sochi/center/39.744722,43.633271/zoom/16/routeTab/rsType/bus/to/39.744722,43.633271╎Южный ветер, оптовая компания?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=route">Найти проезд до Южный ветер, оптовая компания</a>
+          </div>
+          <script charset="utf-8" src="https://widgets.2gis.com/js/DGWidgetLoader.js"></script>
+          <script charset="utf-8">new DGWidgetLoader({"borderColor":"#a3a3a3","pos":{"lat":43.63355928829732,"lon":39.7447156906128,"zoom":16},"opt":{"city":"sochi"},"org":[{"id":"4222652931725170"}]});</script>
+          <noscript style="color:#c00;font-size:16px;font-weight:bold;">Виджет карты использует JavaScript. Включите его в настройках вашего браузера.</noscript>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="partner">
+  <div class="container">
+    <h1 data-aos="fade-up">Наши Партнеры</h1>
+    <p data-aos="fade-up">Мы с гордостью сотрудничаем с ведущими компаниями города Сочи, которые доверяют нам и используют нашу продукцию в своей профессиональной деятельности.</p>
+    <div class="partner-logos">
+        <div class="row top" data-aos="zoom-in">
+            <img src="{% static 'img/partners/аромат корицы.png' %}" alt="Партнер 1" class="logo">
+            <img src="{% static 'img/partners/магеллан.png' %}" alt="Партнер 2" class="logo">
+            <img src="{% static 'img/partners/лаверна.png' %}" alt="Партнер 3" class="logo">
+        </div>
+        <div class="row middle" data-aos="zoom-in">
+            <img src="{% static 'img/partners/ваниль.png' %}" alt="Партнер 4" class="logo">
+            <img src="{% static 'img/partners/лондонъ.png' %}" alt="Партнер 5" class="logo">
+        </div>
+        <div class="row bottom" data-aos="zoom-in">
+            <img src="{% static 'img/partners/пекарня_кривоноговых.png' %}" alt="Партнер 6" class="logo">
+            <img src="{% static 'img/partners/хлебница.png' %}" alt="Партнер 7" class="logo">
+            <img src="{% static 'img/partners/ярмарки.png' %}" alt="Партнер 8" class="logo">
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-12 text center">
+        <img class="custom-br" src="{% static 'img/br.png' %}">
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

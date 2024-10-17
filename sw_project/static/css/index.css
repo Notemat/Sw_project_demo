@@ -1,0 +1,371 @@
+/* Секция home */
+#home {
+  padding: 50px 0; /* Отступ */
+  background-color: #ece4a9 !important; /* Фон секции */
+  overflow: hidden; /* Позволяет секции корректно расширяться по содержимому */
+  display: flex; /* Положение */
+  flex-direction: row; /* Размещаем элементы в строку */
+  align-items: center; /* Центрирование по горизонтали */
+  padding-bottom: 40px; /* Дополнительное расстояние снизу */
+  position: relative;
+  z-index: 1; /* Приоритетность при отображении */
+}
+/* Заголовок внутри секции #home */
+#home h1 {
+  color: #333; /* Цвет шрифта */
+  font-size: 3.5em; /* Размер */
+}
+/* Элементы home */
+.element-list {
+  display: flex; /* Положение */
+  flex-direction: row-reverse;  /* Элементы в строку */
+  flex-wrap: wrap; 
+  justify-content: space-between; /* Размещение блоков с промежутками */
+}
+/* Каждый элемент */
+.element-item {
+  margin-bottom: 40px; /* Отступ вниз после каждого элемента */
+  box-sizing: border-box; 
+  display: flex; /* Положение */
+  flex-direction: column; /* Элементы друг под другом */
+  align-items: center; /* Орииентация по центру */
+  position: relative; /* Позиция родитель */
+  top: calc(10px * var(--index)); /* Смещение каждого элемента вниз, в зависимости от его индекса */
+}
+/* Элементы слева */
+.element-item:nth-child(odd) {
+  top: 100px; /* Элементы с нечетным индексом остаются на месте */
+}
+/* Элементы справа */
+.element-item:nth-child(even) {
+  top: 0px; /* Элементы с четным индексом сдвигаются чуть ниже */
+}
+.element-item:nth-child(3) {
+  top: -100px; /* Элементы с четным индексом сдвигаются чуть ниже */
+}
+/* Изображение элементов */
+.element-image img {
+  max-width: 400px; /* Максимальный размер */
+  height: auto; /* Длина элемента */
+  border-radius: 45px; /* Скругленные углы для изображения */
+  margin-bottom: 10px; /* Отступ между изображением и текстом */
+}
+/* Текстовый блок */
+.element-details {
+  padding-left: 10px;  /* Отступ от левого края */
+  padding-right: 10px; /* Отступ между текстом и изображением */
+}
+/* Для нечетных блоков (изображение слева, текст справа) */
+.element-item:nth-child(odd) {
+  flex-direction: row-reverse; /* Положение изображения и текста */
+}
+/* Для четных блоков (изображение справа, текст слева) */
+.element-item:nth-child(even) {
+  flex-direction: row; /* Положение изображения и текста */
+  padding-left: 20px; /* Отступ от левого края */
+}
+/* Описание в элементах */
+.element-details p {
+  margin: 0 auto; /* Центрирование блока относительно родителя */
+  padding-left: 20px; /* Отступ между текстом и изображением */
+  font-size: 1.2em; /* Размер шрифта */ 
+  color: #333; /* Цвет текста */
+  text-align: justify; /* Выровнять текст по ширине */
+  width: 100%; /* Занять всю доступную ширину */
+}
+/* Обычный текст в секции #home */
+#home p {
+font-size: 1.2em; /* Размер шрифта */
+color: #555; /* Цвет шрифта */
+line-height: 1.6em; /* Расстояние шрифта */
+margin-bottom: 15px; /* Отступ вниз между элементами */
+}
+
+
+/* Стили для секции "О нас" */
+#about {
+padding: 50px 20px; /* Отступы */
+background-color: #f1eaa9; /* Цвет фона */
+}
+/* Контейнер "о нас" */
+#about .container {
+max-width: 1200px; /* Максимальный размер контейнера */
+margin: 0 auto; /* Положение элементов по центру контейнера */ 
+}
+/* Заголовок в секции "О нас" */
+#about h1 {
+  text-align: center; /* Центрирование заголовка */
+  color: #333; /* Цвет заголовка */
+  margin-bottom: 40px; /* Отступ заголовка от нижнего края */
+}
+/* Текст в секции "О нас" */
+#about p {
+  font-size: 1.1em; /* Размер текста */
+  color: #555; /* Цвет текста */
+  line-height: 1.6em; /* Ширина текста */
+  margin-bottom: 40px; /* Отступ текста от нижнего края */
+}
+/* Стили для списка преимуществ */
+.advantages {
+  display: flex; /* Положение элементов */
+  flex-direction: row-reverse; /* Положение изображений, загловка и текста в элементе */
+  flex-wrap: wrap; 
+  gap: 20px; /* Отступ между элементами */
+  justify-content: space-around;
+}
+/* Стили для отдельного блока преимущества */
+.advantage {
+  display: flex; /* Положение элемента */
+  align-items: center; /* Центрирование элемента */
+  padding: 10px; /* Отступ */
+  background-color: transparent; /* Фон элемента (ячейка) */
+  border: none; /* Граница ячейки (нет) */
+  flex: 1 1 calc(33% - 40px); 
+  max-width: calc(33% - 40px); /* Максимальный размер ячейки */
+  box-sizing: border-box; 
+}
+/* Изображение для преимущества */
+.advantage img {
+  width: 50px; /* Размер изображения */
+  height: auto; /* Размер по вертикали */
+  margin-right: 15px; /* Отступ от правого края */
+}
+/* Заголовок внутри блока преимущества */
+.advantage h3 {
+  margin: 0; /* Отступ между элементами */
+  font-size: 1em; /* Размер заголовка */
+  color: #333; /* Цвет заголовка */
+}
+/* Текст внутри блока преимущества */
+.advantage p {
+  margin: 5px 0 0; /* Отступ между текстами */
+  color: #666; /* Цвет текста */
+}
+
+
+/* Секция продуктов */
+#categories {
+  background-color: #f5efb8; /* Фон секции */
+  position: relative; /* Позиция родителя */
+  z-index: 1; /* Приоритет при отображении */
+}
+/* Заголовок секции продуктов */
+.section-title {
+  font-size: 3em; /* Размер элементов заголовка */
+  text-align: center; /* Центрирование заголовка */
+  color: #333; /* Цвет заголовка */
+  margin-bottom: 40px; /* Отступ снизу от элементов */
+}
+/* Текст в секции продуктов */
+#categories p {
+  font-size: 1.2em; /* Размер текста */
+  margin-bottom: 20px; /* Отступ снизу от элементов */
+  color: #666; /* Цвет текста */
+}
+
+.category-item {
+  display: flex; /* Положение элементов */
+  align-items: center; /* Ориентация элементов по центру */
+  margin-bottom: 20px; /* Отступ снизу от элементов */
+}
+/* Левые изображения */
+.category-left .category-image img{
+  order: 1; /* Изображение слева */
+}
+/* Правые изображения */
+.category-right .category-image {
+  order: 2; /* Изображение справа */
+}
+/* Изображения  категорий */
+.category-image img {
+  width: 200px; /* Размер изображения */
+  height: 200px; /* Размер по вертикали */
+  border-radius: 50%; /* Круглые изображения */
+  object-fit: cover;
+  transition: transform 0.3s ease; /* Плавный переход */ 
+}
+
+.category-image:hover img {
+  transform: scale(1.1); /* Увеличение изображения на 10% */
+}
+/* Текст элементов */
+.category-details {
+  flex: 1; /* Убедитесь, что элемент занимает доступное пространство */
+  padding: 0 20px; /* Отступ от краев контейнера */
+  text-align: center; /* Центрируем текст, если это необходимо */
+  overflow: hidden; /* Скрываем переполнение */
+  white-space: nowrap; /* Убираем перенос строк */
+  text-overflow: ellipsis; /* Добавляем многоточие для длинного текста */
+}
+/* Текст элементов слева */
+.category-left .category-details {
+  text-align: left; /* Для левых продуктов текст слева */
+}
+/* Текст элементов справа */
+.category-right .category-details {
+  text-align: right; /* Для правых продуктов текст справа */
+}
+/* Стили для заголовков категорий */
+.category-title {
+  color: #333; /* Стандартный цвет заголовка */
+  text-decoration: none; /* Убираем стандартное подчеркивание */
+  transition: color 0.3s ease; /* Плавное изменение цвета */
+}
+
+.category-title:hover {
+  color: #f8b400; /* Новый цвет при наведении */
+  text-decoration: none; /* Убираем подчеркивание при наведении */
+}
+/* Кнопка действия (например, "Скачать прайс лист") */
+.btn-primary {
+  background-color: #f8b400; /* Цвет заливки кнопки */
+  border-color: #f8b400; /* Цвет границы кнопки */
+  color: #eeeeee; /* Цвет текста */
+  width: 400px; /* Увеличение ширины кнопки */
+  height: 65px; /* Увеличение высоты кнопки */
+  font-size: 1.5em; /* Увеличение размера шрифта */
+  padding: 10px 20px; /* Отступ от краев контейнера */
+  text-decoration: none; 
+  display: inline-block; /* Положение в линию */
+  margin-top: 20px; /* Отступ сверху от элементов */
+  font-family: "Dela Gothic One", sans-serif; /* Стиль шрифта */
+}
+/* Изменения при наведении на кнопку действия */
+.btn-primary:hover {
+  background-color: #e09d00; /* Цвет заливки кнопки */
+  border-color: #e09d00; /* Цвет границы кнопки */
+}
+
+
+/* Секция контактов */
+#contact {
+  background-color: #ece4a9; /* Цвет фона секции */
+  position: relative; /* Позиция родитель */
+  z-index: 1; /* Приоритет при отображении */
+}
+/* Контейнер контактов */
+#contact .container {
+  max-width: 100%;
+  width: auto;
+}
+/* Стили для больших экранов */
+#contact .row {
+  display: flex;
+  flex-wrap: wrap; /* Элементы могут переноситься */
+  justify-content: space-between; /* Распределяем пространство между элементами */
+}
+
+
+
+/* Текст секции контактов */
+#contact p {
+  color: #666; /* Цвет текста в секции */
+}
+/* Логотип WhatsApp */
+#contact .watsapp_logo {
+  width: 50px; /* Размер логотипа */
+  height: 34px; /* Размер по вертикали */
+}
+/* Кнопка WhatsApp */
+.whatsapp-button {
+  display: inline-flex; /* Позиция друг под другом */
+  justify-content: center; /* Ориентация элементов по центру */
+  align-items: center; /* Ориентация кнопок по центру */
+  background-color: #25d366; /* Заливка фона кнопки */
+  color: white; /* Цвет шрифта */
+  border: none; /* Границы кнопки (нет) */
+  border-radius: 25px; /* Округлые углы */
+  padding: 10px 20px; /* Отступ от краев */
+  cursor: pointer; /* Потемнение при наведении */
+  font-size: 1em; /* Размер шрифта */
+  margin-bottom: 20px; /* Отступ снизу от элементов */
+  font-family: "Dela Gothic One", sans-serif; /* Стиль шрифта */
+}
+/* Изменения при наведении на кнопку WhatsApp */
+.whatsapp-button:hover {
+  background-color: #1ebe57; /* Цвет фона при наведении */
+  color: #eeeeee; /* Цвет текста при наведении */
+}
+/* Изображения и иконки в секциях */
+section img {
+    display: block; /* Положение друг под другом */
+    max-width: 100%; /* Максимальный размер изображения (динамический) */
+}
+#contact .col-7 .widget-map {
+  width: 660px !important;/* Убираем ограничения ширины */
+  height: 600px !important;
+  box-sizing: border-box;
+}
+.widget-map iframe {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+}
+
+
+/* Секция партнеров */
+#partner {
+  background-color: #f5efb8 !important; /* Фон секции */
+  position: relative; /* Позиция - родитель */
+  z-index: 1; /* Приоритет при отображении */
+}
+/* Контейнер партнеров */ 
+#partner .container {
+  max-width: auto; /* Максимальный размер контейнера */
+  margin: 0 auto; /* Положение элементов по центру */
+}
+/* Заголовки партнеров */
+#partner h1 {
+  font-size: 42px; /* Размер заголовка партнеров */
+  margin-bottom: 20px; /* Отступ снизу от элементов */
+}
+/* Текст партнеров */
+#partner p {
+  font-size: 16px; /* Размер текста партнеров */
+  color: #555; /* Цветр текста */
+  margin: 0 auto 40px; /* Отступ между элементами */
+}
+/* Логотипы партнеров */
+.partner-logos {
+  display: flex; /* Положение друг за другом */
+  flex-direction: column; /* В колонки */
+  align-items: center; /* Ориентация элементов по ценрту */
+  gap: 30px; /* Отступы между элементами */
+}
+/* Логотип партнера */
+.partner-logos .logo {
+  width: 150px; /* Максимальный размер логотипа */
+  height: auto; /* Размер по вертикали */
+  transition: transform 0.3s ease; /* Плавная анимация */
+}
+/* Логотип при наведении курсором */
+.partner-logos .logo:hover {
+  transform: scale(1.1); /* Увеличение логотипа при наведении */
+}
+/* Уникальная структура для расположения логотипов */
+#partner .row {
+  display: flex;
+  justify-content: center;
+}
+#partner .row.top, .row.bottom {
+  gap: 90px; /* Отступ между элементами */
+  margin-bottom: -25px; /* Отступ снизу от элементов */
+}
+#partner .row.bottom {
+  padding-bottom: 60px;
+}
+#partner .row.middle {
+  gap: 150px;
+  margin-bottom: -25px;
+}
+/* Логотип внизу страницы */
+#partner .custom-br {
+  width: 500px; /* Размер логотипа */
+  height: auto; /* Размер по вертикали */
+  position: absolute; /* Позиция фиксированная от родителя */
+  bottom: -110px; /* спуск снизу */
+  left: 50%; /* слева от края */
+  transform: translateX(-50%); 
+}
+

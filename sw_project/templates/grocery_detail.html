@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{ grocery.name }} - Детали{% endblock %}
+{% block head %}
+  <link rel="stylesheet" href="{% static 'css/grocery_detail.css' %}">
+{% endblock %}
+{% block content %}
+<section id="grocery-detail" class="py-5">
+  <div class="product-info" data-aos="fade-up">
+    <h2>{{ grocery.name }}</h2>
+    <p>{{ grocery.description }}</p>
+  </div>
+
+  <div class="popular-groceries">
+    <h4 data-aos="fade-up">Популярные товары</h4>
+    <div class="carousel" data-aos="zoom-in">
+  {% for image in images %}
+    <div class="image-wrapper">
+      <div class="circle-image image-{{ forloop.counter0 }}">
+        <img src="{{ image.image.url }}" alt="Изображение к {{ grocery.name }}" class="grocery-image">
+      </div>
+      <p class="image-description">{{ image.description }}</p>
+    </div>
+  {% endfor %}
+  </div>
+  <button id="btn-certificate" class="btn btn-certificate">Сертификат дистрибуции</button>
+  <div id="modal" class="modal">
+    <img src="{{ grocery.certificate.url }}" alt="Сертификат">
+    <span class="close">&times;</span>
+  </div>
+</div>
+{% endblock %}
+{% block scripts %}
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+  <script src="{% static 'js/grocery_detail.js' %}"></script>
+{% endblock %}
+
