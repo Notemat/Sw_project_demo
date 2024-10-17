@@ -203,26 +203,27 @@
     text-align: center; /* Центрирует текст */
   }
 
-#contact .col-5, #contact .col-7 {
-  flex: 1; /* Оба элемента занимают примерно по 50% */
-  max-width: 100%;
-}
+  #contact .col-5, #contact .col-7 {
+    flex: 1; /* Оба элемента занимают примерно по 50% */
+    max-width: 100%;
+  }
 
   #contact .col-5 {
-      flex-basis: 100%; /* Элементы занимают всю ширину */
-      margin-bottom: 20px; /* Отступы между элементами */
-      text-align: center; /* Центрирует содержимое внутри блока */
+    flex-basis: 100%; /* Элементы занимают всю ширину */
+    margin-bottom: 20px; /* Отступы между элементами */
+    text-align: center; /* Центрирует содержимое внутри блока */
   }
 
   #contact .col-7 {
-      flex-basis: auto; /* Не изменяем ширину колонки с картой */
-      margin-bottom: 0; /* Убираем отступы для колонки с картой */
+    flex-basis: auto; /* Не изменяем ширину колонки с картой */
+    margin-bottom: 0; /* Убираем отступы для колонки с картой */
   }
 
   /* Адаптивная карта */
   .widget-map {
-    max-height: 360px; /* Максимальная высота карты */
-    max-width: 380px;
+    max-height: 320px; /* Максимальная высота карты */
+    max-width: 360px;
+    transform: translateX(-10px); /* Сдвигаем карту влево на 50px */
   }
 
   /* Оптимизация для кнопок WhatsApp */

@@ -40,7 +40,7 @@
 
     <div class="category-list">
       {% for category in categories %}
-          <div class="category-item {% if forloop.counter0|divisibleby:2 %}category-left{% else %}category-right{% endif %}" data-aos="fade-right" data-aos-offset="600" data-aos-delay="{{ forloop.counter0|add:100 }}">
+          <div class="category-item {% if forloop.counter0|divisibleby:2 %}category-left{% else %}category-right{% endif %}" data-aos="fade-right" data-aos-offset="300" data-aos-delay="{{ forloop.counter0|add:100 }}">
               <div class="category-image">
                   {% if category.grocery_detail %}
                       <a href="{% url 'home:grocery-detail' slug=category.grocery_detail.slug %}">
@@ -104,14 +104,14 @@
           <p>Автомобили оборудованы регулированием температуры.</p>
         </div>
       </div>
-      <div class="advantage" data-aos="zoom-in" data-aos-offset="600" data-aos-delay="{{ forloop.counter0|add:100 }}">
+      <div class="advantage" data-aos="zoom-in" data-aos-offset="300" data-aos-delay="{{ forloop.counter0|add:100 }}">
         <img src="{% static 'img/best-prices.png' %}" alt="Оптовые цены">
         <div>
           <h3>Оптовые цены</h3>
           <p>Самые низкие цены в городе на товары дистрибьюции. Сотрудничество с ведущими заводами-производителями.</p>
         </div>
       </div>
-      <div class="advantage" data-aos="zoom-in" data-aos-offset="600" data-aos-delay="{{ forloop.counter0|add:100 }}">
+      <div class="advantage" data-aos="zoom-in" data-aos-offset="300" data-aos-delay="{{ forloop.counter0|add:100 }}">
         <img src="{% static 'img/high-quality.png' %}" alt="Высокое качество">
         <div>
           <h3>Высокое качество продукции</h3>
