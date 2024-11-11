@@ -18,7 +18,12 @@
   {% for image in images %}
     <div class="image-wrapper">
       <div class="circle-image image-{{ forloop.counter0 }}">
-        <img src="{{ image.image.url }}" alt="Изображение к {{ grocery.name }}" class="grocery-image">
+        <picture>
+          {% if image.image_webp %}
+            <source srcset="{{ image.image_webp.url }}" type="image/webp">
+          {% endif %}
+          <img src="{{ image.image.url }}" alt="Изображение к {{ grocery.name }}" class="grocery-image">
+        </picture>
       </div>
       <p class="image-description">{{ image.description }}</p>
     </div>

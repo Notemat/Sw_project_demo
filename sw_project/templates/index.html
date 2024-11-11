@@ -17,7 +17,12 @@
           <div class="element-item" data-aos="fade-up" data-aos-offset="600" data-aos-delay="{{ forloop.counter0|add:100 }}">
             <!-- Анимация для каждого блока -->
             <div class="element-image">
-              <img src="{{ element.image.url }}" alt="{{ element.name }}">
+              <picture>
+                {% if element.image_webp %}
+                  <source srcset="{{ element.image_webp.url }}" type="image/webp">
+                {% endif %}
+                <img src="{{ element.image.url }}" alt="{{ element.name }}">
+              </picture>
             </div>
             <div class="element-details">
               <p>{{ element.description }}</p>
@@ -44,7 +49,12 @@
               <div class="category-image">
                   {% if category.grocery_detail %}
                       <a href="{% url 'home:grocery-detail' slug=category.grocery_detail.slug %}">
+                        <picture>
+                          {% if category.image_webp %}
+                            <source srcset="{{ category.image_webp.url }}" type="image/webp">
+                          {% endif %}
                           <img src="{{ category.image.url }}" alt="{{ category.name }}">
+                        </picture>
                       </a>
                   {% else %}
                       <span>Нет доступных продуктов</span>

@@ -1,6 +1,7 @@
 from django.db import models
 
 from pages.mixins import ImageTagMixin
+from pages.utils import save_image_in_multiple_formats
 
 
 class Category(ImageTagMixin, models.Model):
@@ -12,12 +13,26 @@ class Category(ImageTagMixin, models.Model):
         null=True, default=None,
         verbose_name='Изображение продукта'
     )
+    image_webp = models.ImageField(
+        upload_to='groceries/images/webp/',
+        null=True, default=None,
+        verbose_name='Изображение продукта'
+    )
     description = models.TextField(verbose_name='Описание продукта')
 
     class Meta:
         ordering = ['name']
         verbose_name = 'Категория продуктов'
         verbose_name_plural = 'Категории продуктов'
+
+    def save(self, *args, **kwargs):
+        if self.image:
+            image_file, webp_file = save_image_in_multiple_formats(self.image)
+
+            self.image.save(image_file.name, image_file, save=False)
+            self.image_webp.save(webp_file.name, webp_file, save=False)
+
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.name
@@ -32,12 +47,26 @@ class Element(ImageTagMixin, models.Model):
         null=True, default=None,
         verbose_name='Изображение элемента'
     )
+    image_webp = models.ImageField(
+        upload_to='elements/images/webp/',
+        null=True, default=None,
+        verbose_name='Изображение элемента'
+    )
     description = models.TextField(verbose_name='Описание элемента')
 
     class Meta:
         ordering = ['name']
         verbose_name = 'Элемент'
         verbose_name_plural = 'Элементы'
+
+    def save(self, *args, **kwargs):
+        if self.image:
+            image_file, webp_file = save_image_in_multiple_formats(self.image)
+
+            self.image.save(image_file.name, image_file, save=False)
+            self.image_webp.save(webp_file.name, webp_file, save=False)
+
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.name
@@ -96,6 +125,11 @@ class GroceryImage(ImageTagMixin, models.Model):
         null=True, default=None,
         verbose_name='Изображение продукта'
     )
+    image_webp = models.ImageField(
+        upload_to='grocery_images/webp/',
+        null=True, default=None,
+        verbose_name='Изображение продукта'
+    )
     description = models.TextField(
         default='No description', verbose_name='Описание изображения'
     )
@@ -104,6 +138,15 @@ class GroceryImage(ImageTagMixin, models.Model):
         ordering = ['grocery']
         verbose_name = 'Изображение к продукту'
         verbose_name_plural = 'Изображения к продукту'
+
+    def save(self, *args, **kwargs):
+        if self.image:
+            image_file, webp_file = save_image_in_multiple_formats(self.image)
+
+            self.image.save(image_file.name, image_file, save=False)
+            self.image_webp.save(webp_file.name, webp_file, save=False)
+
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return f'Изображение к продукту - {self.grocery}'
