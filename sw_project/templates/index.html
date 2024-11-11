@@ -84,35 +84,50 @@
     <h2 data-aos="fade-up" data-aos-offset="600" data-aos-delay="{{ forloop.counter0|add:100 }}">Преимущества нашей компании</h2>
     <div class="advantages">
       <div class="advantage"  data-aos="zoom-in" data-aos-offset="600" data-aos-delay="{{ forloop.counter0|add:100 }}">
-        <img src="{% static 'img/experience.png' %}" alt="Опыт">
+        <picture>
+          <source srcset="{% static 'img/experience.webp' %}" type="image/webp">
+          <img src="{% static 'img/experience.png' %}" alt="Опыт">
+        </picture>
         <div>
           <h3>Большой опыт работы</h3>
           <p>Многолетний опыт работы в городе Сочи.</p>
         </div>
       </div>
       <div class="advantage" data-aos="zoom-in"data-aos-offset="600" data-aos-delay="{{ forloop.counter0|add:100 }}">
-        <img src="{% static 'img/free-delivery.png' %}" alt="Бесплатная доставка">
+        <picture>
+          <source srcset="{% static 'img/free-delivery.webp' %}" type="image/webp">
+          <img src="{% static 'img/free-delivery.png' %}" alt="Бесплатная доставка">
+        </picture>
         <div>
           <h3>Бесплатная доставка</h3>
           <p>Бесплатная доставка от определенной суммы заказа на следующий день после подачи заявки по всему городу Сочи.</p>
         </div>
       </div>
       <div class="advantage"  data-aos="zoom-in"data-aos-offset="600" data-aos-delay="{{ forloop.counter0|add:100 }}">
-        <img src="{% static 'img/modern-vehicles.png' %}" alt="Современные автомобили">
+        <picture>
+          <source srcset="{% static 'img/modern-vehicles.webp' %}" type="image/webp">
+          <img src="{% static 'img/modern-vehicles.png' %}" alt="Современные автомобили">
+        </picture>
         <div>
           <h3>Современные автомобили</h3>
           <p>Автомобили оборудованы регулированием температуры.</p>
         </div>
       </div>
       <div class="advantage" data-aos="zoom-in" data-aos-offset="300" data-aos-delay="{{ forloop.counter0|add:100 }}">
-        <img src="{% static 'img/best-prices.png' %}" alt="Оптовые цены">
+        <picture>
+          <source srcset="{% static 'img/best-prices.webp' %}" type="image/webp">
+          <img src="{% static 'img/best-prices.png' %}" alt="Оптовые цены">
+        </picture>
         <div>
           <h3>Оптовые цены</h3>
           <p>Самые низкие цены в городе на товары дистрибьюции. Сотрудничество с ведущими заводами-производителями.</p>
         </div>
       </div>
       <div class="advantage" data-aos="zoom-in" data-aos-offset="300" data-aos-delay="{{ forloop.counter0|add:100 }}">
-        <img src="{% static 'img/high-quality.png' %}" alt="Высокое качество">
+        <picture>
+          <source srcset="{% static 'img/high-quality.webp' %}" type="image/webp">
+          <img src="{% static 'img/high-quality.png' %}" alt="Высокое качество">
+        </picture>
         <div>
           <h3>Высокое качество продукции</h3>
           <p>Наивысшее качество продукции. Возможен обмен в течение трех дней при возникновении спорных моментов.</p>
@@ -131,13 +146,19 @@
         <p data-aos="fade-up">Вы можете связаться с нами, позвонив или оставив сообщение в WhatsApp.</p>
         <p>
           <a class="whatsapp-button" onclick="openWhatsAppChat()" data-aos="zoom-in">
-            <img class="watsapp_logo" src="{% static 'img/whatsapp_icon.png' %}">
+            <picture>
+              <source srcset="{% static 'img/whatsapp_icon.webp' %}" type="image/webp">
+              <img class="watsapp_logo" src="{% static 'img/whatsapp_icon.png' %}">
+            </picture>
             +7-918-200-02-07
           </a>
         </p>
         <p>
           <a class="whatsapp-button" href="https://api.whatsapp.com/send?phone=79183044300" data-aos="zoom-in">
-            <img class="watsapp_logo" src="{% static 'img/whatsapp_icon.png' %}">
+            <picture>
+              <source srcset="{% static 'img/whatsapp_icon.webp' %}" type="image/webp">
+              <img class="watsapp_logo" src="{% static 'img/whatsapp_icon.png' %}">
+            </picture>
             +7-918-304-43-00
           </a>
         </p>
@@ -171,23 +192,50 @@
     <p data-aos="fade-up">Мы с гордостью сотрудничаем с ведущими компаниями города Сочи, которые доверяют нам и используют нашу продукцию в своей профессиональной деятельности.</p>
     <div class="partner-logos">
         <div class="row top" data-aos="zoom-in">
+          <picture>
+            <source srcset="{% static 'img/partners/аромат_корицы.webp' %}" type="image/webp">
             <img src="{% static 'img/partners/аромат корицы.png' %}" alt="Партнер 1" class="logo">
+          </picture>
+          <picture>
+            <source srcset="{% static 'img/partners/магеллан.webp' %}" type="image/webp">
             <img src="{% static 'img/partners/магеллан.png' %}" alt="Партнер 2" class="logo">
+          </picture>
+          <picture>
+            <source srcset="{% static 'img/partners/лаверна.webp' %}" type="image/webp">
             <img src="{% static 'img/partners/лаверна.png' %}" alt="Партнер 3" class="logo">
+          </picture>
         </div>
         <div class="row middle" data-aos="zoom-in">
+          <picture>
+            <source srcset="{% static 'img/partners/ваниль.webp' %}" type="image/webp">
             <img src="{% static 'img/partners/ваниль.png' %}" alt="Партнер 4" class="logo">
+          </picture>
+          <picture>
+            <source srcset="{% static 'img/partners/лондонъ.webp' %}" type="image/webp">
             <img src="{% static 'img/partners/лондонъ.png' %}" alt="Партнер 5" class="logo">
+          </picture>
         </div>
         <div class="row bottom" data-aos="zoom-in">
-            <img src="{% static 'img/partners/пекарня_кривоноговых.png' %}" alt="Партнер 6" class="logo">
+          <picture>
+              <source srcset="{% static 'img/partners/пекарня_кривоноговых.webp' %}" type="image/webp">
+              <img src="{% static 'img/partners/пекарня_кривоноговых.png' %}" alt="Партнер 6" class="logo">
+          </picture>
+          <picture>
+            <source srcset="{% static 'img/partners/хлебница.webp' %}" type="image/webp">
             <img src="{% static 'img/partners/хлебница.png' %}" alt="Партнер 7" class="logo">
+          </picture>
+          <picture>
+            <source srcset="{% static 'img/partners/ярмарки.webp' %}" type="image/webp">
             <img src="{% static 'img/partners/ярмарки.png' %}" alt="Партнер 8" class="logo">
+          </picture>
         </div>
     </div>
     <div class="row">
       <div class="col-12 text center">
-        <img class="custom-br" src="{% static 'img/br.png' %}">
+        <picture>
+          <source srcset="{% static 'img/br.webp' %}" type="image/webp">
+          <img class="custom-br" src="{% static 'img/br.png' %}">
+        </picture>
       </div>
     </div>
   </div>

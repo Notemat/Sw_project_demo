@@ -27,7 +27,10 @@
     <div class="nav-container">
       <div class="logo_nav">
         <a href="{% url 'home:home' %}#home">
-          <img class="logo" alt="logo" src="{% static 'img/logo.png' %}">
+          <picture>
+            <source srcset="{% static 'img/logo.webp' %}" type="image/webp">
+            <img class="logo" alt="logo" src="{% static 'img/logo.png' %}">
+          </picture>
         </a>
       </div>
       <div class="burger-menu">☰</div>
@@ -35,33 +38,48 @@
         <ul class="menu vertical-menu">
           <li class="menu_item">
             <a href="{% url 'home:home' %}#home" class="menu_link">
-              <img src="{% static 'img/eggsicon.png' %}" class="icon">
+              <picture>
+                <source srcset="{% static 'img/eggsicon.webp' %}" type="image/webp">
+                <img src="{% static 'img/eggsicon.png' %}" class="icon">
+              </picture>
               <i class="fas fa-home"></i> 
               <span class="menu-text">Главная</span>
            </a>
           </li>
           <li class="menu_item">
             <a href="{% url 'home:home' %}#categories" class="menu_link {% if request.path == 'grocery' or '#categories' in request.path %}active{% endif %}">
-              <img src="{% static 'img/eggsicon.png' %}" class="icon">
+              <picture>
+                <source srcset="{% static 'img/eggsicon.webp' %}" type="image/webp">
+                <img src="{% static 'img/eggsicon.png' %}" class="icon">
+              </picture>
               <i class="fas fa-box"></i>
               <span class="menu-text">Продукция</span>
             </a>
           </li>
           <li class="menu_item">
             <a href="{% url 'home:home' %}#about" class="menu_link">
-              <img src="{% static 'img/eggsicon.png' %}" class="icon">
+              <picture>
+                <source srcset="{% static 'img/eggsicon.webp' %}" type="image/webp">
+                <img src="{% static 'img/eggsicon.png' %}" class="icon">
+              </picture>
               <i class="fas fa-info-circle"></i> 
               <span class="menu-text">О нас</a></span>
           </li>
           <li class="menu_item">
             <a href="{% url 'home:home' %}#contact" class="menu_link">
-              <img src="{% static 'img/eggsicon.png' %}" class="icon">
+              <picture>
+                <source srcset="{% static 'img/eggsicon.webp' %}" type="image/webp">
+                <img src="{% static 'img/eggsicon.png' %}" class="icon">
+              </picture>
               <i class="fas fa-phone-alt"></i> 
               <span class="menu-text">Контакты</a></span>
           </li>
           <li class="menu_item">
             <a href="{% url 'home:home' %}#partner" class="menu_link">
-              <img src="{% static 'img/eggsicon.png' %}" class="icon">
+              <picture>
+                <source srcset="{% static 'img/eggsicon.webp' %}" type="image/webp">
+                <img src="{% static 'img/eggsicon.png' %}" class="icon">
+              </picture>
               <i class="fas fa-handshake"></i> 
               <span class="menu-text">Партнеры</a></span>
           </li>
@@ -76,7 +94,10 @@
       {% endblock %}
       <div class="whatsapp-widget">
         <div class="whatsapp-container" onclick="openWhatsAppChat()">
-            <img class="whatsapp-logo" src="{% static 'img/whatsapp_icon.png' %}" alt="WhatsApp" />
+            <picture>
+              <source srcset="{% static 'img/whatsapp_icon.webp' %}" type="image/webp">
+              <img class="whatsapp-logo" src="{% static 'img/whatsapp_icon.png' %}" alt="WhatsApp" />
+            </picture>
             <div class="whatsapp-text">Свяжитесь с нами</div>
         </div>
       </div>

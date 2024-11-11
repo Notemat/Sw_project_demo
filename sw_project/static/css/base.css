@@ -14,16 +14,15 @@
   font-weight: 100;
   font-style: normal;
 }
-
 /* Общие стили для body (тело страницы) - цвет текста, цвет фона, семейство шрифтов, межбуквенный интервал и граница вокруг страницы */
 body {
-color: #272727; /* Цвет текста */
-background-color: #f8b400; /* Цвет фона страницы */
-font: 1em / 1.3; /* Шрифты и межстрочный интервал */
-font-family: 'Roboto', sans-serif; /* Стиль шрифта */
-letter-spacing: .05em; /* Межбуквенный интервал */
-border: 10px solid #f8b400; /* Граница вокруг всего body */
-box-sizing: border-box;
+  color: #272727; /* Цвет текста */
+  background-color: #f8b400; /* Цвет фона страницы */
+  font: 1em / 1.3; /* Шрифты и межстрочный интервал */
+  font-family: 'Roboto', sans-serif; /* Стиль шрифта */
+  letter-spacing: .05em; /* Межбуквенный интервал */
+  border: 10px solid #f8b400; /* Граница вокруг всего body */
+  box-sizing: border-box;
 
 }
 /* Стили для ссылок (a) и эффекты при наведении */
@@ -173,6 +172,7 @@ html {
   /* Меню навигации */
   .bar_menu {
     display: none;
+    transition: max-hight 0.5s ease-in-out;
   }
   /* Бургер меню */
   .burger-menu {
