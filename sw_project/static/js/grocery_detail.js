@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
   // Получаем все ссылки в меню
-  const menuLinks = document.querySelectorAll('.menu_link');
+  const menuLinks = document.querySelectorAll('.menu-link');
 
   // Проверяем наличие маршрута /grocery/ в URL
   if (window.location.pathname.includes('/grocery/')) {

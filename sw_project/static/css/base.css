@@ -1,61 +1,73 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
 /* Устанавливает box-sizing для всех элементов и псевдоэлементов, чтобы padding и border были включены в общую ширину и высоту элементов */
 * {
   box-sizing: border-box;
 }
+
 /* Шрифты */
 .dela-gothic-one-regular {
   font-family: "Dela Gothic One", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
+
 .roboto-thin {
-  font-family: "Roboto", sans-serif;
+  font-family: Roboto, sans-serif;
   font-weight: 100;
   font-style: normal;
 }
+
 /* Общие стили для body (тело страницы) - цвет текста, цвет фона, семейство шрифтов, межбуквенный интервал и граница вокруг страницы */
 body {
   color: #272727; /* Цвет текста */
   background-color: #f8b400; /* Цвет фона страницы */
   font: 1em / 1.3; /* Шрифты и межстрочный интервал */
-  font-family: 'Roboto', sans-serif; /* Стиль шрифта */
+  font-family: Roboto, sans-serif; /* Стиль шрифта */
   letter-spacing: .05em; /* Межбуквенный интервал */
   border: 10px solid #f8b400; /* Граница вокруг всего body */
   box-sizing: border-box;
 
 }
+
 /* Стили для ссылок (a) и эффекты при наведении */
 a {
 color: #3E3E3E; /* Цвет ссылок */
 text-decoration: none; /* Убирает подчеркивание */
 }
+
 a:hover {
 color: #c57d10; /* Изменяет цвет при наведении */
 }
+
 /* Шрифты для заголовков */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Dela Gothic One', sans-serif; /* Шрифт для заголовков */
   font-weight: 400; /* Размер шрифта */
   margin-bottom: 20px; /* Отступ снизу от элемента */
 }
+
 /* Стили для заголовков h1, h2, h3 */
 h1 {
   font-size: 3.5em; /* Размер заголовков */
   font-weight: bold; /* Размер по вертикали */
 }
+
 h2 {
   font-size: 2.5em;
   font-weight: bold;
 }
+
 h3 {
   font-size: 2em;
   font-weight: normal;
 }
+
 /* Плавная прокрутка по ссылкам на странице */
 html {
   scroll-behavior: smooth;
 }
+
 /* Стили для фиксированной шапки сайта */
 .header {
   position: fixed; /* Позиция по середине от родителя */
@@ -74,12 +86,14 @@ html {
   padding: 0; /* Нулевой отступ от краев страинцы */
   flex-direction: column; /* В колонку */
 }
+
 /* Логотип в шапке */
 .logo {
   width: 130px; /* Размер логотипа */
   height: 130px; /* Размер логотипа по вертикали */
   z-index: 1000; /* Приоритет при отображении */
 }
+
 /* Стили для основного меню (навигационные элементы) */
 .menu {
   margin: 0; /* Нулевой отступ от элементов */
@@ -90,90 +104,107 @@ html {
   flex-direction: column; /* В колонку */
   font-family: "Dela Gothic One", sans-serif; /* Стиль шрифта */
 }
+
 /* Бургер-меню по умолчанию скрыто */
 .burger-menu {
   display: none;
 }
+
 /* Стили для элементов списка меню */
 .menu li {
-  margin-left: 0px; /* Отступ слева от элементов */
+  margin-left: 0; /* Отступ слева от элементов */
   font-size: 1.2em; /* Размер элементов */
   margin-bottom: 20px; /* Отступ снизу от элементов */
 }
+
 /* Ширина меню */
-.bar_menu {
+.bar-menu {
   width: 100%; /* Размер элементов */
 }
+
 /* Вертикальное меню */
 .vertical-menu {
   list-style: none;
   padding: 0;
   margin: 0;
 }
+
 /* Отступы для элементов меню */
-.menu_item {
+.menu-item {
   margin: 10px 15px; /* Отступ от элементов */
   width: 100%; /* Установить 100% ширины контейнера */
 }
-.menu_link i {
+
+.menu-link i {
   font-size: 24px;
   margin-bottom: 5px;
   display: none; /* Скрываем иконки по умолчанию */
 }
+
 /* Ссылка внутри меню */
-.menu_link {
+.menu-link {
   width: 100%; /* Установить 100% ширины контейнера */
   padding: 15px; /* Отступ от краев страинцы */
-  border-radius: 20px 20px 20px 20px; /* Округляем с обеих сторон */
+  border-radius: 20px; /* Округляем с обеих сторон */
   transition: background-color 0.3s ease; /* Плавность анимации */
 }
+
 /* Стили активных ссылок */
-.menu_link.active {
+.menu-link.active {
   background-color: #f8b400; /* Заливка до боковой стенки */
   color: #fff; /* Цвет текста при наведении */
   border-radius: 0 20px 20px 0; /* Оставляем округление только с одной стороны */
   transition: all 0.3s ease; /* Плавная анимация */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Добавляем тень для окна */
+  box-shadow: 0 4px 8px rgb(0 0 0 / 10%); /* Добавляем тень для окна */
 }
+
 /* Стили ссылок при наведении */
-.menu_link:hover {
+.menu-link:hover {
   background-color: #f8b400; /* Заливка до боковой стенки */
   color: #fff; /* Цвет текста при наведении */
-  border-radius: 20px 20px 20px 20px; /* Оставляем округление с обеих сторон */
+  border-radius: 20px; /* Оставляем округление с обеих сторон */
   transition: all 0.3s ease; /* Плавная анимация */
 }
+
 /* Эффекты для активных или наведённых ссылок */
-/* Иконка при активном состоянии */
-.menu_link.active .icon {
-  display: inline-block;
-}
+
 /* Скрытая иконка по умолчанию */
-.menu_link .icon {
+.menu-link .icon {
   display: none;
   width: 35px; /* Размер иконки */
   height: 35px; /* Размер по вертикали */
 }
+
+/* Иконка при активном состоянии */
+.menu-link.active .icon {
+  display: inline-block;
+}
+
 /* Медиазапрос для мобильных устройств */
-@media (max-width: 768px) {
+@media (width <= 768px) {
   /* Контейнер навигации */
   .nav-container {
     display: flex; /* Фиксировано по центру */
   }
-  .menu_link i {
+
+  .menu-link i {
     font-size: 24px;
     margin-bottom: 5px;
     display: inline-block;
   }
+
   /* Логотип в шапке */
   .logo {
     width: 110px; /* Размер логотипа */
     height: 110px; /* Размер логотипа по вертикали */
   }
+
   /* Меню навигации */
-  .bar_menu {
+  .bar-menu {
     display: none;
     transition: max-hight 0.5s ease-in-out;
   }
+
   /* Бургер меню */
   .burger-menu {
     display: block; /*  Элементы друг под другом */
@@ -183,21 +214,25 @@ html {
     left: 10px; /* Влево */
     cursor: pointer; 
   }
+
   /* Открытие меню */
-  .bar_menu.open {
+  .bar-menu.open {
     display: flex;  /* Фиксирование по центру */
   }
+
     /* Ссылка внутри меню */
-  .bar_menu.open .menu_link {
-    background-color: rgba(240, 180, 0, 0.5); /* Заливка до боковой стенки */
+  .bar-menu.open .menu-link {
+    background-color: rgb(240 180 0 / 50%); /* Заливка до боковой стенки */
     border-radius: 0 20px 20px 0; /* Оставляем округление только с одной стороны */
   }
+
    /* При нажатии на кнопку */
-  .bar_menu.open .menu_link.active {
+  .bar-menu.open .menu-link.active {
     background-color: #f8b400; /* Заливка до боковой стенки */
   }
+
   /* Скрываем текст */
-  .bar_menu.open .menu-text {
+  .bar-menu.open .menu-text {
     display: none;
   }
 }
@@ -220,6 +255,7 @@ section {
   bottom: 100px; /* Отступ снизу */
   z-index: 1000; /* Высокий приоритет отображения */
 }
+
 /* Контейнер виджета */
 .whatsapp-container {
   position: relative;  /* Позиция родительская */
@@ -227,17 +263,19 @@ section {
   height: 120px; /* Высота кнопки */
   background-color: #25D366; /* Цвет фона для логотипа WhatsApp */
   border-radius: 50%; /* Круглая форма */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Тень */
+  box-shadow: 0 4px 10px rgb(0 0 0 / 15%); /* Тень */
   cursor: pointer;
   display: flex;  /* Выравнивание по центру */
   justify-content: center;  /* Выравнивание контента по центру */
   align-items: center;  /* Выравнивание элементов по центру */
   transition: transform 0.3s ease; /* Плавное увеличение */
 }
+
 /* При навидении на виджет */
 .whatsapp-container:hover {
   transform: scale(1.1); /* Увеличение при наведении */
 }
+
  /* Лототип виджета */
 .whatsapp-logo {
   width: 100%; /* Логотип заполняет весь контейнер */
@@ -245,10 +283,11 @@ section {
   object-fit: cover; /* Логотип будет обрезан, если нужно */
   border-radius: 50%;  /* Закругление углов */
 }
+
  /* Текст виджета */
 .whatsapp-text {
   position: absolute; /* Текст будет поверх логотипа */
-  color: rgb(46, 46, 46);  /* Цвет текста */
+  color: rgb(46 46 46);  /* Цвет текста */
   font-size: 12px; /* Размер шрифта */
   font-weight: bold; 
   text-align: center;  /* Выравнивание текста по центру */
@@ -260,13 +299,15 @@ section {
   background-color: #f5f2dc;
   padding: 5px 10px;  /* Отступ от краев */
 }
+
  /* Адаптация под мобильные устройства */
-@media (max-width: 768px) {
+@media (width <= 768px) {
    /* Контейнер виджета */
   .whatsapp-container {
     width: 100px; /* Размер логотипа */
     height: 100px; /* Высота кнопки */
   }
+
   /* Текст виджета */
   .whatsapp-text {
     width: 88%;

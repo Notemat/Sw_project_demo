@@ -1,19 +1,22 @@
-@media (max-width: 768px) {
+@media (width <= 768px) {
   /* Отключение анимации */
   [data-aos] {
       opacity: 1 !important;
       transform: none !important; /* Убираем любые трансформации */
       transition: none !important; /* Отключаем переходы */
   }
+
   /* Cтили мобильной версии секции home */
   #home p{
-    padding: 10px 10px;
+    padding: 10px;
     margin-bottom: 0;
   }
+
   /* Заголовок секции */
   #home h1 {
     font-size: 2.2em; /* Уменьшаем размер заголовка */
   }
+
   /* Список элементов */
   .element-list {
     display: flex;
@@ -22,11 +25,13 @@
     text-align: center; /* Центрирует текст */
     width: 100%; /* Размер элементов */
   }
+
   .element-item {
     display: block;
     top: 0; /* Убираем смещения для всех элементов */
     margin-bottom: 20px; /* Опционально уменьшаем отступы между элементами */
   }
+
   /* Дополнительно, если нужно, для нечетных и четных элементов */
   .element-item:nth-child(odd), 
   .element-item:nth-child(even), 
@@ -35,6 +40,7 @@
       flex-direction: column;
       padding-left: 0;
   }
+
   /* Изображение элементов */
   .element-image img {
     width: 300px;
@@ -43,6 +49,7 @@
     margin: 0  auto; /* Отступ между элементами */
     display: block; /* Элементы друг под другом */
   }
+
   /* Текст элементов */
   .element-details  {
     font-size: 0.8em; /* Уменьшаем размер текста */
@@ -53,17 +60,19 @@
 }
 
 
-@media (max-width: 768px) {
+@media (width <= 768px) {
   /* Cтили мобильной версии секции categories */
   #categories {
     padding: 10px; /* Отступ от краев */
     text-align: center; /* Ориентация текста по центру */
   }
+
   /* Заголовок секции */
   .section-title {
     font-size: 1.8em; /* Размер заголовка */
     margin-bottom: 20px; /* Отступ снизу от элементов */
   }
+
   /* Уменьшение размера изображений */
   .category-image img {
     width: 150px; /* Уменьшение ширины изображений */
@@ -71,6 +80,7 @@
     border-radius: 50%; /* Круглые изображения */
     object-fit: cover;
   }
+
   /* Текст под изображениями */
   .category-details {
     font-size: 1em; /* Уменьшение размера шрифта */
@@ -80,6 +90,7 @@
     overflow: visible; /* Разрешаем показывать весь текст */
     text-overflow: clip; /* Убираем многоточие для текста */
   }
+
   /* Выравнивание текста для обоих блоков */
   .category-left .category-details {
     text-align: left; /* Текст выровнен по левому краю */
@@ -88,6 +99,7 @@
     overflow: visible; /* Разрешаем показывать весь текст */
     text-overflow: clip; /* Убираем многоточие для текста */
   }
+
   /* Текст с правой стороны */
   .category-right .category-details {
     text-align: right; /* Текст выровнен по правому краю */ 
@@ -96,23 +108,27 @@
     overflow: visible; /* Разрешаем показывать весь текст */
     text-overflow: clip; /* Убираем многоточие для текста */
   }
+
   /* Заголовок с левой стороны */
   .category-left .category-title {
     text-align: left; /* Выровнять текст по ширине */
     word-spacing: normal; /* Убедитесь, что здесь нормальное значение */
     white-space: normal; /* Не допускайте ненужных переносов */
   }
+
   /* Заголовок с правой стороны */
   .category-right .category-title {
     text-align: right; /* Выровнять текст по ширине */
     word-spacing: normal; /* Убедитесь, что здесь нормальное значение */
     white-space: normal; /* Не допускайте ненужных переносов */
   }
+
   /* Уменьшение размера абзацев */
   #categories p {
     font-size: 0.9em;
     margin-bottom: 15px;
   }
+
   /* Кнопка скачать прайс */
   .btn-primary {
     width: 100%; /* Размер кнопки */
@@ -121,22 +137,25 @@
 }
 
 
-@media (max-width: 768px) {
+@media (width <= 768px) {
   /* Cтили мобильной версии секции about */
   #about {
     padding: 10px; /* Отступ от краев */
     text-align: center; /* Выравнивание текста по центру */
   }
+
   /* Заголовок в секции "О нас" */
   #about h1 {
     font-size: 1.8em; /* Размер заголовка */
     margin-bottom: 20px; /* Остпут снизу от элементов */
   }
+
   /* Заголовок меньшего размера секции */
   #about h2 {
     font-size: 1.8em; /* Размер заголовка */
     margin-bottom: 20px; /* Отступ снизу от элементов */
   }
+
   /* Текст в секции "О нас" */
   #about p {
     font-size: 0.9em; /* Уменьшение размера шрифта */
@@ -150,36 +169,41 @@
 
 
   /* Адаптация под мобильные устройства экран 768рх */
-@media (max-width: 768px) {
+@media (width <= 768px) {
   /* Секция преимуществ */
   .advantage {
     flex: 1 1 calc(50% - 20px); 
     max-width: calc(50% - 20px); /* Максимальный размер элемента */
     margin-bottom: 20px; /* Отступ снизу от элементов */
   }
+
   /* Изображение преимуществ */
   .advantage img {
     width: 40px; /* Размер изображения преимуществ */
   }
 }
+
 /* Адаптация под мобильные устройства экран 480рх */
-@media (max-width: 480px) {
+@media (width <= 480px) {
   /* Секция преимуществ */
   .advantage {
     flex-direction: column; /* Положение в колонку */
     align-items: flex-start;  /* Ориентация элементов */
     max-width: 100%; /* Максимальный размер элементов */
   }
+
   /* Изображение преимуществ */
   .advantage img {
     margin-left: 50px; /* Отступ слева от элементов */
     margin-bottom: 10px; /* Отступ справа от элементов */
     display: block; /* Отображение друг под другом */
   }
+
   /* Третье изображение преимуществ */
   .advantage:nth-of-type(3) img {
     margin-left: 150px; /* Отступ слева от элементов */
   }
+
   /* Заголовок преимуществ h3 */
   .advantage h3 {
     font-size: 1.2em; /* Размер заголовка */
@@ -188,7 +212,7 @@
 
 
 /* Оптимизация  contact для мобильных устройств */
-@media (max-width: 768px) {
+@media (width <= 768px) {
   /* Секция контактов */
   #contact .container {
     margin: 0 auto; /* Отступ от краев ЭЛЕМЕНТОВ */
@@ -196,6 +220,7 @@
     padding-left: 0; /* Отступ слева от краев страницы */
     text-align: center; /* Центрируем весь текст внутри контейнера */
   }
+
   #contact .row {
     display: flex;
     flex-direction: column; /* Элементы располагаются один под другим */
@@ -234,22 +259,26 @@
     padding: 8px 16px; /* Отступы от краев страницы */
     margin: 10px auto; /* Центрируем кнопки */
   }
+
   /* Логотип WhatsApp */
-  .watsapp_logo {
+  .watsapp-logo {
     width: 40px; /* Размер логотипа */
     height: 27px; /* Размер по вертикали */
   }
+
   /* Уменьшаем размеры шрифтов в разделе контактов */
   #contact h2 {
     font-size: 1.5em; /* Размер заголовка */
   }
+
   /* Текст секции контактов */
   #contact p {
     font-size: 0.9em; /* Размер текста */
   }
 }
+
 /* Оптимизация для экранов меньше 1500рх  */
-@media (max-width: 1300px) {
+@media (width <= 1300px) {
   /* Секция контактов карта 2гис */
   #contact .container {
     display: contents;
@@ -258,6 +287,7 @@
     padding-left: 0; /* Отступ слева от краев страницы */
     text-align: center; /* Центрируем весь текст внутри контейнера */
   }
+
   #contact .row {
     display: flex;
     flex-direction: column; /* Элементы располагаются один под другим */
@@ -275,6 +305,7 @@
     margin-bottom: 20px; /* Отступы между элементами */
     text-align: center; /* Центрирует содержимое внутри блока */
   }
+
   #contact .col-7 {
     width: auto;  /* Максимальный размер карты */
   }
@@ -282,23 +313,27 @@
 
 
 /* Стили для секции партнеров */
-@media (max-width: 768px) {
+@media (width <= 768px) {
   /* Заголовок партнеров */
   #partner h1 {
     font-size: 27px; /* Уменьшаем размер заголовка */
   }
+
   /* Текст секции партнеров */
   #partner p {
     font-size: 18px; /* Уменьшаем размер текста */
   }
+
   /* Логотип партнеров */
   .partner-logos .logo {
     width: 100px; /* Уменьшаем размер логотипов */
   }
+
   /* Особенное расположение логотипов */
   #partner .row.top, .row.middle, .row.bottom {
     gap: 30px; /* Уменьшаем расстояние между логотипами */
   }
+
   /* Логотип внизу страницы ПАРТНЕРОВ */
   .custom-br {
     width: 350px; /* Размер логотива */

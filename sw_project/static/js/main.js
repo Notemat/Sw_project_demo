@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
   
     // Получаем все секции и ссылки в меню
     const sections = document.querySelectorAll("section");
-    const menuLinks = document.querySelectorAll(".menu_link");
+    const menuLinks = document.querySelectorAll(".menu-link");
 
     // Функция для определения активной секции
     function setActiveSection() {
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener("scroll", setActiveSection);
 
   let burger = document.querySelector('.burger-menu'),
-    menu = document.querySelector('.bar_menu');
+    menu = document.querySelector('.bar-menu');
 
   burger.addEventListener('click', function(e) {
     menu.classList.toggle('open');
@@ -47,8 +47,8 @@ function openWhatsAppChat() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-  let logo = document.querySelector('.logo_nav a'),
-      menu = document.querySelector('.bar_menu');
+  let logo = document.querySelector('.logo-nav a'),
+      menu = document.querySelector('.bar-menu');
 
   // Проверяем ширину экрана и только для мобильных включаем логику
   function toggleMenu() {

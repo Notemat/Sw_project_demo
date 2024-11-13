@@ -25,7 +25,7 @@
     
   <header class="header">
     <div class="nav-container">
-      <div class="logo_nav">
+      <div class="logo-nav">
         <a href="{% url 'home:home' %}#home">
           <picture>
             <source srcset="{% static 'img/logo.webp' %}" type="image/webp">
@@ -34,10 +34,10 @@
         </a>
       </div>
       <div class="burger-menu">☰</div>
-      <div class="bar_menu">
+      <div class="bar-menu">
         <ul class="menu vertical-menu">
-          <li class="menu_item">
-            <a href="{% url 'home:home' %}#home" class="menu_link">
+          <li class="menu-item">
+            <a href="{% url 'home:home' %}#home" class="menu-link">
               <picture>
                 <source srcset="{% static 'img/eggsicon.webp' %}" type="image/webp">
                 <img src="{% static 'img/eggsicon.png' %}" class="icon">
@@ -46,8 +46,8 @@
               <span class="menu-text">Главная</span>
            </a>
           </li>
-          <li class="menu_item">
-            <a href="{% url 'home:home' %}#categories" class="menu_link {% if request.path == 'grocery' or '#categories' in request.path %}active{% endif %}">
+          <li class="menu-item">
+            <a href="{% url 'home:home' %}#categories" class="menu-link {% if request.path == 'grocery' or '#categories' in request.path %}active{% endif %}">
               <picture>
                 <source srcset="{% static 'img/eggsicon.webp' %}" type="image/webp">
                 <img src="{% static 'img/eggsicon.png' %}" class="icon">
@@ -56,8 +56,8 @@
               <span class="menu-text">Продукция</span>
             </a>
           </li>
-          <li class="menu_item">
-            <a href="{% url 'home:home' %}#about" class="menu_link">
+          <li class="menu-item">
+            <a href="{% url 'home:home' %}#about" class="menu-link">
               <picture>
                 <source srcset="{% static 'img/eggsicon.webp' %}" type="image/webp">
                 <img src="{% static 'img/eggsicon.png' %}" class="icon">
@@ -65,8 +65,8 @@
               <i class="fas fa-info-circle"></i> 
               <span class="menu-text">О нас</a></span>
           </li>
-          <li class="menu_item">
-            <a href="{% url 'home:home' %}#contact" class="menu_link">
+          <li class="menu-item">
+            <a href="{% url 'home:home' %}#contact" class="menu-link">
               <picture>
                 <source srcset="{% static 'img/eggsicon.webp' %}" type="image/webp">
                 <img src="{% static 'img/eggsicon.png' %}" class="icon">
@@ -74,8 +74,8 @@
               <i class="fas fa-phone-alt"></i> 
               <span class="menu-text">Контакты</a></span>
           </li>
-          <li class="menu_item">
-            <a href="{% url 'home:home' %}#partner" class="menu_link">
+          <li class="menu-item">
+            <a href="{% url 'home:home' %}#partner" class="menu-link">
               <picture>
                 <source srcset="{% static 'img/eggsicon.webp' %}" type="image/webp">
                 <img src="{% static 'img/eggsicon.png' %}" class="icon">
