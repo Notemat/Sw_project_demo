@@ -212,6 +212,12 @@
 
 
 /* Оптимизация  contact для мобильных устройств */
+@media (width >= 768px) {
+  #contact .container {
+    margin-left: auto; /* Отступ слева от элементов */
+  }
+}
+
 @media (width <= 768px) {
   /* Секция контактов */
   #contact .container {
