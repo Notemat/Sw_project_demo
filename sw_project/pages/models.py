@@ -1,10 +1,9 @@
 from django.db import models
 
-from pages.mixins import ImageTagMixin
-from pages.utils import save_image_in_multiple_formats
+from pages.mixins import ImageTagMixin, ImageSaveMixin
 
 
-class Category(ImageTagMixin, models.Model):
+class Category(ImageTagMixin, ImageSaveMixin, models.Model):
     """Модель категории продуктов на веб-странице."""
 
     name = models.CharField(max_length=249, verbose_name='Название продукта')
@@ -25,20 +24,11 @@ class Category(ImageTagMixin, models.Model):
         verbose_name = 'Категория продуктов'
         verbose_name_plural = 'Категории продуктов'
 
-    def save(self, *args, **kwargs):
-        if self.image:
-            image_file, webp_file = save_image_in_multiple_formats(self.image)
-
-            self.image.save(image_file.name, image_file, save=False)
-            self.image_webp.save(webp_file.name, webp_file, save=False)
-
-        super().save(*args, **kwargs)
-
     def __str__(self):
         return self.name
 
 
-class Element(ImageTagMixin, models.Model):
+class Element(ImageTagMixin, ImageSaveMixin, models.Model):
     """Модель элемента блока home."""
 
     name = models.CharField(max_length=249, verbose_name='Название элемента')
@@ -58,15 +48,6 @@ class Element(ImageTagMixin, models.Model):
         ordering = ['name']
         verbose_name = 'Элемент'
         verbose_name_plural = 'Элементы'
-
-    def save(self, *args, **kwargs):
-        if self.image:
-            image_file, webp_file = save_image_in_multiple_formats(self.image)
-
-            self.image.save(image_file.name, image_file, save=False)
-            self.image_webp.save(webp_file.name, webp_file, save=False)
-
-        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.name
@@ -93,8 +74,8 @@ class Grocery(models.Model):
 
     class Meta:
         ordering = ['name']
-        verbose_name = 'Продукт'
-        verbose_name_plural = 'Продукты'
+        verbose_name = 'Страница продукта'
+        verbose_name_plural = 'Страницы продуктов'
 
     def __str__(self):
         return self.name
@@ -113,7 +94,7 @@ class Grocery(models.Model):
     certificate_tag_short_description = 'Изображение'
 
 
-class GroceryImage(ImageTagMixin, models.Model):
+class GroceryImage(ImageTagMixin, ImageSaveMixin, models.Model):
     """Модель изображений продуктов."""
 
     grocery = models.ForeignKey(
@@ -133,20 +114,14 @@ class GroceryImage(ImageTagMixin, models.Model):
     description = models.TextField(
         default='No description', verbose_name='Описание изображения'
     )
+    is_active = models.BooleanField(
+        default=True, verbose_name='Отображать на странице'
+    )
 
     class Meta:
         ordering = ['grocery']
         verbose_name = 'Изображение к продукту'
         verbose_name_plural = 'Изображения к продукту'
-
-    def save(self, *args, **kwargs):
-        if self.image:
-            image_file, webp_file = save_image_in_multiple_formats(self.image)
-
-            self.image.save(image_file.name, image_file, save=False)
-            self.image_webp.save(webp_file.name, webp_file, save=False)
-
-        super().save(*args, **kwargs)
 
     def __str__(self):
         return f'Изображение к продукту - {self.grocery}'

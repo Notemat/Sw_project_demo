@@ -36,7 +36,8 @@ class CategoryAdmin(ImagePreviewMixin, admin.ModelAdmin):
 class ElementAdmin(ImagePreviewMixin, admin.ModelAdmin):
     """Модель продукта в админке."""
 
-    list_display = ('name', 'image_preview')
+    list_display = ('name', 'description', 'image_preview')
+    list_editable = ('description', )
     search_fields = ('name', )
     readonly_fields = ('image_tag',)
     fieldsets = (
@@ -99,14 +100,16 @@ class GroceryDetailAdmin(admin.ModelAdmin):
 class GroceryImagelAdmin(ImagePreviewMixin, admin.ModelAdmin):
     """Модель изображения продукта в админке."""
 
-    list_display = ('grocery', 'image_preview')
-    search_fields = ('grocery', )
+    list_display = ('grocery', 'image_preview', 'is_active')
+    list_filter = ('grocery', )
+    list_editable = ('is_active',)
     readonly_fields = ('image_tag',)
+    autocomplete_fields = ('grocery', )
     fieldsets = (
         (None, {
             'classes': ('wide'),
             'fields': (
-                ('grocery',),
+                ('grocery', 'is_active'),
                 ('description'),
             ),
         }),

@@ -16,17 +16,19 @@
     <h4 data-aos="fade-up">Популярные товары</h4>
     <div class="carousel" data-aos="zoom-in">
   {% for image in images %}
-    <div class="image-wrapper">
-      <div class="circle-image image-{{ forloop.counter0 }}">
-        <picture>
-          {% if image.image_webp %}
-            <source srcset="{{ image.image_webp.url }}" type="image/webp">
-          {% endif %}
-          <img src="{{ image.image.url }}" alt="Изображение к {{ grocery.name }}" class="grocery-image">
-        </picture>
+    {% if image.is_active %}
+      <div class="image-wrapper">
+        <div class="circle-image image-{{ forloop.counter0 }}">
+          <picture>
+            {% if image.image_webp %}
+              <source srcset="{{ image.image_webp.url }}" type="image/webp">
+            {% endif %}
+            <img src="{{ image.image.url }}" alt="Изображение к {{ grocery.name }}" class="grocery-image">
+          </picture>
+        </div>
+        <p class="image-description">{{ image.description }}</p>
       </div>
-      <p class="image-description">{{ image.description }}</p>
-    </div>
+    {% endif %}
   {% endfor %}
   </div>
   <button id="btn-certificate" class="btn btn-certificate">Сертификат дистрибуции</button>
@@ -37,9 +39,9 @@
 </div>
 {% endblock %}
 {% block scripts %}
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
-  <script src="{% static 'js/main.js' %}"></script>
-  <script src="{% static 'js/grocery_detail.js' %}"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js" defer></script>
+  <script src="{% static 'js/main.js' %}" defer></script>
+  <script src="{% static 'js/grocery_detail.js' %}" defer></script>
 {% endblock %}
 

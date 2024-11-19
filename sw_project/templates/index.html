@@ -4,7 +4,7 @@
 {% block title %}Главная - Южный Ветер{% endblock %}
 {% block head %}
   <link rel="stylesheet" href="{% static 'css/index.css' %}">
-  <link rel="stylesheet" href="{% static 'css/mobile_index.css' %}">
+  <link rel="stylesheet" href="{% static 'css/mobile_index.css' %}" media="screen and (max-width: 768px)">
 {% endblock %}
 {% block content %}
 <section id="home" class="bg-light py-5">
@@ -79,8 +79,8 @@
   </div>
 
     <div class="col-12 text-center" data-aos="fade-up">
-      <p>Для получения более подробной информации и актуального прайс-листа, пожалуйста, скачайте документ по ссылке ниже:</p>
-      <a href="{% static 'docs/price_list.pdf' %}" class="btn btn-primary">Скачать прайс-лист</a>
+      <p>Для получения актуального прайс-листа свяжитесь с нами удобным для вас способом - позвонив по телефону или через  WhatsApp</p>
+      <a href="https://wa.me/79182000207" onclick="openWhatsAppChat()" target="_blank" data-aos="zoom-in" class="btn btn-primary">Связаться с нами</a>
     </div>
   </div>
 </section>
@@ -89,7 +89,9 @@
   <div class="container">
     <h1 data-aos="fade-up">О нас</h1>
     <p data-aos="fade-up">
-      Наша компания уже более двадцати лет работает напрямую с ведущими производителями мукомольной промышленности, круп, консервации и яичной продукции. Мы гордимся нашими долгосрочными партнёрскими отношениями с Таганрогской и Свердловской птицефабриками, Старооскольским мучным заводом и мельничным хозяйством "Лада". Наша продукция востребована в ресторанах, кафе и санаториях по всему городу Сочи.
+      Наша компания уже более двадцати лет сотрудничает с ведущими производителями птицефабрик, мукомольной промышленности, круп и консервов. Среди них — Таганрогская и Свердловская птицефабрики, Старооскольский мукомольный завод, входящий в состав ТД "Оскольская Мука", мельничное хозяйство "Лада" под управлением ТД "Аверс", а также компания "Основа", выпускающая кубанские крупы, и производственное объединение заводов "Знаток", известное своими консервами.
+    <br>
+      Продукция этих компаний широко востребована в ресторанах, кафе и санаториях города Сочи. Мы являемся их официальным дистрибьютором и с гордостью предлагаем её нашим клиентам.
     </p>
     <h2 data-aos="fade-up" data-aos-offset="600" data-aos-delay="{{ forloop.counter0|add:100 }}">Преимущества нашей компании</h2>
     <div class="advantages">
@@ -110,7 +112,7 @@
         </picture>
         <div>
           <h3>Бесплатная доставка</h3>
-          <p>Бесплатная доставка от определенной суммы заказа на следующий день после подачи заявки по всему городу Сочи.</p>
+          <p>Бесплатная доставка осуществляется на следующий день после подачи заявки.</p>
         </div>
       </div>
       <div class="advantage"  data-aos="zoom-in"data-aos-offset="600" data-aos-delay="{{ forloop.counter0|add:100 }}">
@@ -210,35 +212,59 @@
             <source srcset="{% static 'img/partners/магеллан.webp' %}" type="image/webp">
             <img src="{% static 'img/partners/магеллан.png' %}" alt="Партнер 2" class="logo">
           </picture>
-          <picture>
+          <picture style="margin-top: 40px;">
             <source srcset="{% static 'img/partners/лаверна.webp' %}" type="image/webp">
             <img src="{% static 'img/partners/лаверна.png' %}" alt="Партнер 3" class="logo">
           </picture>
         </div>
         <div class="row middle" data-aos="zoom-in">
           <picture>
-            <source srcset="{% static 'img/partners/ваниль.webp' %}" type="image/webp">
-            <img src="{% static 'img/partners/ваниль.png' %}" alt="Партнер 4" class="logo">
+            <source srcset="{% static 'img/partners/матрешка.webp' %}" type="image/webp">
+            <img src="{% static 'img/partners/матрешка.png' %}" alt="Партнер 4" class="logo">
           </picture>
-          <picture>
-            <source srcset="{% static 'img/partners/лондонъ.webp' %}" type="image/webp">
-            <img src="{% static 'img/partners/лондонъ.png' %}" alt="Партнер 5" class="logo">
+          <picture style="margin-top: 50px;">
+            <source srcset="{% static 'img/partners/рутесто.webp' %}" type="image/webp">
+            <img src="{% static 'img/partners/рутесто.png' %}" alt="Партнер 5" class="logo">
           </picture>
         </div>
         <div class="row bottom" data-aos="zoom-in">
           <picture>
-              <source srcset="{% static 'img/partners/пекарня_кривоноговых.webp' %}" type="image/webp">
-              <img src="{% static 'img/partners/пекарня_кривоноговых.png' %}" alt="Партнер 6" class="logo">
+            <source srcset="{% static 'img/partners/санторини.webp' %}" type="image/webp">
+            <img src="{% static 'img/partners/санторини.png' %}" alt="Партнер 6" class="logo">
+          </picture>
+          <picture>
+            <source srcset="{% static 'img/partners/ваниль.webp' %}" type="image/webp">
+            <img src="{% static 'img/partners/ваниль.png' %}" alt="Партнер 7" class="logo">
+          </picture>
+          <picture>
+            <source srcset="{% static 'img/partners/лондонъ.webp' %}" type="image/webp">
+            <img src="{% static 'img/partners/лондонъ.png' %}" alt="Партнер 8" class="logo">
+          </picture>
+        </div>
+        <div class="row middle" data-aos="zoom-in">
+          <picture>
+            <source srcset="{% static 'img/partners/хлебокамбинат.webp' %}" type="image/webp">
+            <img src="{% static 'img/partners/хлебокамбинат.png' %}" alt="Партнер 9" class="logo">
+          </picture>
+          <picture>
+            <source srcset="{% static 'img/partners/южное_взморье.webp' %}" type="image/webp">
+            <img src="{% static 'img/partners/южное_взморье.png' %}" alt="Партнер 10" class="logo">
+          </picture>
+        </div>
+        <div class="row bottom" data-aos="zoom-in">
+          <picture>
+            <source srcset="{% static 'img/partners/пекарня_кривоноговых.webp' %}" type="image/webp">
+            <img src="{% static 'img/partners/пекарня_кривоноговых.png' %}" alt="Партнер 11" class="logo">
           </picture>
           <picture>
             <source srcset="{% static 'img/partners/хлебница.webp' %}" type="image/webp">
-            <img src="{% static 'img/partners/хлебница.png' %}" alt="Партнер 7" class="logo">
+            <img src="{% static 'img/partners/хлебница.png' %}" alt="Партнер 12" class="logo">
           </picture>
           <picture>
             <source srcset="{% static 'img/partners/ярмарки.webp' %}" type="image/webp">
-            <img src="{% static 'img/partners/ярмарки.png' %}" alt="Партнер 8" class="logo">
+            <img src="{% static 'img/partners/ярмарки.png' %}" alt="Партнер 13" class="logo">
           </picture>
-        </div>
+        </div> 
     </div>
     <div class="row">
       <div class="col-12 text center">
