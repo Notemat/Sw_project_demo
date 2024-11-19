@@ -52,3 +52,7 @@ def page_not_found(request, exception):
 def server_error(request):
     """Кастомная страница ошибки 500."""
     return render(request, 'errors/500.html', status=500)
+
+
+def custom_permission_denied(request, exception=None):
+    return render(request, 'errors/403.html', status=403)
