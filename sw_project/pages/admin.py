@@ -1,12 +1,16 @@
 from django.contrib import admin
-from django.contrib.auth.models import User, Group
+from django.contrib.auth.models import Group, User
 from django.utils.safestring import mark_safe
 
-from pages.models import (
-    Element, Category, Grocery,
-    GroceryImage, GroceryValue, MeasurementUnit
-)
 from pages.mixins import ImagePreviewMixin
+from pages.models import (
+    Category,
+    Element,
+    Grocery,
+    GroceryImage,
+    GroceryValue,
+    MeasurementUnit,
+)
 
 
 admin.site.unregister(User)

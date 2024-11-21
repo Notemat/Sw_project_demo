@@ -1,12 +1,14 @@
 from django.db import models
 
-from pages.mixins import ImageTagMixin, ImageSaveMixin
+from pages.mixins import ImageSaveMixin, ImageTagMixin
 
 
 class Category(ImageTagMixin, ImageSaveMixin, models.Model):
     """Модель категории продуктов на веб-странице."""
 
-    name = models.CharField(max_length=249, verbose_name='Название продукта')
+    name: models.CharField = models.CharField(
+        max_length=249, verbose_name='Название продукта'
+    )
     image = models.ImageField(
         upload_to='groceries/images/',
         null=True, default=None,
@@ -17,7 +19,9 @@ class Category(ImageTagMixin, ImageSaveMixin, models.Model):
         null=True, default=None,
         verbose_name='Изображение продукта'
     )
-    description = models.TextField(verbose_name='Описание продукта')
+    description: models.TextField = models.TextField(
+        verbose_name='Описание продукта'
+    )
 
     class Meta:
         ordering = ['name']
@@ -31,7 +35,9 @@ class Category(ImageTagMixin, ImageSaveMixin, models.Model):
 class Element(ImageTagMixin, ImageSaveMixin, models.Model):
     """Модель элемента блока home."""
 
-    name = models.CharField(max_length=249, verbose_name='Название элемента')
+    name: models.CharField = models.CharField(
+        max_length=249, verbose_name='Название элемента'
+    )
     image = models.ImageField(
         upload_to='elements/images/',
         null=True, default=None,
@@ -42,7 +48,9 @@ class Element(ImageTagMixin, ImageSaveMixin, models.Model):
         null=True, default=None,
         verbose_name='Изображение элемента'
     )
-    description = models.TextField(verbose_name='Описание элемента')
+    description: models.TextField = models.TextField(
+        verbose_name='Описание элемента'
+    )
 
     class Meta:
         ordering = ['name']
@@ -56,10 +64,10 @@ class Element(ImageTagMixin, ImageSaveMixin, models.Model):
 class MeasurementUnit(models.Model):
     """Модель единицы измерения."""
 
-    name = models.CharField(
+    name: models.CharField = models.CharField(
         max_length=50, verbose_name='Полное название единицы измерения'
     )
-    abbreviation = models.CharField(
+    abbreviation: models.CharField = models.CharField(
         max_length=5, verbose_name='Сокращение единицы измерения'
     )
 
@@ -75,19 +83,23 @@ class MeasurementUnit(models.Model):
 class Grocery(models.Model):
     """Модель отдельных продуктов."""
 
-    category = models.OneToOneField(
+    category: models.OneToOneField = models.OneToOneField(
         Category, related_name='grocery_detail',
         on_delete=models.CASCADE,
         verbose_name='Категория продукта'
     )
-    name = models.CharField(max_length=249, verbose_name='Название продукта')
+    name: models.CharField = models.CharField(
+        max_length=249, verbose_name='Название продукта'
+    )
     certificate = models.ImageField(
         upload_to='certificates/',
         blank=True, null=True,
         verbose_name='Cертификат продукта'
     )
-    description = models.TextField(verbose_name='Описание продукта')
-    slug = models.SlugField(
+    description: models.TextField = models.TextField(
+        verbose_name='Описание продукта'
+    )
+    slug: models.SlugField = models.SlugField(
         unique=True, max_length=150, verbose_name='Слаг продукта'
     )
 
@@ -116,7 +128,7 @@ class Grocery(models.Model):
 class GroceryImage(ImageTagMixin, ImageSaveMixin, models.Model):
     """Модель изображений продуктов."""
 
-    grocery = models.ForeignKey(
+    grocery: models.ForeignKey = models.ForeignKey(
         Grocery, related_name='images', on_delete=models.CASCADE,
         verbose_name='Категория продукта'
     )
@@ -130,10 +142,10 @@ class GroceryImage(ImageTagMixin, ImageSaveMixin, models.Model):
         null=True, default=None,
         verbose_name='Изображение продукта'
     )
-    description = models.TextField(
+    description: models.TextField = models.TextField(
         default='No description', verbose_name='Описание изображения'
     )
-    is_active = models.BooleanField(
+    is_active: models.BooleanField = models.BooleanField(
         default=True, verbose_name='Отображать на странице'
     )
 
@@ -149,14 +161,16 @@ class GroceryImage(ImageTagMixin, ImageSaveMixin, models.Model):
 class GroceryValue(models.Model):
     """Модель объёма тары продутка."""
 
-    grocery_image = models.ForeignKey(
+    grocery_image: models.ForeignKey = models.ForeignKey(
         GroceryImage,
         related_name='volumes',
         on_delete=models.CASCADE,
         verbose_name='Продукт'
     )
-    value = models.PositiveIntegerField(verbose_name='Объём тары продукта')
-    measurement_unit = models.ForeignKey(
+    value: models.PositiveIntegerField = models.PositiveIntegerField(
+        verbose_name='Объём тары продукта'
+    )
+    measurement_unit: models.ForeignKey = models.ForeignKey(
         MeasurementUnit,
         on_delete=models.PROTECT,
         verbose_name='Единица измерения'

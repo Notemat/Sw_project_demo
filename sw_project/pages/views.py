@@ -1,8 +1,8 @@
 from typing import Any
-from django.views.generic import DetailView, TemplateView
-from django.shortcuts import render
 
-from pages.models import Element, Category, Grocery
+from django.shortcuts import render
+from django.views.generic import DetailView, TemplateView
+from pages.models import Category, Element, Grocery
 
 
 class HomepageTemplateView(TemplateView):

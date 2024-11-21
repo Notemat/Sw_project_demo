@@ -2,12 +2,15 @@ import base64
 
 import pytest
 from django.core.files.base import ContentFile
-
+from pages.models import Category, Element, Grocery, GroceryImage
 from tests.constants import (
-    CATEGORY_NAME, TEST_DESCRIPTION, TEST_IMAGE,
-    ELEMENT_NAME, GROCERY_NAME, TEST_SLUG
+    CATEGORY_NAME,
+    ELEMENT_NAME,
+    GROCERY_NAME,
+    TEST_DESCRIPTION,
+    TEST_IMAGE,
+    TEST_SLUG,
 )
-from pages.models import Category, Grocery, GroceryImage, Element
 
 
 # Функция для декодирования изображения из base64

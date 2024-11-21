@@ -43,13 +43,19 @@ class ImageSaveMixin:
             file_extension = file_extension.lower()
 
             # Проверка, существует ли файл в хранилище, прежде чем сохранять
-            if not self.image.name or not self.image.storage.exists(self.image.name):
+            if not self.image.name or not self.image.storage.exists(
+                self.image.name
+            ):
                 if file_extension == ".webp":
-                    # Если файл в формате WEBP, сохраняем его только в image_webp
-                    self.image_webp.save(self.image.name, self.image, save=False)
+                    # Если файл в формате WEBP, сохраняем его в image_webp
+                    self.image_webp.save(
+                        self.image.name, self.image, save=False
+                    )
                 else:
                     # Создаем файлы разных форматов
-                    image_file, webp_file = save_image_in_multiple_formats(self.image)
+                    image_file, webp_file = save_image_in_multiple_formats(
+                        self.image
+                    )
                     self.image.save(image_file.name, image_file, save=False)
                     self.image_webp.save(webp_file.name, webp_file, save=False)
 

@@ -1,8 +1,10 @@
 import pytest
-
 from tests.constants import (
-    OBJECT_COUNT, CATEGORY_NAME, ELEMENT_NAME,
-    GROCERY_NAME, TEST_SLUG
+    CATEGORY_NAME,
+    ELEMENT_NAME,
+    GROCERY_NAME,
+    OBJECT_COUNT,
+    TEST_SLUG,
 )
 
 
