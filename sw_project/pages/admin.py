@@ -1,13 +1,29 @@
 from django.contrib import admin
+from django.contrib.auth.models import User, Group
 from django.utils.safestring import mark_safe
 
-from pages.models import Element, Category, Grocery, GroceryImage
+from pages.models import (
+    Element, Category, Grocery,
+    GroceryImage, GroceryValue, MeasurementUnit
+)
 from pages.mixins import ImagePreviewMixin
 
 
+admin.site.unregister(User)
+admin.site.unregister(Group)
+
+
 class GroceryImageInline(ImagePreviewMixin, admin.TabularInline):
+    """Инлайн продукта."""
     model = GroceryImage
     extra = 1
+
+
+class GroceryValueInline(admin.TabularInline):
+    """Инлайн объема тары продукта."""
+    model = GroceryValue
+    extra = 1
+    autocomplete_fields = ['measurement_unit']
 
 
 @admin.register(Category)
@@ -55,6 +71,14 @@ class ElementAdmin(ImagePreviewMixin, admin.ModelAdmin):
     )
 
 
+@admin.register(MeasurementUnit)
+class MeasurementUnitAdmin(admin.ModelAdmin):
+    """Модель единицы измерения в админке."""
+
+    list_display = ('name', 'abbreviation')
+    search_fields = ('name', )
+
+
 @admin.register(Grocery)
 class GroceryDetailAdmin(admin.ModelAdmin):
     """Модель продукта в админке."""
@@ -100,7 +124,9 @@ class GroceryDetailAdmin(admin.ModelAdmin):
 class GroceryImagelAdmin(ImagePreviewMixin, admin.ModelAdmin):
     """Модель изображения продукта в админке."""
 
-    list_display = ('grocery', 'image_preview', 'is_active')
+    list_display = ('description', 'image_preview', 'is_active', 'grocery')
+    inlines = [GroceryValueInline]
+    search_fields = ['description', ]
     list_filter = ('grocery', )
     list_editable = ('is_active',)
     readonly_fields = ('image_tag',)
@@ -114,7 +140,7 @@ class GroceryImagelAdmin(ImagePreviewMixin, admin.ModelAdmin):
             ),
         }),
         ('HTML-файлы', {
-            'classes': ('wide'),
+            'classes': ('wide', 'collapse'),
             'fields': (('image', 'image_tag'),)
         }),
     )

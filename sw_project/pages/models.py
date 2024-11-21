@@ -53,6 +53,25 @@ class Element(ImageTagMixin, ImageSaveMixin, models.Model):
         return self.name
 
 
+class MeasurementUnit(models.Model):
+    """Модель единицы измерения."""
+
+    name = models.CharField(
+        max_length=50, verbose_name='Полное название единицы измерения'
+    )
+    abbreviation = models.CharField(
+        max_length=5, verbose_name='Сокращение единицы измерения'
+    )
+
+    class Meta:
+        ordering = ['abbreviation']
+        verbose_name = 'Единица измерения'
+        verbose_name_plural = 'Единицы измерения'
+
+    def __str__(self):
+        return f'{self.abbreviation}'
+
+
 class Grocery(models.Model):
     """Модель отдельных продуктов."""
 
@@ -120,8 +139,33 @@ class GroceryImage(ImageTagMixin, ImageSaveMixin, models.Model):
 
     class Meta:
         ordering = ['grocery']
-        verbose_name = 'Изображение к продукту'
-        verbose_name_plural = 'Изображения к продукту'
+        verbose_name = 'Продукт'
+        verbose_name_plural = 'Продукты'
 
     def __str__(self):
-        return f'Изображение к продукту - {self.grocery}'
+        return f'Продукт категории - {self.grocery}'
+
+
+class GroceryValue(models.Model):
+    """Модель объёма тары продутка."""
+
+    grocery_image = models.ForeignKey(
+        GroceryImage,
+        related_name='volumes',
+        on_delete=models.CASCADE,
+        verbose_name='Продукт'
+    )
+    value = models.PositiveIntegerField(verbose_name='Объём тары продукта')
+    measurement_unit = models.ForeignKey(
+        MeasurementUnit,
+        on_delete=models.PROTECT,
+        verbose_name='Единица измерения'
+    )
+
+    class Meta:
+        ordering = ['grocery_image']
+        verbose_name = 'Объём тары продукта'
+        verbose_name_plural = 'Объём тары продуктов'
+
+    def __str__(self):
+        return f'{self.value} {self.measurement_unit}'

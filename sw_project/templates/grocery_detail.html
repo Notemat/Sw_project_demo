@@ -26,7 +26,15 @@
             <img src="{{ image.image.url }}" alt="Изображение к {{ grocery.name }}" class="grocery-image">
           </picture>
         </div>
-        <p class="image-description">{{ image.description }}</p>
+        <p class="image-description">
+          {{ image.description }}&nbsp;
+          {% if image.volumes.exists %}
+            {% for volume in image.volumes.all %}
+                {{ volume.value }}{{ volume.measurement_unit }}
+                {% if not forloop.last %}/{% endif %}
+            {% endfor %}
+          {% endif %}
+        </p>
       </div>
     {% endif %}
   {% endfor %}

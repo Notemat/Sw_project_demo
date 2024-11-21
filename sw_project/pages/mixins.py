@@ -34,24 +34,23 @@ class ImageTagMixin:
 
 
 class ImageSaveMixin:
-    """Миксин для сохраниения изображений в нужном формате."""
+    """Миксин для сохранения изображений в нужном формате."""
 
     def save(self, *args, **kwargs):
         if self.image:
-            # Проверяем формат загружаемого файла
+            # Инициализация переменной file_extension
             file_name, file_extension = os.path.splitext(self.image.name)
             file_extension = file_extension.lower()
 
-            if file_extension == ".webp":
-                # Если файл уже в формате WEBP, сохраняем его в image_webp
-                self.image_webp.save(self.image.name, self.image, save=False)
-                self.image.save(self.image.name, self.image, save=False)
-            else:
-                image_file, webp_file = save_image_in_multiple_formats(
-                    self.image
-                )
-
-                self.image.save(image_file.name, image_file, save=False)
-                self.image_webp.save(webp_file.name, webp_file, save=False)
+            # Проверка, существует ли файл в хранилище, прежде чем сохранять
+            if not self.image.name or not self.image.storage.exists(self.image.name):
+                if file_extension == ".webp":
+                    # Если файл в формате WEBP, сохраняем его только в image_webp
+                    self.image_webp.save(self.image.name, self.image, save=False)
+                else:
+                    # Создаем файлы разных форматов
+                    image_file, webp_file = save_image_in_multiple_formats(self.image)
+                    self.image.save(image_file.name, image_file, save=False)
+                    self.image_webp.save(webp_file.name, webp_file, save=False)
 
         super().save(*args, **kwargs)
