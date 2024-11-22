@@ -8,12 +8,12 @@
 {% block content %}
 <section id="grocery-detail" class="py-5">
   <div class="product-info" data-aos="fade-up">
-    <h2>{{ grocery.name }}</h2>
+    <h1>{{ grocery.name }}</h1>
     <p>{{ grocery.description }}</p>
   </div>
 
   <div class="popular-groceries">
-    <h4 data-aos="fade-up">Популярные товары</h4>
+    <h3 data-aos="fade-up">Популярные товары</h3>
     <div class="carousel" data-aos="zoom-in">
   {% for image in images %}
     {% if image.is_active %}

@@ -2,17 +2,6 @@ document.addEventListener('DOMContentLoaded', function () {
   // Получаем все ссылки в меню
   const menuLinks = document.querySelectorAll('.menu-link');
 
-  // Проверяем наличие маршрута /grocery/ в URL
-  if (window.location.pathname.includes('/grocery/')) {
-    menuLinks.forEach(link => {
-      // Делаем активной только кнопку "Продукты"
-      if (link.textContent.trim() === 'Продукция') {
-        link.classList.add('active');  // Добавляем класс active для кнопки Продукты
-      } else {
-        link.classList.remove('active');  // Убираем класс active с других ссылок
-      }
-    });
-  }
 
   var modal = document.getElementById('modal');
   var btn = document.getElementById('btn-certificate');

@@ -1,35 +1,8 @@
+from django.contrib import admin
 from django.db import models
+from django.utils.html import mark_safe
 
 from pages.mixins import ImageSaveMixin, ImageTagMixin
-
-
-class Category(ImageTagMixin, ImageSaveMixin, models.Model):
-    """Модель категории продуктов на веб-странице."""
-
-    name: models.CharField = models.CharField(
-        max_length=249, verbose_name='Название продукта'
-    )
-    image = models.ImageField(
-        upload_to='groceries/images/',
-        null=True, default=None,
-        verbose_name='Изображение продукта'
-    )
-    image_webp = models.ImageField(
-        upload_to='groceries/images/webp/',
-        null=True, default=None,
-        verbose_name='Изображение продукта'
-    )
-    description: models.TextField = models.TextField(
-        verbose_name='Описание продукта'
-    )
-
-    class Meta:
-        ordering = ['name']
-        verbose_name = 'Категория продуктов'
-        verbose_name_plural = 'Категории продуктов'
-
-    def __str__(self):
-        return self.name
 
 
 class Element(ImageTagMixin, ImageSaveMixin, models.Model):
@@ -80,14 +53,9 @@ class MeasurementUnit(models.Model):
         return f'{self.abbreviation}'
 
 
-class Grocery(models.Model):
+class Grocery(ImageTagMixin, ImageSaveMixin, models.Model):
     """Модель отдельных продуктов."""
 
-    category: models.OneToOneField = models.OneToOneField(
-        Category, related_name='grocery_detail',
-        on_delete=models.CASCADE,
-        verbose_name='Категория продукта'
-    )
     name: models.CharField = models.CharField(
         max_length=249, verbose_name='Название продукта'
     )
@@ -96,8 +64,22 @@ class Grocery(models.Model):
         blank=True, null=True,
         verbose_name='Cертификат продукта'
     )
+    image = models.ImageField(
+        upload_to='groceries/images/',
+        null=True, default=None,
+        verbose_name='Изображение категории продукта'
+    )
+    image_webp = models.ImageField(
+        upload_to='groceries/images/webp/',
+        null=True, default=None,
+        verbose_name='Изображение категории продукта'
+    )
+    main_description: models.TextField = models.TextField(
+        verbose_name='Описание на главной странице'
+    )
+
     description: models.TextField = models.TextField(
-        verbose_name='Описание продукта'
+        verbose_name='Описание на странице продуктов'
     )
     slug: models.SlugField = models.SlugField(
         unique=True, max_length=150, verbose_name='Слаг продукта'
@@ -105,15 +87,15 @@ class Grocery(models.Model):
 
     class Meta:
         ordering = ['name']
-        verbose_name = 'Страница продукта'
-        verbose_name_plural = 'Страницы продуктов'
+        verbose_name = 'Категория продукта'
+        verbose_name_plural = 'Категории продуктов'
 
     def __str__(self):
         return self.name
 
+    @admin.display(description='Сертификат')
     def certificate_tag(self):
         if self.certificate:
-            from django.utils.html import mark_safe
             return mark_safe(
                 (
                     "<img src='{}' width='350' height='350' "
@@ -121,8 +103,19 @@ class Grocery(models.Model):
                 ).format(self.certificate.url)
             )
         else:
+            return 'Сертификатов не найдено'
+
+    @admin.display(description='Изображение')
+    def image_tag(self):
+        if self.image_webp:
+            return mark_safe(
+                (
+                    "<img src='{}' width='350' height='350' "
+                    "style='object-fit: cover;' />"
+                ).format(self.image.url)
+            )
+        else:
             return 'Изображений не найдено'
-    certificate_tag_short_description = 'Изображение'
 
 
 class GroceryImage(ImageTagMixin, ImageSaveMixin, models.Model):

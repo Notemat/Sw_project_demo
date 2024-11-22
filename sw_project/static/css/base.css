@@ -25,7 +25,6 @@ body {
   letter-spacing: .05em; /* Межбуквенный интервал */
   border: 10px solid #f8b400; /* Граница вокруг всего body */
   box-sizing: border-box;
-
 }
 
 /* Стили для ссылок (a) и эффекты при наведении */
@@ -47,17 +46,26 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Стили для заголовков h1, h2, h3 */
 h1 {
-  font-size: 3.5em; /* Размер заголовков */
+  color: #333;
+  font-size: 56px; /* Размер заголовков */
   font-weight: bold; /* Размер по вертикали */
 }
 
 h2 {
-  font-size: 2.5em;
+  color: #333;
+  font-size: 48px;
   font-weight: bold;
 }
 
 h3 {
-  font-size: 2em;
+  color: #333;
+  font-size: 32px;
+  font-weight: normal;
+}
+
+p {
+  color: #555; /* Цвет текста */
+  font-size: 19.2px;
   font-weight: normal;
 }
 
@@ -67,7 +75,7 @@ html {
 }
 
 /* Стили для фиксированной шапки сайта */
-.header {
+header {
   position: fixed; /* Позиция по середине от родителя */
   margin: 0; /* Центрирование от элементов */
   padding: 0; /* По центру от краев страницы */
@@ -83,6 +91,10 @@ html {
   margin: 0; /* Нулевой отступ */
   padding: 0; /* Нулевой отступ от краев страинцы */
   flex-direction: column; /* В колонку */
+}
+
+.destkop-home-link {
+  display: block;
 }
 
 /* Логотип в шапке */
@@ -164,8 +176,6 @@ html {
   transition: all 0.3s ease; /* Плавная анимация */
 }
 
-/* Эффекты для активных или наведённых ссылок */
-
 /* Скрытая иконка по умолчанию */
 .menu-link .icon {
   display: none;
@@ -178,8 +188,39 @@ html {
   display: inline-block;
 }
 
-/* Медиазапрос для мобильных устройств */
+/* Промежуточная версия (для экранов от 768px до 1350px) */
+@media (width <= 1350px) {
+  .bar-menu {
+    display: none; /* Скрываем горизонтальное меню */
+  }
+
+  .burger-menu {
+    display: none; /* Включаем бургер-меню */
+  }
+
+  .bar-menu.open {
+    display: flex; /* Показываем вертикальное меню */
+  }
+}
+
 @media (width <= 768px) {
+  /* Стили для заголовков h1, h2, h3 */
+  h1 {
+    font-size: 24px; /* Размер заголовков */
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
   /* Контейнер навигации */
   .nav-container {
     display: flex; /* Фиксировано по центру */
@@ -234,7 +275,6 @@ html {
     display: none;
   }
 }
-
 
 /* Общие стили для секций сайта */
 section {

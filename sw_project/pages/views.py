@@ -1,8 +1,6 @@
-from typing import Any
-
 from django.shortcuts import render
 from django.views.generic import DetailView, TemplateView
-from pages.models import Category, Element, Grocery
+from pages.models import Element, Grocery
 
 
 class HomepageTemplateView(TemplateView):
@@ -12,22 +10,9 @@ class HomepageTemplateView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['categories'] = Category.objects.prefetch_related(
-            'grocery_detail'
-        ).order_by('-id')
         context['elements'] = Element.objects.all()
-        context['grocery'] = Grocery.objects.all()
+        context['groceries'] = Grocery.objects.all()
         return context
-
-
-def product_list(request):
-    products = Category.objects.all()
-    return render(request, 'index.html', {'products': products})
-
-
-def element_list(request):
-    elements = Element.objects.all()
-    return render(request, 'index.html', {'elements': elements})
 
 
 class GroceryDetailView(DetailView):

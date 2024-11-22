@@ -44,16 +44,16 @@
     </div>
 
     <div class="category-list">
-      {% for category in categories %}
+      {% for grocery in groceries %}
           <div class="category-item {% if forloop.counter0|divisibleby:2 %}category-left{% else %}category-right{% endif %}" data-aos="fade-right" data-aos-offset="300" data-aos-delay="{{ forloop.counter0|add:100 }}">
               <div class="category-image">
-                  {% if category.grocery_detail %}
-                      <a href="{% url 'home:grocery-detail' slug=category.grocery_detail.slug %}">
+                  {% if grocery %}
+                      <a href="{% url 'home:grocery-detail' slug=grocery.slug %}">
                         <picture>
-                          {% if category.image_webp %}
-                            <source srcset="{{ category.image_webp.url }}" type="image/webp">
+                          {% if grocery.image_webp %}
+                            <source srcset="{{ grocery.image_webp.url }}" type="image/webp">
                           {% endif %}
-                          <img src="{{ category.image.url }}" alt="{{ category.name }}">
+                          <img src="{{ grocery.image.url }}" alt="{{ grocery.name }}">
                         </picture>
                       </a>
                   {% else %}
@@ -62,16 +62,16 @@
               </div>
               <div class="category-details">
                   <div class="category-title">
-                      {% if category.grocery_detail %}
-                          <a href="{% url 'home:grocery-detail' slug=category.grocery_detail.slug %}">
-                              <h4>{{ category.name }}</h4>
+                      {% if grocery %}
+                          <a href="{% url 'home:grocery-detail' slug=grocery.slug %}">
+                              <h4>{{ grocery.name }}</h4>
                           </a>
                       {% else %}
-                          <h4>{{ category.name }}</h4>
+                          <h4>{{ grocery.name }}</h4>
                       {% endif %}
                   </div>
                   <div class="category-description">
-                      <p>{{ category.description }}</p>
+                      <p>{{ grocery.main_description }}</p>
                   </div>
               </div>
           </div>
@@ -203,68 +203,64 @@
     <h1 data-aos="fade-up">Наши Партнеры</h1>
     <p data-aos="fade-up">Мы с гордостью сотрудничаем с ведущими компаниями города Сочи, которые доверяют нам и используют нашу продукцию в своей профессиональной деятельности.</p>
     <div class="partner-logos">
-        <div class="row top" data-aos="zoom-in">
-          <picture>
-            <source srcset="{% static 'img/partners/аромат_корицы.webp' %}" type="image/webp">
-            <img src="{% static 'img/partners/аромат корицы.png' %}" alt="Партнер 1" class="logo">
-          </picture>
-          <picture>
-            <source srcset="{% static 'img/partners/магеллан.webp' %}" type="image/webp">
-            <img src="{% static 'img/partners/магеллан.png' %}" alt="Партнер 2" class="logo">
-          </picture>
-          <picture style="margin-top: 40px;">
-            <source srcset="{% static 'img/partners/лаверна.webp' %}" type="image/webp">
-            <img src="{% static 'img/partners/лаверна.png' %}" alt="Партнер 3" class="logo">
-          </picture>
-        </div>
-        <div class="row middle" data-aos="zoom-in">
-          <picture>
-            <source srcset="{% static 'img/partners/матрешка.webp' %}" type="image/webp">
-            <img src="{% static 'img/partners/матрешка.png' %}" alt="Партнер 4" class="logo">
-          </picture>
-          <picture style="margin-top: 50px;">
-            <source srcset="{% static 'img/partners/рутесто.webp' %}" type="image/webp">
-            <img src="{% static 'img/partners/рутесто.png' %}" alt="Партнер 5" class="logo">
-          </picture>
-        </div>
-        <div class="row bottom" data-aos="zoom-in">
-          <picture>
-            <source srcset="{% static 'img/partners/санторини.webp' %}" type="image/webp">
-            <img src="{% static 'img/partners/санторини.png' %}" alt="Партнер 6" class="logo">
-          </picture>
-          <picture>
-            <source srcset="{% static 'img/partners/ваниль.webp' %}" type="image/webp">
-            <img src="{% static 'img/partners/ваниль.png' %}" alt="Партнер 7" class="logo">
-          </picture>
-          <picture>
-            <source srcset="{% static 'img/partners/лондонъ.webp' %}" type="image/webp">
-            <img src="{% static 'img/partners/лондонъ.png' %}" alt="Партнер 8" class="logo">
-          </picture>
-        </div>
-        <div class="row middle" data-aos="zoom-in">
-          <picture>
-            <source srcset="{% static 'img/partners/хлебокамбинат.webp' %}" type="image/webp">
-            <img src="{% static 'img/partners/хлебокамбинат.png' %}" alt="Партнер 9" class="logo">
-          </picture>
-          <picture>
-            <source srcset="{% static 'img/partners/южное_взморье.webp' %}" type="image/webp">
-            <img src="{% static 'img/partners/южное_взморье.png' %}" alt="Партнер 10" class="logo">
-          </picture>
-        </div>
-        <div class="row bottom" data-aos="zoom-in">
-          <picture>
-            <source srcset="{% static 'img/partners/пекарня_кривоноговых.webp' %}" type="image/webp">
-            <img src="{% static 'img/partners/пекарня_кривоноговых.png' %}" alt="Партнер 11" class="logo">
-          </picture>
-          <picture>
-            <source srcset="{% static 'img/partners/хлебница.webp' %}" type="image/webp">
-            <img src="{% static 'img/partners/хлебница.png' %}" alt="Партнер 12" class="logo">
-          </picture>
-          <picture>
-            <source srcset="{% static 'img/partners/ярмарки.webp' %}" type="image/webp">
-            <img src="{% static 'img/partners/ярмарки.png' %}" alt="Партнер 13" class="logo">
-          </picture>
-        </div> 
+      <div class="row top" data-aos="zoom-in">
+        <picture>
+          <source srcset="{% static 'img/partners/аромат_корицы.webp' %}" type="image/webp">
+          <img src="{% static 'img/partners/аромат корицы.png' %}" alt="Партнер 1" class="logo">
+        </picture>
+        <picture>
+          <source srcset="{% static 'img/partners/магеллан.webp' %}" type="image/webp">
+          <img src="{% static 'img/partners/магеллан.png' %}" alt="Партнер 2" class="logo">
+        </picture>
+        <picture style="margin-top: 40px;">
+          <source srcset="{% static 'img/partners/лаверна.webp' %}" type="image/webp">
+          <img src="{% static 'img/partners/лаверна.png' %}" alt="Партнер 3" class="logo">
+        </picture>
+        <picture>
+          <source srcset="{% static 'img/partners/матрешка.webp' %}" type="image/webp">
+          <img src="{% static 'img/partners/матрешка.png' %}" alt="Партнер 4" class="logo">
+        </picture>
+        <picture style="margin-top: 50px;">
+          <source srcset="{% static 'img/partners/рутесто.webp' %}" type="image/webp">
+          <img src="{% static 'img/partners/рутесто.png' %}" alt="Партнер 5" class="logo">
+        </picture>
+      </div>
+      <div class="row middle" data-aos="zoom-in">
+        <picture>
+          <source srcset="{% static 'img/partners/санторини.webp' %}" type="image/webp">
+          <img src="{% static 'img/partners/санторини.png' %}" alt="Партнер 6" class="logo">
+        </picture>
+        <picture>
+          <source srcset="{% static 'img/partners/ваниль.webp' %}" type="image/webp">
+          <img src="{% static 'img/partners/ваниль.png' %}" alt="Партнер 7" class="logo">
+        </picture>
+        <picture>
+          <source srcset="{% static 'img/partners/лондонъ.webp' %}" type="image/webp">
+          <img src="{% static 'img/partners/лондонъ.png' %}" alt="Партнер 8" class="logo">
+        </picture>
+        <picture>
+          <source srcset="{% static 'img/partners/хлебокамбинат.webp' %}" type="image/webp">
+          <img src="{% static 'img/partners/хлебокамбинат.png' %}" alt="Партнер 9" class="logo">
+        </picture>
+      </div>
+      <div class="row bottom" data-aos="zoom-in">
+        <picture>
+          <source srcset="{% static 'img/partners/южное_взморье.webp' %}" type="image/webp">
+          <img src="{% static 'img/partners/южное_взморье.png' %}" alt="Партнер 10" class="logo">
+        </picture>
+        <picture>
+          <source srcset="{% static 'img/partners/пекарня_кривоноговых.webp' %}" type="image/webp">
+          <img src="{% static 'img/partners/пекарня_кривоноговых.png' %}" alt="Партнер 11" class="logo">
+        </picture>
+        <picture>
+          <source srcset="{% static 'img/partners/хлебница.webp' %}" type="image/webp">
+          <img src="{% static 'img/partners/хлебница.png' %}" alt="Партнер 12" class="logo">
+        </picture>
+        <picture>
+          <source srcset="{% static 'img/partners/ярмарки.webp' %}" type="image/webp">
+          <img src="{% static 'img/partners/ярмарки.png' %}" alt="Партнер 13" class="logo">
+        </picture>
+      </div>
     </div>
     <div class="row">
       <div class="col-12 text center">
