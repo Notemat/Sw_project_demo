@@ -4,7 +4,7 @@
 {% block title %}Главная - Южный Ветер{% endblock %}
 {% block head %}
   <link rel="stylesheet" href="{% static 'css/index.css' %}">
-  <link rel="stylesheet" href="{% static 'css/mobile_index.css' %}" media="screen and (max-width: 768px)">
+  <link rel="stylesheet" href="{% static 'css/mobile_index.css' %}" media="screen and (max-width: 1300px)">
 {% endblock %}
 {% block content %}
 <section id="home" class="bg-light py-5">
@@ -152,7 +152,7 @@
 <section id="contact">
   <div class="container">
     <div class="row">
-      <div class="col-5">
+      <div class="col-6">
         <h2 data-aos="fade-up">Контакты</h2>
         <p data-aos="fade-up">Наша компания находится по адресу ул. Кипарисовая д. 8В</p>
         <p data-aos="fade-up">Вы можете связаться с нами, позвонив или оставив сообщение в WhatsApp.</p>
@@ -180,7 +180,16 @@
         <h3 data-aos="fade-up">Электронная почта</h3>
         <p data-aos="fade-up"><a href="mailto:swsochi@gmail.ru">office@swsochi.ru</a></p>
       </div>
-      <div class="col-7">
+      {% if "mobile" in request.META.HTTP_USER_AGENT|lower %}
+        <div class="static-map">
+          <img 
+            src="https://static.maps.2gis.com/1.0?s=880x250&c=43.63236,39.7469&z=16&pt=43.6333,39.7447" 
+            alt="Статичная карта для указания местоположения офиса"
+            style="width: 100%; height: auto;"
+          >
+        </div>
+      {% else %}
+      <div class="col-6">
         <div class="widget-map">
           <a class="dg-widget-link" href="http://2gis.ru/sochi/firm/4222652931725170/center/39.7447156906128,43.63355928829732/zoom/16?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=bigMap">Посмотреть на карте Сочи</a>
           <div class="dg-widget-link">
@@ -193,6 +202,7 @@
           <script charset="utf-8">new DGWidgetLoader({"borderColor":"#a3a3a3","pos":{"lat":43.63355928829732,"lon":39.7447156906128,"zoom":16},"opt":{"city":"sochi"},"org":[{"id":"4222652931725170"}]});</script>
           <noscript style="color:#c00;font-size:16px;font-weight:bold;">Виджет карты использует JavaScript. Включите его в настройках вашего браузера.</noscript>
         </div>
+      {% endif %}
       </div>
     </div>
   </div>

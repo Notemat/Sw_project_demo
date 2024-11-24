@@ -1,6 +1,10 @@
 from django.urls import path
 
-from pages.views import GroceryDetailView, HomepageTemplateView
+from pages.views import (
+    GroceryDetailView,
+    HomepageTemplateView,
+    PrivacyPolicyTemplateView
+)
 
 app_name = 'home'
 
@@ -10,5 +14,6 @@ urlpatterns = [
         GroceryDetailView.as_view(),
         name='grocery-detail'
     ),
+    path('privacy-policy/', PrivacyPolicyTemplateView.as_view(), name='home'),
     path('', HomepageTemplateView.as_view(), name='home'),
 ]

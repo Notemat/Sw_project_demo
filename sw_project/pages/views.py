@@ -11,7 +11,7 @@ class HomepageTemplateView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['elements'] = Element.objects.all()
-        context['groceries'] = Grocery.objects.all()
+        context['groceries'] = Grocery.objects.all().order_by('id')
         return context
 
 
@@ -27,6 +27,12 @@ class GroceryDetailView(DetailView):
         context = super().get_context_data(**kwargs)
         context['images'] = self.object.images.all()
         return context
+
+
+class PrivacyPolicyTemplateView(TemplateView):
+    """Класс страницы политики конфиденциальности."""
+
+    template_name = 'privacy_policy.html'
 
 
 def page_not_found(request, exception):

@@ -288,37 +288,66 @@
   }
 }
 
-/* Оптимизация для экранов меньше 1500рх  */
+/* Адаптация секции "Контакты" для экранов шириной 1300px и меньше */
 @media (width <= 1300px) {
-  /* Секция контактов карта 2гис */
+  #contact {
+    padding: 0; /* Убираем отступы */
+    padding-top: 80px;
+    padding-bottom: 40px;
+  }
+
   #contact .container {
-    display: contents;
-    margin: 0 auto; /* Отступ от краев ЭЛЕМЕНТОВ */
-    margin-left: 0; /* Отступ слева от элементов */
-    padding-left: 0; /* Отступ слева от краев страницы */
-    text-align: center; /* Центрируем весь текст внутри контейнера */
+    width: 100%; /* Гарантируем, что контейнер займет всю ширину */
+    padding-left: 0; /* Если нужен отступ */
+    padding-right: 0;
+    box-sizing: border-box; /* Учитываем отступы в ширине */
   }
 
   #contact .row {
-    display: flex;
-    flex-direction: column; /* Элементы располагаются один под другим */
-    align-items: center; /* Центрирует по вертикали */
-    text-align: center; /* Центрирует текст */
-  }
-
-  #contact .col-5, #contact .col-7 {
-    flex: 1; /* Оба элемента занимают примерно по 50% */
+    flex-direction: column; /* Элементы в столбик */
+    align-items: center;    /* Центрируем элементы */
+    width: 100%;
     max-width: 100%;
+    padding: 0;
+    margin: 0;
   }
+  
 
-  #contact .col-5 {
-    flex-basis: 100%; /* Элементы занимают всю ширину */
-    margin-bottom: 20px; /* Отступы между элементами */
-    text-align: center; /* Центрирует содержимое внутри блока */
-  }
-
+  #contact .col-5, 
   #contact .col-7 {
-    width: auto;  /* Максимальный размер карты */
+    width: 100%;           /* Растягиваем каждый блок на всю ширину */
+    max-width: 100%;       /* Убираем ограничения */
+    margin-bottom: 20px;   /* Отступ между блоками */
+    padding: 0;            /* Убираем внутренние отступы */
+  }
+
+  #contact .widget-map {
+    width: 100%;           /* Карта занимает всю ширину */
+    max-width: 100%;       /* Убираем ограничения ширины */
+    height: auto;          /* Высота подстраивается */
+    box-sizing: border-box; /* Включаем внутренние отступы в расчёт ширины */
+  }
+  
+  #contact .col-7 .widget-map {
+    width: 100%;
+    height: 500px;
+  }
+
+  .widget-map iframe {
+    width: 100%;           /* Масштабируем iframe */
+    height: 100%;          /* Высота по содержимому */
+    border: none;          /* Убираем границы */
+  }
+
+  .static-map {
+    width: 100%;           /* Растягиваем контейнер карты */
+    max-width: 100%;       /* Убираем ограничения */
+    height: auto;          /* Высота под содержимое */
+  }
+
+  .static-map img {
+    width: 100%;           /* Масштабируем изображение */
+    height: auto;
   }
 
   #partner .row.middle {
@@ -346,7 +375,7 @@
 
   /* Особенное расположение логотипов */
   #partner .row.top, .row.middle, .row.bottom {
-    gap: 30px; /* Уменьшаем расстояние между логотипами */
+    gap: 0; /* Уменьшаем расстояние между логотипами */
   }
 
   /* Логотип внизу страницы ПАРТНЕРОВ */

@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Проверяем, находится ли пользователь на странице продуктов
   const isProductPage = window.location.pathname.includes('/grocery/');
+  const isPrivacyPage = window.location.pathname.includes('/privacy-policy/');
 
   // Функция для определения активной секции
   function setActiveSection() {
@@ -15,6 +16,17 @@ document.addEventListener('DOMContentLoaded', function () {
       // Если это страница продуктов, фиксируем вкладку "Продукция" как активную
       menuLinks.forEach(link => {
         if (link.textContent.trim() === 'Продукция') {
+          link.classList.add('active'); // Добавляем класс active для кнопки Продукты
+        } else {
+          link.classList.remove('active'); // Убираем класс active с других ссылок
+        }
+      });
+      return; // Выходим из функции, так как скроллинг не должен менять активную вкладку
+    }
+    if (isPrivacyPage) {
+      // Если это страница конфиденциальности, фиксируем вкладку "О нас" как активную
+      menuLinks.forEach(link => {
+        if (link.textContent.trim() === 'О нас') {
           link.classList.add('active'); // Добавляем класс active для кнопки Продукты
         } else {
           link.classList.remove('active'); // Убираем класс active с других ссылок

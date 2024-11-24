@@ -253,12 +253,15 @@ section img {
   background-color: #ece4a9; /* Цвет фона секции */
   position: relative; /* Позиция родитель */
   z-index: 1; /* Приоритет при отображении */
+  padding-left: 100px;
 }
 
 /* Контейнер контактов */
 #contact .container {
   max-width: 100%;
   width: auto;
+  padding-top: 60px;
+  padding-bottom: 100px;
 }
 
 /* Стили для больших экранов */
@@ -303,10 +306,17 @@ section img {
   transform: scale(1.1); /* Увеличение логотипа при наведении */
 }
 
-#contact .col-7 .widget-map {
-  width: 660px !important;/* Убираем ограничения ширины */
-  height: 600px !important;
+#contact .col-6 .widget-map {
+  width: 600px;
+  height: 600px;
   box-sizing: border-box;
+  padding-top: 0;
+}
+
+.static-map {
+  overflow: hidden;
+  width: 100%;
+  height: auto;
 }
 
 .widget-map iframe {
@@ -322,12 +332,15 @@ section img {
   background-color: #f5efb8 !important; /* Фон секции */
   position: relative; /* Позиция - родитель */
   z-index: 1; /* Приоритет при отображении */
+  padding-bottom: 150px;
 }
 
 /* Контейнер партнеров */ 
 #partner .container {
   max-width: auto; /* Максимальный размер контейнера */
   margin: 0 auto; /* Положение элементов по центру */
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 
 /* Заголовки партнеров */
@@ -381,12 +394,12 @@ section img {
 }
 
 /* Логотип внизу страницы */
-#partner .custom-br {
+.custom-br {
   width: 500px; /* Размер логотипа */
   height: auto; /* Размер по вертикали */
   position: absolute; /* Позиция фиксированная от родителя */
-  bottom: -110px; /* спуск снизу */
   left: 50%; /* слева от края */
   transform: translateX(-50%); 
+  z-index: 1;
 }
 
