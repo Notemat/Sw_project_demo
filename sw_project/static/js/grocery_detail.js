@@ -27,29 +27,69 @@ document.addEventListener('DOMContentLoaded', function () {
 $(document).ready(function(){
   $('.carousel').slick({
     infinite: true,
-    slidesToShow: 4,  // Количество элементов, отображаемых одновременно
+    slidesToShow: 4,
     slidesToScroll: 1,
-    arrows: true,  // Стрелки для прокрутки
-    dots: true,    // Навигационные точки внизу
+    arrows: true, // Включены стрелки
+    dots: false,  // Отключаем точки
+    draggable: true, // Отключаем перетаскивание мышкой
+    touchMove: true,
     responsive: [
       {
         breakpoint: 720,
         settings: {
-          slidesToShow: 3
+          slidesToShow: 3,
         }
       },
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 2
+          slidesToShow: 2,
         }
       },
       {
         breakpoint: 360,
         settings: {
-          slidesToShow: 1
+          slidesToShow: 1,
         }
       }
     ]
+  });
+
+  // Функция для выравнивания высоты всех ячеек
+  function setEqualHeight() {
+    let maxHeight = 0;
+
+    // Сбрасываем высоту, чтобы избежать наложения значений
+    $('.carousel .slick-slide').css('height', 'auto');
+
+    // Вычисляем максимальную высоту среди слайдов
+    $('.carousel .slick-slide').each(function() {
+      let thisHeight = $(this).outerHeight();
+      if (thisHeight > maxHeight) {
+        maxHeight = thisHeight;
+      }
+    });
+
+    // Применяем максимальную высоту ко всем слайдам
+    $('.carousel .slick-slide').css('height', maxHeight + 'px');
+  }
+
+  // Устанавливаем одинаковую высоту при загрузке
+  setEqualHeight();
+
+  // Устанавливаем одинаковую высоту при изменении размера окна
+  $(window).on('resize', function() {
+    setEqualHeight();
+  });
+
+  // Добавляем прокрутку колесом мыши
+  $('.carousel').on('wheel', function(e) {
+    e.preventDefault();
+
+    if (e.originalEvent.deltaY < 0) {
+      $(this).slick('slickPrev');
+    } else {
+      $(this).slick('slickNext');
+    }
   });
 });

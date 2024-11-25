@@ -1,13 +1,50 @@
 /* Секция home */
+.section {
+  position: relative;
+}
+
+.section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 25px;
+  background: #f8b400;
+  z-index: -1; /* Убедитесь, что псевдоэлемент находится за содержимым */
+}
+
+.section-after::after {
+  content: '';
+  position: absolute;
+  bottom: 0; /* Полоска должна быть внизу секции */
+  left: 0;
+  width: 100%;
+  height: 25px; /* Высота полоски */
+  background: #f8b400; /* Цвет полоски */
+  z-index: -1; /* Позади содержимого */
+}
+
 #home {
   background-color: #ece4a9 !important; /* Фон секции */
   overflow: hidden; /* Позволяет секции корректно расширяться по содержимому */
   display: flex; /* Положение */
   flex-direction: row; /* Размещаем элементы в строку */
-  align-items: center; /* Центрирование по горизонтали */
   padding-bottom: 40px; /* Дополнительное расстояние снизу */
   position: relative;
   z-index: 1; /* Приоритетность при отображении */
+}
+
+#home .container h1 {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 50px;
+  justify-content: center;
+  align-items: center; /* Центрирование по горизонтали */
+}
+
+.another-title {
+  font-family: Roboto, sans-serif;
 }
 
 /* Элементы home */
@@ -40,12 +77,6 @@
 
 .element-item:nth-child(3) {
   top: -100px; /* Элементы с четным индексом сдвигаются чуть ниже */
-}
-
-/* Изображения и иконки в секциях */
-section img {
-    display: block; /* Положение друг под другом */
-    max-width: 100%; /* Максимальный размер изображения (динамический) */
 }
 
 /* Изображение элементов */
@@ -332,7 +363,7 @@ section img {
   background-color: #f5efb8 !important; /* Фон секции */
   position: relative; /* Позиция - родитель */
   z-index: 1; /* Приоритет при отображении */
-  padding-bottom: 150px;
+  padding-bottom: 75px;
 }
 
 /* Контейнер партнеров */ 

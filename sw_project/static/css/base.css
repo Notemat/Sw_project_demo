@@ -16,6 +16,7 @@
   font-style: normal;
 }
 
+
 /* Общие стили для body (тело страницы) - цвет текста, цвет фона, семейство шрифтов, межбуквенный интервал и граница вокруг страницы */
 body {
   color: #272727; /* Цвет текста */
@@ -203,6 +204,7 @@ header {
 
 footer {
   padding-top: 7px;
+  margin-bottom: -20px;
 }
 
 footer .row {
@@ -212,7 +214,7 @@ footer .row {
 }
 
 footer p {
-  font-family: "Dela Gothic One", sans-serif; /* Стиль шрифта */
+  font-family: Roboto, sans-serif; /* Стиль шрифта */
   line-height: 1;
   margin: 0;
   color: #414040; /* Цвет текста */
@@ -220,7 +222,7 @@ footer p {
 }
 
 .p-link {
-  font-family: "Dela Gothic One", sans-serif; /* Стиль шрифта */
+  font-family: Roboto, sans-serif; /* Стиль шрифта */
   color: #414040; /* Цвет текста */
   font-weight: normal;
   font-size: 14px;

@@ -15,3 +15,8 @@
     text-align: justify;
 }
 
+@media (width <= 462px) {
+  #privacy-policy h2 {
+    font-size: 18px;
+}
+}
