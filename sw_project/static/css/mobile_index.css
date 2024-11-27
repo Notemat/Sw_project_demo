@@ -33,19 +33,23 @@
       transition: none !important; /* Отключаем переходы */
   }
 
+  .h2-title {
+    font-size: 26px;
+    padding-top: 25px; /* Отступ сверху вниз */
+  }
+
+  /*  Вторая часть заголовка */
+  .h1-title {
+    font-size: 36px;
+    padding-bottom: 40px; /* Отступ снизу вверх */
+  }
+
 
   /* Cтили мобильной версии секции home */
   #home p{
     padding: 10px;
     margin-bottom: 0;
     font-size: 16px;
-  }
-
-  /* Заголовок секции */
-  #home h1 {
-    font-size: 24px; /* Уменьшаем размер заголовка */
-    padding-top: 25px; /* Отступ сверху вниз */
-    padding-bottom: 50px; /* Отступ снизу вверх */
   }
 
   /* Список элементов */

@@ -34,17 +34,21 @@
   z-index: 1; /* Приоритетность при отображении */
 }
 
-#home .container h1 {
-  width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  padding-top: 50px;
+/* Заголовок первая часть */
+.h2-title {
+  font-family: Pacifico;
+  font-size: 56px;
   justify-content: center;
-  align-items: center; /* Центрирование по горизонтали */
+  margin: 0 auto;
+  color: #333;
 }
 
-.another-title {
-  font-family: Roboto, sans-serif;
+/*  Вторая часть заголовка */
+.h1-title { 
+  font-family: Pacifico;
+  margin: 0 auto;
+  font-size: 76px;
+  text-align: center;
 }
 
 /* Элементы home */
