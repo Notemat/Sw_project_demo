@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^7.0.2",
     "stylelint": "^16.10.0",
     "stylelint-config-standard": "^36.0.1"
   }

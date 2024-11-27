@@ -6,6 +6,7 @@
   /* Список элементов */
   .element-image img {
     width: 300px;
+    height: 200px;
     max-width: auto; /* Уменьшаем ширину изображений на мобильных */
   }
 
@@ -80,7 +81,7 @@
   .element-image img {
     width: 300px;
     max-width: 100%; /* Уменьшаем ширину изображений на мобильных */
-    height: auto; /* Размер по вертикали */
+    height: 200; /* Размер по вертикали */
     margin: 0  auto; /* Отступ между элементами */
     display: block; /* Элементы друг под другом */
   }
@@ -218,6 +219,7 @@
   .advantage img {
     align-items: center;
     width: 40px; /* Размер изображения преимуществ */
+    height: 40px;
   }
 }
 
