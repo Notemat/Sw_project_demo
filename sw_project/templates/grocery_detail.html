@@ -39,11 +39,13 @@
     {% endif %}
   {% endfor %}
   </div>
-  <button id="btn-certificate" class="btn btn-certificate">Сертификат дистрибуции</button>
-  <div id="modal" class="modal">
-    <img src="{{ grocery.certificate.url }}" alt="Сертификат">
-    <span class="close">&times;</span>
-  </div>
+  {% if grocery.certificate %}
+    <button id="btn-certificate" class="btn btn-certificate">Сертификат дистрибуции</button>
+    <div id="modal" class="modal">
+      <img src="{{ grocery.certificate.url }}" alt="Сертификат">
+      <span class="close">&times;</span>
+    </div>
+  {% endif %}
 </div>
 {% endblock %}
 {% block scripts %}
