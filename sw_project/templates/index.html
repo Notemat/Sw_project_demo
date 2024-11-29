@@ -5,6 +5,7 @@
 {% block head %}
   <link rel="stylesheet" href="{% static 'css/index.css' %}">
   <link rel="stylesheet" href="{% static 'css/mobile_index.css' %}" media="screen and (max-width: 1300px)">
+  <meta name="description" content="{% block meta_description %}Южный Ветер – оптовый склад бакалейной продукции в Сочи. Высококачественный ассортимент: яйца, мука, сахар, масла, крупы, макароны, консервация и многое другое. Быстрая и надежная доставка для магазинов, санаториев и кондитерских по Сочи.{% endblock %}">
 {% endblock %}
 {% block content %}
 <section id="home" class="section-after">
@@ -174,6 +175,13 @@
             +7-918-304-43-00
           </a>
         </p>
+        <a class="phone-button" data-aos="fade-up" href="tel:+78622687180">
+          <picture>
+            <source srcset="{% static 'img/phone.webp' %}" type="image/webp">
+            <img class="phone-logo" src="{% static 'img/phone.png' %}" alt="Позвонить">
+          </picture>
+           +7-862-268-71-80
+        </a>
         <h3 data-aos="fade-up" >Часы работы</h3>
         <p data-aos="fade-up">Понедельник - Суббота: 08:00 - 16:30</p>
         <p data-aos="fade-up">Воскресенье - Выходной</p>

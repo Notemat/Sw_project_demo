@@ -58,14 +58,15 @@ class MeasurementUnitAdmin(admin.ModelAdmin):
 class GroceryDetailAdmin(admin.ModelAdmin):
     """Модель продукта в админке."""
 
-    list_display = ('name', 'slug', 'image_count', 'image_preview')
+    list_display = ('name', 'priority', 'slug', 'image_count', 'image_preview')
     search_fields = ('name', )
     readonly_fields = ('certificate_tag', 'image_tag')
+    list_editable = ('priority',)
     fieldsets = (
         (None, {
             'classes': ('wide'),
             'fields': (
-                ('name', 'slug',),
+                ('name', 'slug', 'priority',),
                 ('main_description'), ('description'),
             ),
         }),

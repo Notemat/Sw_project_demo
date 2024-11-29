@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /soboleva-admin/
+Sitemap: https://yuzhnyjveter-sochi.ru/sitemap.xml

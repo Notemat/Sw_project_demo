@@ -26,6 +26,7 @@ body {
   letter-spacing: .05em; /* Межбуквенный интервал */
   border: 10px solid #f8b400; /* Граница вокруг всего body */
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 /* Стили для ссылок (a) и эффекты при наведении */

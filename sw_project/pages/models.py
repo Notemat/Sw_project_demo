@@ -84,9 +84,12 @@ class Grocery(ImageTagMixin, ImageSaveMixin, models.Model):
     slug: models.SlugField = models.SlugField(
         unique=True, max_length=150, verbose_name='Слаг продукта'
     )
+    priority: models.IntegerField = models.IntegerField(
+        default=0, verbose_name='Приоритетность'
+    )
 
     class Meta:
-        ordering = ['name']
+        ordering = ['priority', 'name']
         verbose_name = 'Категория продукта'
         verbose_name_plural = 'Категории продуктов'
 

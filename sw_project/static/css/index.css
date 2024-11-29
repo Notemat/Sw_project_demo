@@ -328,7 +328,7 @@
   border-radius: 25px; /* Округлые углы */
   padding: 10px 20px; /* Отступ от краев */
   cursor: pointer; /* Потемнение при наведении */
-  font-size: 1em; /* Размер шрифта */
+  font-size: 19px; /* Размер шрифта */
   margin-bottom: 20px; /* Отступ снизу от элементов */
   font-family: "Dela Gothic One", sans-serif; /* Стиль шрифта */
   transition: transform 0.3s ease; /* Плавная анимация */
@@ -341,11 +341,42 @@
   transform: scale(1.1); /* Увеличение логотипа при наведении */
 }
 
+/* Кнопка WhatsApp */
+.phone-button {
+  display: inline-flex; /* Позиция друг под другом */
+  justify-content: center; /* Ориентация элементов по центру */
+  align-items: center; /* Ориентация кнопок по центру */
+  background-color: #274988; /* Заливка фона кнопки */
+  color: white; /* Цвет шрифта */
+  border: none; /* Границы кнопки (нет) */
+  border-radius: 25px; /* Округлые углы */
+  padding: 10px 20px; /* Отступ от краев */
+  cursor: pointer; /* Потемнение при наведении */
+  font-size: 19px; /* Размер шрифта */
+  margin-bottom: 20px; /* Отступ снизу от элементов */
+  font-family: "Dela Gothic One", sans-serif; /* Стиль шрифта */
+  transition: transform 0.3s ease; /* Плавная анимация */
+}
+
+/* Изменения при наведении на кнопку WhatsApp */
+.phone-button:hover {
+  background-color: #11185f; /* Цвет фона при наведении */
+  color: #eee; /* Цвет текста при наведении */
+  transform: scale(1.1); /* Увеличение логотипа при наведении */
+}
+
+/* Логотип WhatsApp */
+#contact .phone-logo {
+  width: 43px; /* Размер логотипа */
+  height: 37px; /* Размер по вертикали */
+  margin-right: 10px;
+}
+
 #contact .col-6 .widget-map {
   width: 600px;
   height: 600px;
   box-sizing: border-box;
-  padding-top: 0;
+  margin-top: 50px;
 }
 
 .static-map {
