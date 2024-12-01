@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}{{ grocery.name }} - Детали{% endblock %}
 {% block head %}
+  <title>Купить {{ grocery.name }} с доставкой по Сочи от ООО "Южный Ветер"</title>
   <link rel="stylesheet" href="{% static 'css/grocery_detail.css' %}">
   <meta name="description" content="{{ meta_description }}">
 {% endblock %}

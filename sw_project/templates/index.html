@@ -1,8 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
-
-{% block title %}Главная - Южный Ветер{% endblock %}
 {% block head %}
+  <title>Оптовая компания ООО "Южный Ветер" — продажа продуктов в Сочи: яйцо, мука, крупы, масло</title>
   <link rel="stylesheet" href="{% static 'css/index.css' %}">
   <link rel="stylesheet" href="{% static 'css/mobile_index.css' %}" media="screen and (max-width: 1300px)">
   <meta name="description" content="{% block meta_description %}Южный Ветер – оптовый склад бакалейной продукции в Сочи. Высококачественный ассортимент: яйца, мука, сахар, масла, крупы, макароны, консервация и многое другое. Быстрая и надежная доставка для магазинов, санаториев и кондитерских по Сочи.{% endblock %}">
@@ -11,7 +10,7 @@
 <section id="home" class="section-after">
   <div class="container">
     <div class="row align-items-center" style="padding-top: 60px;" data-aos="fade-down">
-      <h2 class="h2-title">Добро пожаловать в компанию</h2>
+      <h1 class="h2-title">Добро пожаловать в компанию</h1>
       <h1 class="h1-title">Южный Ветер</h1>
       <!-- Блоки с анимацией по скроллу -->
       <div class="element-list">
@@ -94,7 +93,7 @@
       Наша компания уже более двадцати лет сотрудничает с ведущими производителями птицефабрик, мукомольной промышленности, круп и консервов.
       Продукция этих компаний широко востребована в ресторанах, кафе и санаториях города Сочи. Мы являемся их официальным дистрибьютором и с гордостью предлагаем её нашим клиентам.
     </p>
-    <h2 data-aos="fade-up" data-aos-offset="600" data-aos-delay="{{ forloop.counter0|add:100 }}">Преимущества нашей компании</h2>
+    <h2 style="padding-bottom: 50px;" data-aos="fade-up" data-aos-offset="600" data-aos-delay="{{ forloop.counter0|add:100 }}">Преимущества нашей компании</h2>
     <div class="advantages">
       <div class="advantage"  data-aos="zoom-in" data-aos-offset="600" data-aos-delay="{{ forloop.counter0|add:100 }}">
         <picture>
@@ -175,7 +174,7 @@
             +7-918-304-43-00
           </a>
         </p>
-        <a class="phone-button" data-aos="fade-up" href="tel:+78622687180">
+        <a class="phone-button" data-aos="zoom-in" href="tel:+78622687180">
           <picture>
             <source srcset="{% static 'img/phone.webp' %}" type="image/webp">
             <img class="phone-logo" src="{% static 'img/phone.png' %}" alt="Позвонить">
