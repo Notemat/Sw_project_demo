@@ -11,12 +11,20 @@
     text-align: justify;
 }
 
+#privacy-policy .privacy-description {
+  text-align: center;
+}
+
 #privacy-policy p {
-    text-align: justify;
+    text-align: left;
 }
 
 @media (width <= 462px) {
   #privacy-policy h2 {
     font-size: 18px;
-}
+  }
+
+  #privacy-policy h4 {
+    text-align: left;
+  }
 }

@@ -231,7 +231,7 @@ footer p {
   font-family: Roboto, sans-serif; /* Стиль шрифта */
   color: #414040; /* Цвет текста */
   font-weight: normal;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .p-link:hover {
@@ -410,16 +410,39 @@ section {
 
 @media (width <= 768px) {
   /* Стили для footer */
+  footer {
+    padding-top: 2px;
+  }
+
+  .row {
+    display: flex;
+    align-items: center; /* Все элементы выравнены по центру по вертикали */
+  }
+
   footer .col-2, footer .col-3, footer .col-5 {
     flex: 1 1 33.333%; /* Каждая колонка занимает треть ширины */
     max-width: 33.333%; /* Ограничение ширины */
     text-align: center; /* Центрирование контента внутри */
+    line-height: 1; /* Пример для одинаковой высоты строк */
+  }
+
+  footer .col-2:nth-child(2) {
+    padding: 0;
+    padding-top: 4px;
+  }
+
+  footer .col-5{
+    line-height: 0.5;
+    padding: 0;
+    text-align: left;
+    margin-top: 0;
   }
 
   footer p {
-    margin-top: 7px;
-    font-size: 14px;
+    margin-top: 0;
     font-family: Roboto, sans-serif; /* Стиль шрифта */
+    font-size: 8px;
+    text-align: left;
   }
 
   .hide-on-mobile {
@@ -428,6 +451,7 @@ section {
 
  .p-link {
     font-family: Roboto, sans-serif; /* Стиль шрифта */
-    font-size: 14px;
+    font-size: 8px;
+    text-align: left;
   }
 }

@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block head %}
-  <title>Купить {{ grocery.name }} с доставкой по Сочи от ООО "Южный Ветер"</title>
+  <title>{{ grocery.name }} в Сочи. Купить по оптовым ценам. ООО "Южный Ветер"</title>
   <link rel="stylesheet" href="{% static 'css/grocery_detail.css' %}">
   <meta name="description" content="{{ meta_description }}">
 {% endblock %}
@@ -47,7 +47,29 @@
       <span class="close">&times;</span>
     </div>
   {% endif %}
-</div>
+  </div>
+  <div class="order-guide">
+    <h3>Как сделать заказ</h3>
+    <p>Продукцию можно приобрести на месте или заказать доставку. Цены зависят от объёма закупки. Доставка бесплатная и осуществляется на следующий день после подачи заявки. </p>
+    <p>Для уточнения цен, процесса доставки и заключения договора на условиях, подходящих для ваших нужд, пожалуйста, свяжитесь с нами любым удобным способом:</p>
+    <div class="contact-buttons">
+      <a href="https://wa.me/79182000207" class="circle-btn whatsapp-btn" title="Написать в WhatsApp +7-918-200-02-07">
+        <img src="{% static 'img/whatsapp_icon.png' %}" alt="WhatsApp">
+      </a>
+      <a href="tel:+79182000207" class="circle-btn phone-btn" title="Позвонить +7-918-200-02-07">
+        <img src="{% static 'img/phone.png' %}" alt="Телефон">
+      <a href="https://wa.me/79183044300" class="circle-btn whatsapp-btn" title="Написать в WhatsApp +7-918-304-43-00">
+        <img src="{% static 'img/whatsapp_icon.png' %}" alt="WhatsApp">
+      </a>
+      </a>
+      <a href="tel:+79183044300" class="circle-btn phone-btn" title="Позвонить +7-918-304-43-00">
+        <img src="{% static 'img/phone.png' %}" alt="Телефон">
+      </a>
+    </div>
+    <p>Со всеми интересующими вопросам вы также можете написать на наш электронный адрес: <a href="mailto:swsochi@gmail.ru" class="link-highlight">office@swsochi.ru</a></p>
+    <p>Подробную информацию, включая адрес с навигацией, вы найдёте в разделе <a href="#contacts" class="link-highlight">Контакты</a>.</p>
+  </div>
+</section>
 {% endblock %}
 {% block scripts %}
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>

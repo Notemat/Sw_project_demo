@@ -124,6 +124,79 @@
   object-fit: contain;
 }
 
+.order-guide {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  border-radius: 8px;
+}
+
+.order-guide h3 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.contact-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center; /* Центрирование кнопок */
+  margin: 20px 0;
+}
+
+.circle-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #f3f3f3;
+  box-shadow: 0 2px 4px black;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.phone-btn img {
+  width: 60px;
+  height: 60px;
+}
+
+.whatsapp-btn img {
+  width: 66px; /* Размер логотипа */
+  height: 50px; /* Размер по вертикали */
+}
+
+.circle-btn:hover {
+  background-color: #e6e6e6;
+  transform: scale(1.1); /* Лёгкое увеличение при наведении */
+}
+
+.whatsapp-btn {
+  background-color: #25d366; /* Цвет WhatsApp */
+}
+
+.whatsapp-btn:hover {
+  background-color: #1b9e4b;
+}
+
+.phone-btn {
+  background-color: #274988; /* Заливка фона кнопки */
+  color: #fff;
+}
+
+.phone-btn:hover {
+  background-color: #11185f; /* Цвет фона при наведении */
+}
+
+.link-highlight {
+  color: #274988;
+  text-decoration: none;
+}
+
+.link-highlight:hover {
+  text-decoration: underline;
+}
+
 
 /* Адаптация под мобильные устройства */
 @media (width <= 1000px) {
@@ -158,4 +231,26 @@
     width: auto;
     font-size: 16px;
   }
+
+  .whatsapp-widget {
+    display: none;
+  }
+}
+
+@media (width <= 390px) {
+  .circle-btn {
+    width: 50px;
+    height: 50px;
+  }
+
+  .phone-btn img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .whatsapp-btn img {
+    width: 56px; /* Размер логотипа */
+    height: 40px; /* Размер по вертикали */
+  }
+
 }
