@@ -40,7 +40,7 @@
   </div>
 
   <div class="popular-groceries">
-    <h3 data-aos="fade-up">Популярные товары</h3>
+    <h2 style="font-size: 32px;" data-aos="fade-up">Популярные товары</h2>
     <div class="carousel" data-aos="zoom-in">
   {% for image in images %}
     {% if image.is_active %}
@@ -74,8 +74,29 @@
     </div>
   {% endif %}
   </div>
+  <div class="other-groceries">
+    <h3>Категории продукции</h3>
+    <p>Вы можете ознакомиться с другими нашими товарами перейдя по ссылке нужной категории</p>
+    <div class="category-links">
+      {% for item in groceries %}
+        {% if item.slug != grocery.slug %}
+          <div class="category-image">
+            <a href="{% url 'home:grocery-detail' slug=item.slug %}">
+              <picture>
+                {% if item.image_webp %}
+                  <source srcset="{{ item.image_webp.url }}" type="image/webp">
+                {% endif %}
+                <img src="{{ item.image.url }}" alt="{{ item.name }}">
+              </picture>
+              <span class="category-name">{{ item.name }}</span>
+            </a>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
   <div class="order-guide">
-    <h3>Как сделать заказ</h3>
+    <h3>Как оформить заказ</h3>
     <p>Продукцию можно приобрести на месте или заказать доставку. Цены зависят от объёма закупки. Доставка бесплатная и осуществляется на следующий день после подачи заявки. </p>
     <p>Для уточнения цен, процесса доставки и заключения договора на условиях, подходящих для ваших нужд, пожалуйста, свяжитесь с нами любым удобным способом:</p>
     <div class="contact-buttons">

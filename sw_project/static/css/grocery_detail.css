@@ -124,16 +124,74 @@
   object-fit: contain;
 }
 
-.order-guide {
+
+/* Блок категорий других товаров */
+.other-groceries {
   max-width: 1200px;
   margin: 0 auto;
   padding: 40px 20px;
   border-radius: 8px;
 }
 
+.other-groceries h3 {
+  font-size: 28px;
+}
+
+.category-links {
+  display: inline-flex;
+  margin: 20px 0;
+  gap: 30px;
+}
+
+.category-image {
+  position: relative;
+}
+
+/* Элемент с названием категории */
+.category-name {
+  position: absolute;
+  top: 110%; /* Располагаем под кружком */
+  left: 50%;
+  transform: translateX(-50%); /* Центрируем под кружком */
+  background-color: #f5f2dc; /* Светлый фон с лёгкой прозрачностью */
+  color: #333; /* Тёмно-серый текст */
+  font-size: 14px;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 8px; /* Закруглённые углы */
+  white-space: nowrap; /* Отключаем перенос текста */
+  box-shadow: 0 2px 4px black; /* Лёгкая тень */
+  opacity: 0; /* Исходное состояние */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 1;
+}
+
+.category-image:hover .category-name {
+  opacity: 1;
+}
+
+/* Изображения  категорий */
+.category-image img {
+  width: 120px; /* Размер изображения */
+  height: 120px; /* Размер по вертикали */
+  border-radius: 50%; /* Круглые изображения */
+  object-fit: cover;
+  transition: transform 0.3s ease; /* Плавный переход */
+  box-shadow: 0 2px 4px black; 
+}
+
+
+/* Блок доставки */
+.order-guide {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 8px;
+}
+
 .order-guide h3 {
   margin-bottom: 1rem;
-  font-size: 1.5rem;
+  font-size: 26px;
   color: #333;
 }
 
@@ -203,6 +261,10 @@
   text-decoration: underline;
 }
 
+.category-image:hover img {
+  transform: scale(1.1); /* Увеличение изображения на 10% */
+}
+
 
 /* Адаптация под мобильные устройства */
 @media (width <= 1000px) {
@@ -216,6 +278,10 @@
 @media (width <= 768px) {
   .popular-groceries {
     padding-bottom: 80px;
+  }
+
+  .popular-groceries h2 {
+    font-size: 22px !important;
   }
 
   /* Карусель изображений и описаний продуктов */
@@ -238,6 +304,58 @@
     font-size: 16px;
   }
 
+  .category-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Распределение карточек по ширине */
+    gap: 10px;
+  }
+
+  .category-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    background-color: #f5f2dc; /* Фон карточки */
+    border: 2px solid #5f5b4f;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgb(0 0 0 / 10%); /* Тень от карточки */
+    box-shadow: hover; /* Прозрачность тени */
+    max-width: 150px; /* Уменьшенная ширина карточки */
+    text-align: center;
+    max-height: 200px; /* Высота карточки */
+    flex: 1;
+    position: relative;
+  }
+
+  .category-image img {
+    width: 80px; /* Уменьшенные размеры изображения */
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .category-name {
+    font-size: 12px; /* Размер текста */
+    color: #555; /* Мягкий цвет текста */
+    font-weight: bold;
+    top: 0;
+    left: 0;
+    transform: none;
+    opacity: 1; /* Убираем скрытие */
+    background-color: transparent; /* Убираем фон */
+    margin-top: 8px; /* Отступ между картинкой и названием */
+    border: none; /* Убираем рамку */
+    padding: 0; /* Внутренний отступ */
+    width: 100%; /* Растянуть по ширине карточки */
+    position: relative; /* Чтобы разместить под картинкой */
+    display: flex;
+    white-space: normal;
+    text-align: center;
+    z-index: 1; /* Чтобы текст был поверх фона */
+    box-shadow: none;
+  }
+
   .whatsapp-widget {
     display: none;
   }
@@ -258,5 +376,14 @@
     width: 56px; /* Размер логотипа */
     height: 40px; /* Размер по вертикали */
   }
+
+  /* Уменьшение размера изображений */
+  .category-image img {
+    width: 60px; /* Уменьшение ширины изображений */
+    height: 60px; /* Размер по вертикали */
+    border-radius: 50%; /* Круглые изображения */
+    object-fit: cover;
+  }
+
 
 }

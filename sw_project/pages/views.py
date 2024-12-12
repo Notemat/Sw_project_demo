@@ -28,6 +28,7 @@ class GroceryDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['images'] = self.object.images.all()
+        context['groceries'] = Grocery.objects.all()
 
         meta_description = META_GROCERIES
         for key, description in META_TAGS.items():
