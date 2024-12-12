@@ -21,7 +21,7 @@
 
 /* Стиль для обертки изображений и их описаний */
 .popular-groceries {
-  margin-top: 90px; /* Отступ сверху от элементов */
+  margin-top: 40px; /* Отступ сверху от элементов */
   display: block; /* Положение друг под другом */
 }
 
@@ -135,6 +135,12 @@
   margin-bottom: 1rem;
   font-size: 1.5rem;
   color: #333;
+}
+
+.order-guide p {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .contact-buttons {
