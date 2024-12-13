@@ -76,7 +76,7 @@
   </div>
   <div class="other-groceries">
     <h3>Категории продукции</h3>
-    <p>Вы можете ознакомиться с другими нашими товарами перейдя по ссылке нужной категории</p>
+    <p>Ознакомьтесь с другими нашими товарами перейдя по ссылке нужной категории</p>
     <div class="category-links">
       {% for item in groceries %}
         {% if item.slug != grocery.slug %}
@@ -97,24 +97,43 @@
   </div>
   <div class="order-guide">
     <h3>Как оформить заказ</h3>
-    <p>Продукцию можно приобрести на месте или заказать доставку. Цены зависят от объёма закупки. Доставка бесплатная и осуществляется на следующий день после подачи заявки. </p>
-    <p>Для уточнения цен, процесса доставки и заключения договора на условиях, подходящих для ваших нужд, пожалуйста, свяжитесь с нами любым удобным способом:</p>
-    <div class="contact-buttons">
-      <a href="https://wa.me/79182000207" class="circle-btn whatsapp-btn" title="Написать в WhatsApp +7-918-200-02-07">
-        <img src="{% static 'img/whatsapp_icon.png' %}" alt="WhatsApp">
-      </a>
-      <a href="tel:+79182000207" class="circle-btn phone-btn" title="Позвонить +7-918-200-02-07">
-        <img src="{% static 'img/phone.png' %}" alt="Телефон">
-      <a href="https://wa.me/79183044300" class="circle-btn whatsapp-btn" title="Написать в WhatsApp +7-918-304-43-00">
-        <img src="{% static 'img/whatsapp_icon.png' %}" alt="WhatsApp">
-      </a>
-      </a>
-      <a href="tel:+79183044300" class="circle-btn phone-btn" title="Позвонить +7-918-304-43-00">
-        <img src="{% static 'img/phone.png' %}" alt="Телефон">
-      </a>
+    <p>Вы можете приобрести продукцию <strong class="highlight">на месте</strong> или заказать доставку. Цены зависят от <strong class="highlight">объёма закупки</strong>. 
+      <span class="highlight">Доставка бесплатная</span> и осуществляется <strong class="highlight">на следующий день</strong> после подачи заявки.<br>
+      Если у вас возникли вопросы, наши менеджеры готовы ответить на них. Не стесняйтесь обращаться — мы сделаем всё, чтобы процесс заказа был максимально <span class="highlight">простым и удобным</span>.
+    </p>
+    <div class="contact-groceries">
+      <h4>Свяжитесь с нами для уточнения:</h4>
+      <ul>
+          <li><strong class="highlight">Цен на интересующие вас товары</strong></li>
+          <li><strong class="highlight">Процесса доставки</strong></li>
+          <li><strong class="highlight">Заключения договора на подходящих условиях</strong></li>
+      </ul>
+      
+      <div class="contact-buttons">
+        <h4>Доступные способы связи:</h4>
+        <ul>
+          <li>
+            <a href="https://wa.me/79182000207" class="circle-btn whatsapp-btn" title="Написать в WhatsApp">
+              <img src="{% static 'img/whatsapp_icon.png' %}" alt="WhatsApp">
+            </a>
+            <p>сообщением или звонком по WhatsApp.</p>
+          </li>
+          <li>
+              <a href="tel:+79182000207" class="circle-btn phone-btn" title="Позвонить">
+                <img src="{% static 'img/phone.png' %}" alt="Телефон">
+              </a>
+              <p>звонком по мобильному телефону.</p>
+          </li>
+          <li>
+            <a href="mailto:swsochi@gmail.ru" class="circle-btn mail-btn" title="Написать на почту">
+              <img src="{% static 'img/лого-почта.webp' %}" alt="Эл. почта">
+            </a>
+            <p>написав письмо на наш электронный адрес.</p>
+          </li>
+        </ul>
+      </div>
+      <p style="padding-top: 20px;">Подробную информацию, включая адрес с навигацией, вы найдёте в разделе <a href="/#contact" class="link-highlight">Контакты</a>.</p>
     </div>
-    <p>Со всеми интересующими вопросам вы также можете написать на наш электронный адрес: <a href="mailto:swsochi@gmail.ru" class="link-highlight">office@swsochi.ru</a></p>
-    <p>Подробную информацию, включая адрес с навигацией, вы найдёте в разделе <a href="/#contact" class="link-highlight">Контакты</a>.</p>
   </div>
 </section>
 {% endblock %}

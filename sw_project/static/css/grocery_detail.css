@@ -9,7 +9,7 @@
 
 /* Текст секции */
 .product-info {
-  margin-top: 70px; /* Отступ сверху от элементов */
+  padding-top: 40px;
   text-align: center; /* Выравнивание текста по центру */
 }
 
@@ -21,7 +21,7 @@
 
 /* Стиль для обертки изображений и их описаний */
 .popular-groceries {
-  margin-top: 40px; /* Отступ сверху от элементов */
+  padding-top: 40px;
   display: block; /* Положение друг под другом */
 }
 
@@ -74,6 +74,8 @@
 .image-description {
   font-size: 16px; /* Размер шрифта */
   width: 200px; /* Размер блока */
+  color: #555; /* Мягкий цвет текста */
+  font-weight: bold;
   display: inline-flex; /* Положение адаптивно в линию */
 }
 
@@ -129,7 +131,7 @@
 .other-groceries {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 40px 5px;
   border-radius: 8px;
 }
 
@@ -185,7 +187,7 @@
 .order-guide {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
+  padding-top: 40px;
   border-radius: 8px;
 }
 
@@ -201,11 +203,38 @@
   text-align: center;
 }
 
+.contact-groceries {
+  max-width: 1000px;
+  display: block;
+  position: relative;
+  text-align: left;
+  margin: 0 auto;
+  padding-top: 40px;
+  padding-left: 0;
+}
+
 .contact-buttons {
-  display: flex;
+  display: block;
+  padding-top: 40px;
+  padding-left: 0;
   gap: 20px;
-  justify-content: center; /* Центрирование кнопок */
-  margin: 20px 0;
+  justify-content: left; /* Центрирование кнопок */
+}
+
+.contact-buttons p {
+  text-align: left ;
+  margin-left: 0;
+}
+
+.contact-buttons ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-buttons li {
+  display: flex;
+  align-items: center;
 }
 
 .circle-btn {
@@ -218,9 +247,15 @@
   background-color: #f3f3f3;
   box-shadow: 0 2px 4px black;
   transition: transform 0.2s, background-color 0.2s;
+  margin-right: 15px;
 }
 
 .phone-btn img {
+  width: 60px;
+  height: 60px;
+}
+
+.mail-btn img {
   width: 60px;
   height: 60px;
 }
@@ -245,11 +280,19 @@
 
 .phone-btn {
   background-color: #274988; /* Заливка фона кнопки */
-  color: #fff;
 }
 
 .phone-btn:hover {
   background-color: #11185f; /* Цвет фона при наведении */
+}
+
+.mail-btn {
+  background-color: #e9e7e1; /* Заливка фона кнопки */
+}
+
+
+.mail-btn:hover {
+  background-color: #757473; /* Цвет фона при наведении */
 }
 
 .link-highlight {
@@ -265,6 +308,29 @@
   transform: scale(1.1); /* Увеличение изображения на 10% */
 }
 
+.order-guide h4 {
+  padding-top: 40px;
+  padding-bottom: 10px;
+  font-size: 22px;
+  color: #333;
+}
+
+.order-guide ul {
+  margin: 15px 0;
+  line-height: 1.5;
+}
+
+.order-guide ul li {
+  margin-bottom: 10px;
+}
+
+.highlight {
+  color: #b36e14cb; /* Яркий цвет для акцента */
+  font-family: Roboto, sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+}
+
 
 /* Адаптация под мобильные устройства */
 @media (width <= 1000px) {
@@ -277,7 +343,7 @@
 /* Адаптация под мобильные устройства */
 @media (width <= 768px) {
   .popular-groceries {
-    padding-bottom: 80px;
+    padding-bottom: 40px;
   }
 
   .popular-groceries h2 {
@@ -311,6 +377,10 @@
     gap: 10px;
   }
 
+  .other-groceries {
+    padding-top: 10px;
+  }
+
   .category-image {
     display: flex;
     flex-direction: column;
@@ -326,6 +396,12 @@
     max-height: 200px; /* Высота карточки */
     flex: 1;
     position: relative;
+  }
+
+  /* Выравнивание последнего элемента по центру, если он нечетный */
+  .category-image:nth-last-child(1):nth-child(odd) {
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .category-image img {
@@ -359,6 +435,10 @@
   .whatsapp-widget {
     display: none;
   }
+
+  .highlight {
+    font-size: 16px;
+  }
 }
 
 @media (width <= 390px) {
@@ -385,5 +465,8 @@
     object-fit: cover;
   }
 
-
+  .mail-btn img {
+    width: 50px;
+    height: 50px;
+  }
 }
