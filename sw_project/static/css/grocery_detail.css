@@ -80,7 +80,7 @@
 }
 
 /* Кнопка действия (например, "Сертификат дистрибьюции") */
-.btn-certificate {
+.button {
   background-color: #f8b400; /* Цвет заливки кнопки */
   border-color: #f8b400; /* Цвет границы кнопки */
   color: #eee; /* Цвет шрифта */
@@ -97,7 +97,7 @@
 }
 
 /* Изменения при наведении на кнопку действия */
-.btn-certificate:hover {
+.button:hover {
   background-color: #e09d00; /* Цвет заливки кнопки */
   border-color: #e09d00; /* Цвет границы кнопки */
   color: white;
@@ -137,6 +137,14 @@
 
 .other-groceries h3 {
   font-size: 28px;
+}
+
+.hidden {
+  display: none;
+}
+
+.toggle-button {
+  display: none;
 }
 
 .category-links {
@@ -365,16 +373,26 @@
     font-size: 12px; /* Размер шрифта */
   }
 
-  .btn-certificate {
+  .button {
     width: auto;
     font-size: 16px;
   }
 
+  .toggle-button {
+    display: block;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .category-links.hidden {
+    display: none;
+  }
+
   .category-links {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between; /* Распределение карточек по ширине */
-    gap: 10px;
+    flex-wrap: wrap; /* Чтобы элементы переходили на новую строку */
+    gap: 10px; /* Промежуток между карточками */
+    justify-content: center; /* Центрируем карточки */
   }
 
   .other-groceries {

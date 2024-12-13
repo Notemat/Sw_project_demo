@@ -67,7 +67,7 @@
   {% endfor %}
   </div>
   {% if grocery.certificate %}
-    <button id="btn-certificate" class="btn btn-certificate">Сертификат дистрибуции</button>
+    <button id="btn-certificate" class="button btn-certificate">Сертификат дистрибуции</button>
     <div id="modal" class="modal">
       <img src="{{ grocery.certificate.url }}" alt="Сертификат">
       <span class="close">&times;</span>
@@ -76,8 +76,9 @@
   </div>
   <div class="other-groceries">
     <h3>Категории продукции</h3>
-    <p>Ознакомьтесь с другими нашими товарами перейдя по ссылке нужной категории</p>
-    <div class="category-links">
+    <p>Ознакомиться с остальными нашими товарами можно перейдя по ссылке нужной категории</p>
+      <button class="button toggle-button" onclick="toggleCategories()">Категории продукции</button>
+    <div class="category-links hidden" id="categories">
       {% for item in groceries %}
         {% if item.slug != grocery.slug %}
           <div class="category-image">
@@ -97,7 +98,7 @@
   </div>
   <div class="order-guide">
     <h3>Как оформить заказ</h3>
-    <p>Вы можете приобрести продукцию <strong class="highlight">на месте</strong> или заказать доставку. Цены зависят от <strong class="highlight">объёма закупки</strong>. 
+    <p>Вы можете приобрести {{ grocery.name|lower }}, а так же другие продукты <strong class="highlight">на месте</strong> или заказать доставку. Цены зависят от <strong class="highlight">объёма закупки</strong>. 
       <span class="highlight">Доставка бесплатная</span> и осуществляется <strong class="highlight">на следующий день</strong> после подачи заявки.<br>
       Если у вас возникли вопросы, наши менеджеры готовы ответить на них. Не стесняйтесь обращаться — мы сделаем всё, чтобы процесс заказа был максимально <span class="highlight">простым и удобным</span>.
     </p>

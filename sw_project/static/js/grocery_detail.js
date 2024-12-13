@@ -93,3 +93,16 @@ $(document).ready(function(){
     }
   });
 });
+
+function toggleCategories() {
+  const categoryLinks = document.querySelector('.category-links');
+  categoryLinks.classList.toggle('hidden'); // Переключение класса
+
+  // Изменяем текст кнопки
+  const button = document.querySelector('.toggle-button');
+  if (categoryLinks.classList.contains('hidden')) {
+    button.textContent = 'Показать категории';
+  } else {
+    button.textContent = 'Скрыть категории';
+  }
+}
