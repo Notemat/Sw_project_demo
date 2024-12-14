@@ -400,6 +400,8 @@
   }
 
   .category-image {
+    flex: 1 1 calc(33.33% - 16px); /* Устанавливаем ширину ячеек (1/3 ширины строки) */
+    max-width: 150px; /* Ограничиваем ширину */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -409,17 +411,9 @@
     border-radius: 12px;
     box-shadow: 0 4px 8px rgb(0 0 0 / 10%); /* Тень от карточки */
     box-shadow: hover; /* Прозрачность тени */
-    max-width: 150px; /* Уменьшенная ширина карточки */
     text-align: center;
     max-height: 200px; /* Высота карточки */
-    flex: 1;
     position: relative;
-  }
-
-  /* Выравнивание последнего элемента по центру, если он нечетный */
-  .category-image:nth-last-child(1):nth-child(odd) {
-    margin-left: auto;
-    margin-right: auto;
   }
 
   .category-image img {
@@ -434,16 +428,16 @@
     color: #555; /* Мягкий цвет текста */
     font-weight: bold;
     top: 0;
-    left: 0;
+    left: auto;
     transform: none;
     opacity: 1; /* Убираем скрытие */
     background-color: transparent; /* Убираем фон */
     margin-top: 8px; /* Отступ между картинкой и названием */
     border: none; /* Убираем рамку */
-    padding: 0; /* Внутренний отступ */
     width: 100%; /* Растянуть по ширине карточки */
+    padding: 0;
+    display: block;
     position: relative; /* Чтобы разместить под картинкой */
-    display: flex;
     white-space: normal;
     text-align: center;
     z-index: 1; /* Чтобы текст был поверх фона */

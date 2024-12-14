@@ -31,6 +31,30 @@
 
     gtag('config', 'G-1QND4QW85N');
   </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "numberOfItems": {{ images|length }},
+      "itemListElement": [
+        {% for image in images %}
+        {% if image.is_active %}
+        {
+          "@type": "Product",
+          "position": {{ forloop.counter }},
+          "name": "{{ image.description|escapejs }}",
+          "image": "{{ image.image.url|escapejs }}",
+          "description": "Уточняйте цену у менеджера",
+          "offers": {
+            "@type": "Offer",
+            "availability": "https://schema.org/InStock"
+          }
+        }{% if not forloop.last %},{% endif %}
+        {% endif %}
+        {% endfor %}
+      ]
+    }
+    </script>
 {% endblock %}
 {% block content %}
 <section id="grocery-detail" class="py-5">
