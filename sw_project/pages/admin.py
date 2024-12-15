@@ -1,3 +1,4 @@
+from django import forms
 from django.contrib import admin
 from django.contrib.auth.models import Group, User
 from django.utils.safestring import mark_safe
@@ -14,6 +15,15 @@ from pages.models import (
 
 admin.site.unregister(User)
 admin.site.unregister(Group)
+
+
+class PriceAdminForm(forms.ModelForm):
+    class Meta:
+        model = GroceryImage
+        fields = ('price', )
+        widgets = {
+            'price': forms.TextInput(attrs={'placeholder': 'Цена в ₽'})
+        }
 
 
 class GroceryValueInline(admin.TabularInline):
@@ -56,7 +66,7 @@ class MeasurementUnitAdmin(admin.ModelAdmin):
 
 @admin.register(Grocery)
 class GroceryDetailAdmin(admin.ModelAdmin):
-    """Модель продукта в админке."""
+    """Модель категорий в админке."""
 
     list_display = ('name', 'priority', 'slug', 'image_count', 'image_preview')
     search_fields = ('name', )
@@ -95,13 +105,16 @@ class GroceryDetailAdmin(admin.ModelAdmin):
 
 @admin.register(GroceryImage)
 class GroceryImagelAdmin(ImagePreviewMixin, admin.ModelAdmin):
-    """Модель изображения продукта в админке."""
+    """Модель отдельного продукта в админке."""
 
-    list_display = ('description', 'image_preview', 'is_active', 'grocery')
+    list_display = (
+        'description', 'image_preview', 'is_active', 'price', 'grocery'
+    )
     inlines = [GroceryValueInline]
+    form = PriceAdminForm
     search_fields = ['description', ]
     list_filter = ('grocery', )
-    list_editable = ('is_active',)
+    list_editable = ('is_active', 'price')
     readonly_fields = ('image_tag',)
     autocomplete_fields = ('grocery', )
     fieldsets = (
@@ -109,7 +122,7 @@ class GroceryImagelAdmin(ImagePreviewMixin, admin.ModelAdmin):
             'classes': ('wide'),
             'fields': (
                 ('grocery', 'is_active'),
-                ('description'),
+                ('description', 'price'),
             ),
         }),
         ('HTML-файлы', {

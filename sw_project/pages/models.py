@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.core.validators import MinValueValidator
 from django.db import models
 from django.utils.html import mark_safe
 
@@ -122,7 +123,7 @@ class Grocery(ImageTagMixin, ImageSaveMixin, models.Model):
 
 
 class GroceryImage(ImageTagMixin, ImageSaveMixin, models.Model):
-    """Модель изображений продуктов."""
+    """Модель отдельных продуктов."""
 
     grocery: models.ForeignKey = models.ForeignKey(
         Grocery, related_name='images', on_delete=models.CASCADE,
@@ -143,6 +144,11 @@ class GroceryImage(ImageTagMixin, ImageSaveMixin, models.Model):
     )
     is_active: models.BooleanField = models.BooleanField(
         default=True, verbose_name='Отображать на странице'
+    )
+    price: models.DecimalField = models.DecimalField(
+        max_digits=10, decimal_places=2, validators=[MinValueValidator(0)],
+        null=True, blank=True, verbose_name='Цена на продукт (₽)',
+        help_text="Введите цену в рублях. Пример: 1234.56"
     )
 
     class Meta:

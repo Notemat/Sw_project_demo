@@ -44,11 +44,24 @@
           "position": {{ forloop.counter }},
           "name": "{{ image.description|escapejs }}",
           "image": "{{ image.image.url|escapejs }}",
-          "description": "Уточняйте цену у менеджера",
+          {% if image.volumes.exists %}
+          "description": "{{ image.volumes.measurement_unit|escapejs }}",
           "offers": {
             "@type": "Offer",
+            "price": "{{ image.price|default:0|floatformat:0 }}",
+            "priceCurrency": "RUB",
             "availability": "https://schema.org/InStock"
           }
+          {% else %}
+          "offers": {
+            "@type": "Offer",
+            "availability": "https://schema.org/InStock",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "description": "Уточняйте цену у менеджера"
+            }
+          }
+          {% endif %}
         }{% if not forloop.last %},{% endif %}
         {% endif %}
         {% endfor %}
