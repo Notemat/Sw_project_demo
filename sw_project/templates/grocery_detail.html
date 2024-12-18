@@ -48,7 +48,7 @@
           "description": "{{ image.volumes.measurement_unit|escapejs }}",
           "offers": {
             "@type": "Offer",
-            "price": "{{ image.price|default:0|floatformat:0 }}",
+            "price": "{{ image.price|default:1|floatformat:0 }}",
             "priceCurrency": "RUB",
             "availability": "https://schema.org/InStock"
           }
@@ -137,7 +137,7 @@
     <h3>Как оформить заказ</h3>
     <p>Вы можете приобрести {{ grocery.name|lower }}, а так же другие продукты <strong class="highlight">на месте</strong> или заказать доставку. Цены зависят от <strong class="highlight">объёма закупки</strong>. 
       <span class="highlight">Доставка бесплатная</span> и осуществляется <strong class="highlight">на следующий день</strong> после подачи заявки.<br>
-      Если у вас возникли вопросы, наши менеджеры готовы ответить на них. Не стесняйтесь обращаться — мы сделаем всё, чтобы процесс заказа был максимально <span class="highlight">простым и удобным</span>.
+      Если у вас возникли вопросы, наши менеджеры готовы ответить на них. Не стесняйтесь <strong class="highlight">обращаться</strong> — мы сделаем всё, чтобы процесс заказа был максимально <span class="highlight">простым и удобным</span>.
     </p>
     <div class="contact-groceries">
       <h4>Свяжитесь с нами для уточнения:</h4>

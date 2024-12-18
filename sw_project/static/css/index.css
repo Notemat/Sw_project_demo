@@ -73,7 +73,7 @@
 
 /* Элементы слева */
 .element-item:nth-child(odd) {
-  top: 100px; /* Элементы с нечетным индексом остаются на месте */
+  top: 80px; /* Элементы с нечетным индексом остаются на месте */
 }
 
 /* Элементы справа */
@@ -82,7 +82,7 @@
 }
 
 .element-item:nth-child(3) {
-  top: -100px; /* Элементы с четным индексом сдвигаются чуть ниже */
+  top: -80px; /* Элементы с четным индексом сдвигаются чуть ниже */
 }
 
 /* Изображение элементов */
@@ -138,47 +138,64 @@
 /* Стили для списка преимуществ */
 .advantages {
   display: flex; /* Положение элементов */
-  flex-flow: row-reverse wrap; /* Положение изображений, загловка и текста в элементе */ 
-  gap: 20px; /* Отступ между элементами */
+  flex-flow: row wrap; /* Положение изображений, загловка и текста в элементе */ 
+  gap: 30px 20px; /* Отступ между элементами */
   justify-content: space-around;
 }
 
 /* Стили для отдельного блока преимущества */
 .advantage {
   display: flex; /* Положение элемента */
-  align-items: center; /* Центрирование элемента */
+  align-items: flex-start; /* Выравниваем элементы сверху */
+  text-align: left; /* Текст по левому краю */
   background-color: transparent; /* Фон элемента (ячейка) */
   border: none; /* Граница ячейки (нет) */
   flex: 1 1 calc(33% - 40px); 
   max-width: calc(33% - 40px); /* Максимальный размер ячейки */
-  box-sizing: border-box; 
+  box-sizing: border-box;
+  padding: 5px;
+  padding-left: 0;
 }
 
 /* Изображение для преимущества */
 .advantage picture {
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
   flex-shrink: 0; /* Элемент не должен уменьшаться с сокращением пространства */
 }
 
 .advantage img {
-  width: 50px; /* Размер изображения */
-  height: auto; /* Размер по вертикали */
+  width: 50px;
+  height: auto;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.advantage:hover img {
+  transform: scale(1.1); /* Небольшое увеличение изображения */
+  filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.2)); /* Тень */
 }
 
 /* Заголовок внутри блока преимущества */
 .advantage h3 {
   margin: 0; /* Отступ между элементами */
-  font-size: 21px; /* Размер заголовка */
+  font-size: 20px; /* Размер заголовка */
 }
 
 /* Текст внутри блока преимущества */
 .advantage p {
   margin: 5px 0 0; /* Отступ между текстами */
+  font-size: 16px;
 }
 
 /* Текст в секции "О нас" */
 #about p {
   line-height: 1.6em; /* Ширина текста */
   margin-bottom: 40px; /* Отступ текста от нижнего края */
+}
+
+.advantage .highlight {
+  font-size: 16px;
 }
 
 /* Секция продуктов */
@@ -291,22 +308,7 @@
   background-color: #ece4a9; /* Цвет фона секции */
   position: relative; /* Позиция родитель */
   z-index: 1; /* Приоритет при отображении */
-  padding-left: 100px;
-}
-
-/* Контейнер контактов */
-#contact .container {
-  max-width: 100%;
-  width: auto;
-  padding-top: 60px;
-  padding-bottom: 100px;
-}
-
-/* Стили для больших экранов */
-#contact .row {
-  display: flex;
-  flex-wrap: wrap; /* Элементы могут переноситься */
-  justify-content: space-between; /* Распределяем пространство между элементами */
+  display: block;
 }
 
 /* Текст секции контактов */
@@ -314,72 +316,23 @@
   color: #666; /* Цвет текста в секции */
 }
 
-/* Логотип WhatsApp */
-#contact .watsapp-logo {
-  width: 50px; /* Размер логотипа */
-  height: 34px; /* Размер по вертикали */
+#contact .container {
+  display: flex;
+  flex-direction: column; /* Сохраняем вертикальное расположение */
+  align-items: center; /* Центрирование по горизонтали */
+  max-width: 1500px;
+  position: relative;
+  margin: 0 auto;
 }
 
-/* Кнопка WhatsApp */
-.whatsapp-button {
-  display: inline-flex; /* Позиция друг под другом */
-  justify-content: center; /* Ориентация элементов по центру */
-  align-items: center; /* Ориентация кнопок по центру */
-  background-color: #25d366; /* Заливка фона кнопки */
-  color: white; /* Цвет шрифта */
-  border: none; /* Границы кнопки (нет) */
-  border-radius: 25px; /* Округлые углы */
-  padding: 10px 20px; /* Отступ от краев */
-  cursor: pointer; /* Потемнение при наведении */
-  font-size: 19px; /* Размер шрифта */
-  margin-bottom: 20px; /* Отступ снизу от элементов */
-  font-family: "Dela Gothic One", sans-serif; /* Стиль шрифта */
-  transition: transform 0.3s ease; /* Плавная анимация */
+.contacts {
+  max-width: 1000px;
+  width: 100%; /* Устанавливаем ширину, чтобы центрирование работало правильно */
 }
 
-/* Изменения при наведении на кнопку WhatsApp */
-.whatsapp-button:hover {
-  background-color: #1ebe57; /* Цвет фона при наведении */
-  color: #eee; /* Цвет текста при наведении */
-  transform: scale(1.1); /* Увеличение логотипа при наведении */
-}
-
-/* Кнопка WhatsApp */
-.phone-button {
-  display: inline-flex; /* Позиция друг под другом */
-  justify-content: center; /* Ориентация элементов по центру */
-  align-items: center; /* Ориентация кнопок по центру */
-  background-color: #274988; /* Заливка фона кнопки */
-  color: white; /* Цвет шрифта */
-  border: none; /* Границы кнопки (нет) */
-  border-radius: 25px; /* Округлые углы */
-  padding: 10px 20px; /* Отступ от краев */
-  cursor: pointer; /* Потемнение при наведении */
-  font-size: 19px; /* Размер шрифта */
-  margin-bottom: 20px; /* Отступ снизу от элементов */
-  font-family: "Dela Gothic One", sans-serif; /* Стиль шрифта */
-  transition: transform 0.3s ease; /* Плавная анимация */
-}
-
-/* Изменения при наведении на кнопку WhatsApp */
-.phone-button:hover {
-  background-color: #11185f; /* Цвет фона при наведении */
-  color: #eee; /* Цвет текста при наведении */
-  transform: scale(1.1); /* Увеличение логотипа при наведении */
-}
-
-/* Логотип WhatsApp */
-#contact .phone-logo {
-  width: 43px; /* Размер логотипа */
-  height: 37px; /* Размер по вертикали */
-  margin-right: 10px;
-}
-
-#contact .col-6 .widget-map {
-  width: 600px;
-  height: 600px;
-  box-sizing: border-box;
-  margin-top: 50px;
+.contact-buttons {
+  position: relative;
+  align-items: center;
 }
 
 .static-map {
@@ -388,13 +341,50 @@
   height: auto;
 }
 
-.widget-map iframe {
-  width: 100% !important;
-  height: 100% !important;
-  max-width: 100% !important;
-  max-height: 100% !important;
+.widget-map {
+  width: 100%;
+  max-width: auto; /* Ширина совпадает с шириной container */
+  margin: 0 auto; /* Центрирование */
+  padding-top: 40px;
+  position: relative;
 }
 
+.widget-map iframe {
+  width: 100% !important;
+  height: 500px !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Тень */
+  border-radius: 25px; /* Скругление углов */
+  overflow: hidden; /* Убирает лишние края iframe */
+}
+
+.contact-buttons .row {
+  display: flex;
+  max-width: 700px;
+  margin: 0 auto;
+  justify-content: space-between; /* Разделяет кнопки равномерно */
+  margin-bottom: 20px;
+}
+
+.contact-buttons .column {
+  display: flex;
+  flex-direction: column; /* Элементы располагаются в столбик */
+  align-items: flex-start; /* Выравниваем всё по левому краю */
+  gap: 20px; /* Расстояние между элементами */
+}
+
+.contact-buttons .column li {
+  display: flex;
+  align-items: center; /* Центрируем содержимое li по вертикали */
+}
+
+.contact-buttons .column li .circle-btn {
+  flex: 0 0 50px; /* Фиксированная ширина кнопок (например, 50px) */
+  margin-right: 15px; /* Отступ между кнопкой и текстом */
+}
+
+.working-time {
+  padding: 40px 0;
+}
 
 /* Секция партнеров */
 #partner {

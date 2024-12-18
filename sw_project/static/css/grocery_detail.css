@@ -130,9 +130,13 @@
 /* Блок категорий других товаров */
 .other-groceries {
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 5px;
+  padding: 40px 0;
   border-radius: 8px;
+  margin: 0 auto; /* Центрирование по горизонтали */
+  position: relative; /* Исключает влияние абсолютного позиционирования */
+  display: block; /* Используйте flex для контроля выравнивания */
+  justify-content: center; /* Центрирует элементы внутри */
+  align-items: center; /* Центрирует по вертикали */
 }
 
 .other-groceries h3 {
@@ -221,93 +225,6 @@
   padding-left: 0;
 }
 
-.contact-buttons {
-  display: block;
-  padding-top: 40px;
-  padding-left: 0;
-  gap: 20px;
-  justify-content: left; /* Центрирование кнопок */
-}
-
-.contact-buttons p {
-  text-align: left ;
-  margin-left: 0;
-}
-
-.contact-buttons ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.contact-buttons li {
-  display: flex;
-  align-items: center;
-}
-
-.circle-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background-color: #f3f3f3;
-  box-shadow: 0 2px 4px black;
-  transition: transform 0.2s, background-color 0.2s;
-  margin-right: 15px;
-}
-
-.phone-btn img {
-  width: 60px;
-  height: 60px;
-}
-
-.mail-btn img {
-  width: 60px;
-  height: 60px;
-}
-
-.whatsapp-btn img {
-  width: 66px; /* Размер логотипа */
-  height: 50px; /* Размер по вертикали */
-}
-
-.circle-btn:hover {
-  background-color: #e6e6e6;
-  transform: scale(1.1); /* Лёгкое увеличение при наведении */
-}
-
-.whatsapp-btn {
-  background-color: #25d366; /* Цвет WhatsApp */
-}
-
-.whatsapp-btn:hover {
-  background-color: #1b9e4b;
-}
-
-.phone-btn {
-  background-color: #274988; /* Заливка фона кнопки */
-}
-
-.phone-btn:hover {
-  background-color: #11185f; /* Цвет фона при наведении */
-}
-
-.mail-btn {
-  background-color: #e9e7e1; /* Заливка фона кнопки */
-}
-
-
-.mail-btn:hover {
-  background-color: #757473; /* Цвет фона при наведении */
-}
-
-.link-highlight {
-  color: #274988;
-  text-decoration: none;
-}
-
 .link-highlight:hover {
   text-decoration: underline;
 }
@@ -332,18 +249,26 @@
   margin-bottom: 10px;
 }
 
-.highlight {
-  color: #b36e14cb; /* Яркий цвет для акцента */
-  font-family: Roboto, sans-serif;
-  font-weight: bold;
-  font-size: 18px;
+
+/* Адаптация под мобильные устройства */
+@media (width <= 1150px) {
+  .category-image img {
+    width: 90px; /* Размер изображения */
+    height: 90px; /* Размер по вертикали */
+  }
 }
 
 
-/* Адаптация под мобильные устройства */
 @media (width <= 1000px) {
   .image-description {
     width: 100px; /* Размер блока */
+  }
+}
+
+@media (width <= 1000px) {
+  .category-image img {
+    width: 70px; /* Размер изображения */
+    height: 70px; /* Размер по вертикали */
   }
 }
 
@@ -447,38 +372,14 @@
   .whatsapp-widget {
     display: none;
   }
-
-  .highlight {
-    font-size: 16px;
-  }
 }
 
 @media (width <= 390px) {
-  .circle-btn {
-    width: 50px;
-    height: 50px;
-  }
-
-  .phone-btn img {
-    width: 50px;
-    height: 50px;
-  }
-
-  .whatsapp-btn img {
-    width: 56px; /* Размер логотипа */
-    height: 40px; /* Размер по вертикали */
-  }
-
   /* Уменьшение размера изображений */
   .category-image img {
     width: 60px; /* Уменьшение ширины изображений */
     height: 60px; /* Размер по вертикали */
     border-radius: 50%; /* Круглые изображения */
     object-fit: cover;
-  }
-
-  .mail-btn img {
-    width: 50px;
-    height: 50px;
   }
 }

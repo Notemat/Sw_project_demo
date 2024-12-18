@@ -1,3 +1,9 @@
+@media (width <= 1300px) {
+  .contact-buttons .row {
+    justify-content: left;
+  }
+}
+
 @media (width <= 1000px) {
   #home h1 {
     padding-bottom: 60px;
@@ -209,34 +215,41 @@
   /* Адаптация под мобильные устройства экран 768рх */
 @media (width <= 768px) {
   /* Секция преимуществ */
-  .advantage {
-    flex: 1 1 calc(50% - 20px); 
-    max-width: calc(50% - 20px); /* Максимальный размер элемента */
-    margin-bottom: 20px; /* Отступ снизу от элементов */
+  .advantages {
+    flex-direction: column; /* Столбец */
+    align-items: center; /* Центрирование элементов */
+    gap: 0; /* Меньший отступ между блоками */
   }
 
-  /* Изображение преимуществ */
+  .advantage {
+    flex-direction: column; /* Иконка сверху, текст снизу */
+    align-items: center; /* Центрирование содержимого */
+    text-align: center; /* Текст по центру */
+    padding: 0; /* Уменьшенный внутренний отступ */
+    margin: 0;
+    max-width: 90%; /* Ограничиваем ширину */
+  }
+
   .advantage img {
-    align-items: center;
-    width: 40px; /* Размер изображения преимуществ */
-    height: 40px;
-  }
-}
-
-/* Адаптация под мобильные устройства экран 480рх */
-@media (width <= 480px) {
-  /* Секция преимуществ */
-  .advantage {
-    display: flex;
-    justify-content: center; /* Центрирование по горизонтали */
-    align-items: center; /* Центрирование по вертикали */
-    flex-direction: column; /* Положение в колонку */
-    max-width: 100%; /* Максимальный размер элементов */
+    width: 40px; /* Уменьшаем размер иконок */
+    height: auto;
+    margin-bottom: 10px; /* Отступ между иконкой и текстом */
   }
 
-  /* Заголовок преимуществ h3 */
   .advantage h3 {
-    font-size: 18px; /* Размер заголовка */
+    font-size: 18px; /* Меньший размер заголовка */
+    line-height: 1;
+    margin: 5px 0; /* Убираем большие отступы */
+  }
+
+  .advantage p {
+    font-size: 14px; /* Меньший размер текста */
+    line-height: 1.2 !important;
+    margin: 0; /* Убираем лишние отступы */
+  }
+
+  .advantage .highlight {
+    font-size: 14px;
   }
 }
 
@@ -256,12 +269,35 @@
     padding-left: 0; /* Отступ слева от краев страницы */
     text-align: center; /* Центрируем весь текст внутри контейнера */
   }
+  
+  .contacts {
+    padding-right: 15px; /* Отступ слева от элементов */
+    padding-left: 15px; /* Отступ слева от краев страницы */
+  }
 
-  #contact .row {
+  .contact-buttons .row {
     display: flex;
-    flex-direction: column; /* Элементы располагаются один под другим */
-    align-items: center; /* Центрирует по вертикали */
-    text-align: center; /* Центрирует текст */
+    flex-direction: column; /* Выстраиваем строки вертикально */
+    align-items: start; /* Центрируем элементы */
+    gap: 10px; /* Расстояние между строками */
+    padding-left: 10px;
+  }
+
+  .contact-buttons .row li {
+    display: flex;
+    justify-content: left; /* Центрируем по горизонтали */
+    align-items: start; /* Центрируем по вертикали */
+    gap: 10px; /* Расстояние между кнопкой и текстом */
+    width: 100%; /* Растягиваем на всю ширину */
+  }
+
+  .contact-buttons .row li p {
+    margin: 0; /* Убираем маргины, чтобы текст не сдвигался */
+    text-align: left; /* Выравнивание текста слева */
+  }
+
+  .circle-btn {
+    margin: 0; /* Убираем лишние маргины вокруг кнопок */
   }
 
   /* Адаптивная карта */
@@ -329,24 +365,8 @@
     box-sizing: border-box; /* Учитываем отступы в ширине */
   }
 
-  #contact .row {
-    flex-direction: column; /* Элементы в столбик */
-    align-items: center;    /* Центрируем элементы */
-    width: 100%;
-    max-width: 100%;
-    padding: 0;
-    margin: 0;
-  }
-
-  #contact .col-6 {
-    width: 100%;           /* Растягиваем каждый блок на всю ширину */
-    max-width: 100%;       /* Убираем ограничения */
-    margin-bottom: 20px;   /* Отступ между блоками */
-    padding: 0;            /* Убираем внутренние отступы */
-  }
-
   #contact .widget-map {
-    width: 100%;           /* Карта занимает всю ширину */
+    width: 95%;           /* Карта занимает всю ширину */
     max-width: 100%;       /* Убираем ограничения ширины */
     height: auto;          /* Высота подстраивается */
     box-sizing: border-box; /* Включаем внутренние отступы в расчёт ширины */

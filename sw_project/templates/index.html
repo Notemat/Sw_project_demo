@@ -20,6 +20,8 @@
         webvisor:true
     });
   </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/99151012" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <!-- /Yandex.Metrika counter -->
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-1QND4QW85N"></script>
   <script>
@@ -29,8 +31,6 @@
 
     gtag('config', 'G-1QND4QW85N');
   </script>
-  <noscript><div><img src="https://mc.yandex.ru/watch/99151012" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-  <!-- /Yandex.Metrika counter -->
   {% endblock %}
 {% block content %}
 <section id="home" class="section-after">
@@ -116,8 +116,8 @@
   <div class="container">
     <h1 data-aos="fade-up">О нас</h1>
     <p data-aos="fade-up">
-      Наша компания уже более двадцати лет сотрудничает с ведущими производителями птицефабрик, мукомольной промышленности, круп и консервов.
-      Продукция этих компаний широко востребована в ресторанах, кафе и санаториях города Сочи. Мы являемся их официальным дистрибьютором и с гордостью предлагаем её нашим клиентам.
+      Наша компания уже более двадцати лет сотрудничает с ведущими <strong class="highlight">птицефабриками, производителями мукомольной промышленности, круп и консервов</strong> .
+      Продукция этих компаний широко востребована в <strong class="highlight">ресторанах, кафе и санаториях города Сочи</strong>. Мы являемся их <strong class="highlight">официальным дистрибьютором</strong> и с гордостью предлагаем её нашим клиентам.
     </p>
     <h2 style="padding-bottom: 50px;" data-aos="fade-up" data-aos-offset="600" data-aos-delay="{{ forloop.counter0|add:100 }}">Преимущества нашей компании</h2>
     <div class="advantages">
@@ -128,7 +128,7 @@
         </picture>
         <div>
           <h3>Большой опыт работы</h3>
-          <p>Многолетний опыт работы в городе Сочи.</p>
+          <p>Более <strong class="highlight">20 лет</strong> на рынке Сочи. Мы знаем, что вам нужно</p>
         </div>
       </div>
       <div class="advantage" data-aos="zoom-in"data-aos-offset="600" data-aos-delay="{{ forloop.counter0|add:100 }}">
@@ -138,7 +138,7 @@
         </picture>
         <div>
           <h3>Бесплатная доставка</h3>
-          <p>Бесплатная доставка осуществляется на следующий день после подачи заявки.</p>
+          <p>Осуществляется <strong class="highlight">на следующий день после подачи заявки</strong></p>
         </div>
       </div>
       <div class="advantage"  data-aos="zoom-in"data-aos-offset="600" data-aos-delay="{{ forloop.counter0|add:100 }}">
@@ -148,7 +148,7 @@
         </picture>
         <div>
           <h3>Современные автомобили</h3>
-          <p>Автомобили оборудованы регулированием температуры.</p>
+          <p>Оснащены необходимым оборудованием для обеспечения <strong class="highlight">сохранности продукции</strong></p>
         </div>
       </div>
       <div class="advantage" data-aos="zoom-in" data-aos-offset="300" data-aos-delay="{{ forloop.counter0|add:100 }}">
@@ -158,7 +158,7 @@
         </picture>
         <div>
           <h3>Оптовые цены</h3>
-          <p>Самые низкие цены в городе на товары дистрибьюции. Сотрудничество с ведущими заводами-производителями.</p>
+          <p><strong class="highlight">Самые выгодные предложения</strong> в городе напрямую от ведущих заводов-производителей</p>
         </div>
       </div>
       <div class="advantage" data-aos="zoom-in" data-aos-offset="300" data-aos-delay="{{ forloop.counter0|add:100 }}">
@@ -168,7 +168,7 @@
         </picture>
         <div>
           <h3>Высокое качество продукции</h3>
-          <p>Наивысшее качество продукции. Возможен обмен в течение трех дней при возникновении спорных моментов.</p>
+          <p>Гарантия обмена <strong class="highlight">в течение трех дней</strong> при возникновении любых спорных моментов</p>
         </div>
       </div>
     </div>
@@ -177,65 +177,109 @@
 
 <section id="contact" class="section">
   <div class="container">
-    <div class="row">
-      <div class="col-6">
-        <h2 data-aos="fade-up">Контакты</h2>
-        <p data-aos="fade-up">Наша компания находится по адресу<a href="https://go.2gis.com/vjb73"> ул. Кипарисовая д. 8В</a></p>
-        <p data-aos="fade-up">Вы можете связаться с нами, позвонив или оставив сообщение в WhatsApp.</p>
-        <p>
-          <a class="whatsapp-button" href="https://wa.me/79182000207" onclick="openWhatsAppChat()" target="_blank" data-aos="zoom-in">
-            <picture>
-              <source srcset="{% static 'img/whatsapp_icon.webp' %}" type="image/webp">
-              <img class="watsapp-logo" src="{% static 'img/whatsapp_icon.png' %}" alt="Связаться через WhatsApp">
-            </picture>
-            +7-918-200-02-07
-          </a>
-        </p>
-        <p>
-          <a class="whatsapp-button" href="https://api.whatsapp.com/send?phone=79183044300" target="_blank" data-aos="zoom-in">
-            <picture>
-              <source srcset="{% static 'img/whatsapp_icon.webp' %}" type="image/webp">
-              <img class="watsapp-logo" src="{% static 'img/whatsapp_icon.png' %}" alt="Связаться через WhatsApp">
-            </picture>
-            +7-918-304-43-00
-          </a>
-        </p>
-        <a class="phone-button" data-aos="zoom-in" href="tel:+78622687180">
-          <picture>
-            <source srcset="{% static 'img/phone.webp' %}" type="image/webp">
-            <img class="phone-logo" src="{% static 'img/phone.png' %}" alt="Позвонить">
-          </picture>
-           +7-862-268-71-80
-        </a>
-        <h3 data-aos="fade-up" >Часы работы</h3>
-        <p data-aos="fade-up">Понедельник - Суббота: 08:00 - 16:30</p>
-        <p data-aos="fade-up">Воскресенье - Выходной</p>
-        <h3 data-aos="fade-up">Электронная почта</h3>
-        <p data-aos="fade-up"><a href="mailto:swsochi@gmail.ru">office@swsochi.ru</a></p>
+    <div class="contacts">
+      <h2 data-aos="fade-up">Контакты</h2>
+      <p data-aos="fade-up">Найти нашу компанию можно найти по адресу<a href="https://go.2gis.com/vjb73"> г.Сочи ул.Кипарисовая д.8В</a>. 
+        Офис расположен в <strong class="highlight">центральном районе города Сочи</strong> в удобной доступности для клиентов. 
+        Если у вас возникнут сложности - <strong class="highlight">звоните</strong> нам и ваc cориентируют. <strong class="highlight">Приходите, мы всегда рады видеть вас!</strong>
+      </p>
+    </div>
+    {% if "mobile" in request.META.HTTP_USER_AGENT|lower %}
+      <div class="static-map">
+        <img 
+          src="https://static.maps.2gis.com/1.0?s=880x250&c=43.63236,39.7469&z=16&pt=43.6333,39.7447" 
+          alt="Статичная карта для указания местоположения офиса"
+          style="width: 100%; height: auto;"
+        >
       </div>
-      {% if "mobile" in request.META.HTTP_USER_AGENT|lower %}
-        <div class="static-map">
-          <img 
-            src="https://static.maps.2gis.com/1.0?s=880x250&c=43.63236,39.7469&z=16&pt=43.6333,39.7447" 
-            alt="Статичная карта для указания местоположения офиса"
-            style="width: 100%; height: auto;"
-          >
+    {% else %}
+      <div class="widget-map" data-aos="fade-up">
+        <a class="dg-widget-link" href="http://2gis.ru/sochi/firm/4222652931725170/center/39.7447156906128,43.63355928829732/zoom/16?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=bigMap">Посмотреть на карте Сочи</a>
+        <div class="dg-widget-link">
+          <a href="http://2gis.ru/sochi/firm/4222652931725170/photos/4222652931725170/center/39.7447156906128,43.63355928829732/zoom/17?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=photos">Фотографии компании</a>
         </div>
-      {% else %}
-      <div class="col-6">
-        <div class="widget-map">
-          <a class="dg-widget-link" href="http://2gis.ru/sochi/firm/4222652931725170/center/39.7447156906128,43.63355928829732/zoom/16?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=bigMap">Посмотреть на карте Сочи</a>
-          <div class="dg-widget-link">
-            <a href="http://2gis.ru/sochi/firm/4222652931725170/photos/4222652931725170/center/39.7447156906128,43.63355928829732/zoom/17?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=photos">Фотографии компании</a>
-          </div>
-          <div class="dg-widget-link">
-            <a href="http://2gis.ru/sochi/center/39.744722,43.633271/zoom/16/routeTab/rsType/bus/to/39.744722,43.633271╎Южный ветер, оптовая компания?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=route">Найти проезд до Южный ветер, оптовая компания</a>
-          </div>
-          <script charset="utf-8" src="https://widgets.2gis.com/js/DGWidgetLoader.js"></script>
-          <script charset="utf-8">new DGWidgetLoader({"borderColor":"#a3a3a3","pos":{"lat":43.63355928829732,"lon":39.7447156906128,"zoom":16},"opt":{"city":"sochi"},"org":[{"id":"4222652931725170"}]});</script>
-          <noscript style="color:#c00;font-size:16px;font-weight:bold;">Виджет карты использует JavaScript. Включите его в настройках вашего браузера.</noscript>
+        <div class="dg-widget-link">
+          <a href="http://2gis.ru/sochi/center/39.744722,43.633271/zoom/16/routeTab/rsType/bus/to/39.744722,43.633271╎Южный ветер, оптовая компания?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=route">Найти проезд до Южный ветер, оптовая компания</a>
         </div>
-      {% endif %}
+        <script charset="utf-8" src="https://widgets.2gis.com/js/DGWidgetLoader.js"></script>
+        <script charset="utf-8">new DGWidgetLoader({"borderColor":"#a3a3a3","pos":{"lat":43.63355928829732,"lon":39.7447156906128,"zoom":16},"opt":{"city":"sochi"},"org":[{"id":"4222652931725170"}]});</script>
+        <noscript style="color:#c00;font-size:16px;font-weight:bold;">Виджет карты использует JavaScript. Включите его в настройках вашего браузера.</noscript>
+      </div>
+    {% endif %}
+    <div class="working-time">
+      <h3 data-aos="fade-up" >Часы работы</h3>
+      <p data-aos="fade-up">Понедельник - Суббота:<strong class="highlight"> 08:00 - 16:30</strong></p>
+      <p data-aos="fade-up">Воскресенье:<strong class="highlight"> Выходной день</strong></p>
+    </div>
+    <div class="contacts" data-aos="fade-up">
+      <h3>Способы связи</h3>
+      <p data-aos="fade-up">
+        У вас есть <strong class="highlight">вопросы</strong>? Мы готовы помочь! <strong class="highlight">Напишите</strong> нам на почту, <strong class="highlight">позвоните</strong> или <strong class="highlight">отправьте сообщение</strong> через мессенджер. 
+        Выберите удобный способ связи — и <strong class="highlight">мы обязательно ответим</strong>. Не откладывайте, свяжитесь с нами уже сегодня!
+      </p>
+      <div class="contact-buttons">
+        <div class="row">
+          <li>
+            <a href="tel:+79182000207" class="circle-btn phone-btn" title="Позвонить">
+              <picture>
+                <source srcset="{% static 'img/phone.webp' %}" type="image/webp">
+                <img src="{% static 'img/phone.png' %}" alt="Телефон">
+              </picture>
+            </a>
+            <p><strong class="highlight">Основной мобильный телефон:</strong><br><a href="+79182000207">+7(918)-200-02-07</a></p>
+          </li>
+          <li>
+            <a href="https://wa.me/79182000207" class="circle-btn whatsapp-btn" title="Написать в WhatsApp">
+              <picture>
+                <source srcset="{% static 'img/whatsapp_icon.webp' %}" type="image/webp">
+                <img src="{% static 'img/whatsapp_icon.png' %}" alt="WhatsApp">
+              </picture>
+            </a>
+            <p><strong class="highlight">Написать в WhatsApp</strong></p>
+          </li>
+        </div>
+        <div class="row">
+          <li>
+            <a href="tel:+79182000207" class="circle-btn phone-btn" title="Позвонить">
+              <picture>
+                <source srcset="{% static 'img/phone.webp' %}" type="image/webp">
+                <img src="{% static 'img/phone.png' %}" alt="Телефон">
+              <picture>
+            </a>
+            <p><strong class="highlight">Дополнительный телефон:</strong><br><a href="+79183044300">+7(918)-304-43-00</a></p>
+          </li>
+          <li>
+            <a href="https://wa.me/79182000207" class="circle-btn whatsapp-btn" title="Написать в WhatsApp">
+              <picture>
+                <source srcset="{% static 'img/whatsapp_icon.webp' %}" type="image/webp">
+                <img src="{% static 'img/whatsapp_icon.png' %}" alt="WhatsApp">
+              </picture>
+            </a>
+            <p><strong class="highlight">Написать в WhatsApp</strong></p>
+          </li>
+        </div>
+        <div class="row">
+          <li>
+            <a href="mailto:swsochi@gmail.ru" class="circle-btn mail-btn" title="Написать на почту">
+              <picture>
+                <source srcset="{% static 'img/лого-почта.webp' %}" type="image/webp">
+                <img src="{% static 'img/лого-почта.webp' %}" alt="Эл. почта">
+              </picture>
+            </a>
+            <p><strong class="highlight">Написать письмо на наш электронный адрес:</strong><br><a href="mailto:swsochi@gmail.ru">office@swsochi.ru</a></p>
+          </li>
+        </div>
+        <div class="row">
+          <li>
+            <a href="tel:+78622687180" class="circle-btn fax-btn" title="Звонок по Сочи">
+              <picture>
+                <source srcset="{% static 'img/факс.webp' %}" type="image/webp">
+                <img src="{% static 'img/факс.png' %}" alt="Стационарный телефон">
+              </picture>
+            </a>
+            <p><strong class="highlight">Стационарный телефон-факс:</strong><br><a href="+78622687180">+7(862)-226-71-80<a></a></p>
+          </li>
+        </div>
       </div>
     </div>
   </div>
