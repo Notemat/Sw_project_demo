@@ -61,12 +61,14 @@
   </div>
 </section>
 
-<section id="categories" class="section-after">
+<section id="categories">
   <div class="container">
     <div class="row">
       <div class="col-12">
         <h1 class="section-title text-center" data-aos="fade-up">Продукты</h1>
-        <p class="text-center" data-aos="fade-up">Мы предлагаем широкий ассортимент товаров бакалейной группы. В нашем каталоге вы найдете:</p>
+        <p class="text-center" data-aos="fade-up">
+          Мы предлагаем широкий <strong class="highlight">качественных</strong> товаров бакалейной группы. 
+          В нашем каталоге вы найдете:</p>
       </div>
     </div>
 
@@ -98,7 +100,7 @@
                       {% endif %}
                   </div>
                   <div class="category-description">
-                      <p>{{ grocery.main_description }}</p>
+                      <p>{{ grocery.main_description|safe }}</p>
                   </div>
               </div>
           </div>
@@ -106,8 +108,10 @@
   </div>
 
     <div class="col-12 text-center" data-aos="fade-up">
-      <p>Для получения актуального прайс-листа свяжитесь с нами удобным для вас способом - позвонив по телефону или через  WhatsApp</p>
-      <a href="https://wa.me/79182000207" onclick="openWhatsAppChat()" target="_blank" data-aos="zoom-in" class="btn btn-primary">Связаться с нами</a>
+      <p>Хотите узнать актуальные цены? <strong class="highlight">Свяжитесь</strong> с нами любым удобным способом — <strong class="highlight">мы всегда готовы помочь</strong>! Звоните или пишите в WhatsApp прямо сейчас.</p>
+      <a href="https://wa.me/79182000207" onclick="openWhatsAppChat()" target="_blank" data-aos="zoom-in" class="btn btn-primary">
+        <img src="{% static 'img/whatsapp_icon.png' %}" alt="WhatsApp" style="height: 20px; margin-right: 8px;">
+        Связаться с нами</a>
     </div>
   </div>
 </section>

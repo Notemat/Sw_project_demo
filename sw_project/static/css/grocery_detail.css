@@ -1,11 +1,11 @@
 /* Страница отдельного продукта */
 #grocery-detail {
-    display: block; /* Положение друг под другом */
-    background-color: #ece4a9 !important; /* Фон секции */
-    min-height: 100vh; /* Задает минимальную высоту секции равной высоте окна */
-    position: relative; /* Позиция родителя */
-    z-index: 1; /* Приоритет при отображении */
-  }
+  display: block; /* Положение друг под другом */
+  background: linear-gradient(to bottom, #fffacd, #f8e5b2); /* Светлый жёлтый с градиентом */
+  min-height: 100vh; /* Задает минимальную высоту секции равной высоте окна */
+  position: relative; /* Позиция родителя */
+  z-index: 1; /* Приоритет при отображении */
+}
 
 /* Текст секции */
 .product-info {

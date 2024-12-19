@@ -109,77 +109,157 @@
     padding-top: 80px;
     padding-bottom: 80px;
     text-align: center; /* Ориентация текста по центру */
+    display: flex;
+    flex-direction: column; /* Расположение блоков друг под другом */
+    justify-content: space-between; /* Распределение по вертикали */
+  }
+  
+  .category-block {
+    flex: 1;
+    width: 100%;
+  }
+}
+
+  /* Стили для экранов <= 768px (ваши изначальные) */
+@media (width <= 768px) {
+  #categories {
+    padding: 10px;
+    padding-top: 80px;
+    padding-bottom: 80px;
   }
 
-  /* Заголовок секции */
+  .category-block {
+    width: 100%;
+  }
+
   .section-title {
-    font-size: 24px; /* Размер заголовка */
-    margin-bottom: 20px; /* Отступ снизу от элементов */
+    font-size: 24px;
+    margin-bottom: 20px;
   }
 
-  /* Уменьшение размера изображений */
+  .category-list {
+    gap: 0;
+    padding-bottom: 20px;
+  }
+
+  .category-item {
+    flex: 1 1 100%;
+    margin: 10px 0;
+  }
+
+  .category-image {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
   .category-image img {
-    width: 150px; /* Уменьшение ширины изображений */
-    height: 150px; /* Размер по вертикали */
-    border-radius: 50%; /* Круглые изображения */
-    object-fit: cover;
+    width: 120px;
+    height: 120px;
+    padding: 0;
   }
 
-  /* Текст под изображениями */
-  .category-details {
-    font-size: 16px; /* Уменьшение размера шрифта */
-    padding: 10px 5px; /* Отступ от краев */
-    text-align: justify; /* Центрирование текста */
-    white-space: normal; /* Убираем запрет на перенос строк */
-    overflow: visible; /* Разрешаем показывать весь текст */
-    text-overflow: clip; /* Убираем многоточие для текста */
+  .category-left .category-image img {
+    order: 1;
   }
 
-  /* Выравнивание текста для обоих блоков */
+  .category-right .category-image {
+    margin: 0;
+    order: 2;
+  }
+
   .category-left .category-details {
-    text-align: left; /* Текст выровнен по левому краю */
-    word-spacing: normal; /* Убедитесь, что здесь нормальное значение */
-    white-space: normal; /* Убираем запрет на перенос строк */
-    overflow: visible; /* Разрешаем показывать весь текст */
-    text-overflow: clip; /* Убираем многоточие для текста */
+    text-align: left;
   }
 
-  /* Текст с правой стороны */
   .category-right .category-details {
-    text-align: right; /* Текст выровнен по правому краю */ 
-    word-spacing: normal; /* Убедитесь, что здесь нормальное значение */
-    white-space: normal; /* Убираем запрет на перенос строк */
-    overflow: visible; /* Разрешаем показывать весь текст */
-    text-overflow: clip; /* Убираем многоточие для текста */
+    text-align: right;
   }
 
-  /* Заголовок с левой стороны */
   .category-left .category-title {
-    text-align: left; /* Выровнять текст по ширине */
-    word-spacing: normal; /* Убедитесь, что здесь нормальное значение */
-    white-space: normal; /* Не допускайте ненужных переносов */
+    text-align: left;
   }
 
-  /* Заголовок с правой стороны */
   .category-right .category-title {
-    text-align: right; /* Выровнять текст по ширине */
-    word-spacing: normal; /* Убедитесь, что здесь нормальное значение */
-    white-space: normal; /* Не допускайте ненужных переносов */
+    text-align: right;
   }
 
-  /* Уменьшение размера абзацев */
   #categories p {
     font-size: 16px;
     margin-bottom: 15px;
   }
 
-  /* Кнопка скачать прайс */
   .btn-primary {
-    width: 100%; /* Размер кнопки */
-    font-size: 1.2em; /* Шрифт кнопки */
+    width: 100%;
+    font-size: 1.2em;
   }
 }
 
+/* Упрощенная версия для экранов <= 480px */
+@media (width <= 397px) {
+  #categories {
+    padding: 5px; /* Минимальный отступ */
+    box-sizing: border-box;
+    padding-bottom: 20px;
+  }
+
+  .category-list {
+    display: flex;
+    flex-direction: column; /* Элементы в столбик */
+    gap: 15px; /* Отступ между элементами */
+  }
+
+  .category-item {
+    display: flex;
+    flex-direction: column; /* Элементы внутри в столбик */
+    align-items: center; /* Центрируем содержимое */
+    text-align: center; /* Выравниваем текст */
+    margin: 0; /* Убираем лишние отступы */
+  }
+
+  .category-image img {
+    width: 80px; /* Ограничиваем размер изображения */
+    height: auto; /* Сохраняем пропорции */
+  }
+
+  .category-left .category-image img {
+    order: 0;
+  }
+
+  .category-right .category-image {
+    order: 0;
+  }
+
+  .category-title {
+    font-size: 16px; /* Уменьшение заголовка */
+    margin-top: 10px;
+  }
+
+  .category-description {
+    font-size: 12px; /* Уменьшение описания */
+    margin-top: 5px;
+  }
+
+  .category-left .category-details {
+    text-align: center;
+  }
+
+  .category-right .category-details {
+    text-align: center;
+  }
+
+  .category-left .category-title {
+    text-align: center;
+  }
+
+  .category-right .category-title {
+    text-align: center;
+  }
+
+  .btn-primary {
+    width: 100%;
+    font-size: 12px;
+  }
+}
 
 @media (width <= 768px) {
   /* Cтили мобильной версии секции about */

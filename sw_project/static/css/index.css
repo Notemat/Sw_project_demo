@@ -1,6 +1,7 @@
 /* Секция home */
-.section {
+.section, .section-after {
   position: relative;
+  z-index: 1;
 }
 
 .section::before {
@@ -23,11 +24,12 @@
   width: 100%;
   height: 25px; /* Высота полоски */
   background: #f8b400; /* Цвет полоски */
-  z-index: -1; /* Позади содержимого */
+  z-index: 0; /* Позади содержимого */
 }
 
 #home {
-  background-color: #ece4a9 !important; /* Фон секции */
+  background: linear-gradient(to bottom, #ece4a9, #fffacd); /* Светлый жёлтый с градиентом */
+  background-color:  !important; /* Фон секции */
   overflow: hidden; /* Позволяет секции корректно расширяться по содержимому */
   display: flex; /* Положение */
   flex-direction: row; /* Размещаем элементы в строку */
@@ -118,9 +120,114 @@
   width: 100%; /* Занять всю доступную ширину */
 }
 
+
+/* Градиент для фона секции */
+#categories {
+  background: linear-gradient(to bottom, #fffacd, #f8e5b2); /* Светлый жёлтый с градиентом */
+  padding: 50px 20px;
+}
+
+/* Текст описания категории */
+.category-description p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Контейнер списка категорий */
+.category-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Расстояние между элементами */
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.category-item {
+  flex: 0 1 calc(50% - 10px); /* Два столбца */
+  display: flex;
+  text-align: left; /* Выравнивание текста */
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.category-left {
+  width: 100%;
+  justify-content: flex-start; /* Выровнять влево */
+}
+
+.category-right {
+  width: 100%;
+  justify-content: flex-start; /* Выровнять вправо */
+}
+
+.category-image {
+  padding-right: 10px;
+}
+
+.category-image picture img {
+  width: 200px; /* Размер изображения */
+  height: 200px; /* Размер по вертикали */
+  border-radius: 50%; /* Круглая форма */
+  border: 1px solid #965b0d; /* Рамка */
+  object-fit: cover;
+  box-shadow: 0 2px 4px black;
+  transition: transform 0.3s ease; /* Анимация при наведении */
+}
+
+.category-image picture img:hover {
+  transform: scale(1.05); /* Лёгкое увеличение при наведении */
+}
+
+/* Заголовок секции продуктов */
+.section-title {
+  font-size: 3em; /* Размер элементов заголовка */
+  text-align: center; /* Центрирование заголовка */
+  color: #333; /* Цвет заголовка */
+  margin-bottom: 40px; /* Отступ снизу от элементов */
+}
+
+/* Стили для заголовков категорий */
+.category-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #333; /* Стандартный цвет заголовка */
+  text-decoration: none; /* Убираем стандартное подчеркивание */
+  transition: color 0.3s ease; /* Плавное изменение цвета */
+}
+
+.category-title:hover {
+  color: #f8b400; /* Новый цвет при наведении */
+  text-decoration: none !important; /* Убираем подчеркивание при наведении */
+}
+
+/* Кнопка действия (например, "Cвязаться с нами") */
+.btn-primary {
+  max-width: 350px;
+  height: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px; /* Расстояние между иконкой и текстом */
+  font-family: 'Dela Gothic One', sans-serif;
+  padding: 10px 20px;
+  font-size: 20px;
+  background-color: #25d366; /* Цвет WhatsApp */
+  box-shadow: 0 2px 4px black;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #1dc955; /* Более тёмный оттенок */
+  transform: scale(1.05); /* Лёгкое увеличение при наведении */
+}
+
+
 /* Стили для секции "О нас" */
 #about {
-  background-color: #f1eaa9; /* Цвет фона */
+  background: linear-gradient(to bottom, #f8e5b2, #f1eaa9); /* Светлый жёлтый с градиентом */
 }
 
 /* Контейнер "о нас" */
@@ -198,114 +305,10 @@
   font-size: 16px;
 }
 
-/* Секция продуктов */
-#categories {
-  background-color: #f5efb8; /* Фон секции */
-  position: relative; /* Позиция родителя */
-  z-index: 1; /* Приоритет при отображении */
-}
-
-/* Заголовок секции продуктов */
-.section-title {
-  font-size: 3em; /* Размер элементов заголовка */
-  text-align: center; /* Центрирование заголовка */
-  color: #333; /* Цвет заголовка */
-  margin-bottom: 40px; /* Отступ снизу от элементов */
-}
-
-/* Текст в секции продуктов */
-#categories p {
-  font-size: 1.2em; /* Размер текста */
-  margin-bottom: 20px; /* Отступ снизу от элементов */
-}
-
-.category-item {
-  display: flex; /* Положение элементов */
-  align-items: center; /* Ориентация элементов по центру */
-  margin-bottom: 20px; /* Отступ снизу от элементов */
-}
-
-/* Изображения  категорий */
-.category-image img {
-  width: 200px; /* Размер изображения */
-  height: 200px; /* Размер по вертикали */
-  border-radius: 50%; /* Круглые изображения */
-  object-fit: cover;
-  box-shadow: 0 2px 4px black;
-  transition: transform 0.3s ease; /* Плавный переход */ 
-}
-
-/* Левые изображения */
-.category-left .category-image img{
-  order: 1; /* Изображение слева */
-}
-
-/* Правые изображения */
-.category-right .category-image {
-  order: 2; /* Изображение справа */
-}
-
-.category-image:hover img {
-  transform: scale(1.1); /* Увеличение изображения на 10% */
-}
-
-/* Текст элементов */
-.category-details {
-  flex: 1; /* Убедитесь, что элемент занимает доступное пространство */
-  padding: 0 20px; /* Отступ от краев контейнера */
-  text-align: center; /* Центрируем текст, если это необходимо */
-  overflow: hidden; /* Скрываем переполнение */
-  white-space: nowrap; /* Убираем перенос строк */
-  text-overflow: ellipsis; /* Добавляем многоточие для длинного текста */
-}
-
-/* Текст элементов слева */
-.category-left .category-details {
-  text-align: left; /* Для левых продуктов текст слева */
-}
-
-/* Текст элементов справа */
-.category-right .category-details {
-  text-align: right; /* Для правых продуктов текст справа */
-}
-
-/* Стили для заголовков категорий */
-.category-title {
-  color: #333; /* Стандартный цвет заголовка */
-  text-decoration: none; /* Убираем стандартное подчеркивание */
-  transition: color 0.3s ease; /* Плавное изменение цвета */
-}
-
-.category-title:hover {
-  color: #f8b400; /* Новый цвет при наведении */
-  text-decoration: none; /* Убираем подчеркивание при наведении */
-}
-
-/* Кнопка действия (например, "Cвязаться с нами") */
-.btn-primary {
-  background-color: #25d366; /* Цвет заливки кнопки */
-  border-color: #25d366; /* Цвет границы кнопки */
-  color: #eee; /* Цвет текста */
-  width: 400px; /* Увеличение ширины кнопки */
-  height: 65px; /* Увеличение высоты кнопки */
-  font-size: 1.5em; /* Увеличение размера шрифта */
-  padding: 10px 20px; /* Отступ от краев контейнера */
-  text-decoration: none; 
-  display: inline-block; /* Положение в линию */
-  margin-top: 20px; /* Отступ сверху от элементов */
-  font-family: "Dela Gothic One", sans-serif; /* Стиль шрифта */
-}
-
-/* Изменения при наведении на кнопку действия */
-.btn-primary:hover {
-  background-color: #169645; /* Цвет заливки кнопки */
-  border-color: #169645; /* Цвет границы кнопки */
-}
-
 
 /* Секция контактов */
 #contact {
-  background-color: #ece4a9; /* Цвет фона секции */
+  background: linear-gradient(to bottom, #f1eaa9, #ece4a9); /* Светлый жёлтый с градиентом */
   position: relative; /* Позиция родитель */
   z-index: 1; /* Приоритет при отображении */
   display: block;
@@ -389,7 +392,7 @@
 
 /* Секция партнеров */
 #partner {
-  background-color: #f5efb8 !important; /* Фон секции */
+  background: linear-gradient(to bottom, #ece4a9, #f5efb8); /* Светлый жёлтый с градиентом */
   position: relative; /* Позиция - родитель */
   z-index: 1; /* Приоритет при отображении */
   padding-bottom: 75px;
