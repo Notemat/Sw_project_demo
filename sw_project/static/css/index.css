@@ -357,6 +357,7 @@
   overflow: hidden; /* Убирает лишние края iframe */
 }
 
+
 .contact-buttons .row {
   display: flex;
   max-width: 700px;
@@ -422,8 +423,9 @@
 
 /* Логотип партнера */
 .partner-logos .logo {
-  width: 150px; /* Максимальный размер логотипа */
+  max-width: 120px; /* Максимальный размер логотипа */
   height: auto; /* Размер по вертикали */
+  object-fit: contain;
   transition: transform 0.3s ease; /* Плавная анимация */
 }
 
@@ -448,7 +450,7 @@
 }
 
 #partner .row.middle {
-  gap: 150px;
+  gap: 90px;
   margin-bottom: -25px;
 }
 
