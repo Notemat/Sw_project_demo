@@ -37,16 +37,18 @@ class GroceryValueInline(admin.TabularInline):
 class ElementAdmin(ImagePreviewMixin, admin.ModelAdmin):
     """Модель продукта в админке."""
 
-    list_display = ('name', 'description', 'image_preview')
-    list_editable = ('description', )
+    list_display = (
+        'name', 'description', 'priority', 'is_active', 'image_preview'
+    )
+    list_editable = ('description', 'priority', 'is_active')
     search_fields = ('name', )
     readonly_fields = ('image_tag',)
     fieldsets = (
         (None, {
             'classes': ('wide'),
             'fields': (
-                ('name'),
-                ('description'),
+                ('name', 'char_limit', 'is_active'),
+                ('description'), ('action_link', 'priority'),
             ),
         }),
         ('HTML-файлы', {

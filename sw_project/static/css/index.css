@@ -28,98 +28,204 @@
 }
 
 #home {
-  background: linear-gradient(to bottom, #ece4a9, #fffacd); /* Светлый жёлтый с градиентом */
-  background-color:  !important; /* Фон секции */
-  overflow: hidden; /* Позволяет секции корректно расширяться по содержимому */
-  display: flex; /* Положение */
-  flex-direction: row; /* Размещаем элементы в строку */
-  padding-bottom: 40px; /* Дополнительное расстояние снизу */
+  background: linear-gradient(to bottom, #ece4a9, #fffacd);
+  overflow: unset;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 40px;
   position: relative;
-  z-index: 1; /* Приоритетность при отображении */
+  z-index: 1;
+  min-height: 100vh;
+  padding-top: 60px;
 }
 
-/* Заголовок первая часть */
-.h2-title {
-  font-family: Pacifico;
-  font-size: 56px;
+.element-list {
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
   justify-content: center;
-  margin: 0 auto;
-  color: #333;
+  padding-top: 80px;
+  padding-bottom: 40px;
+  align-items: center;
+  gap: 15px;
+  position: relative; /* Устанавливаем контекст для позиционирования стрелок */
 }
 
-/*  Вторая часть заголовка */
-.h1-title { 
-  font-family: Pacifico;
-  margin: 0 auto;
-  font-size: 76px;
+.element-item {
+  flex: 1 1 calc(25% - 20px); /* Ширина каждой карточки — 25% минус отступы */
+  max-width: calc(25% - 20px); /* Максимальная ширина — 25% */
+  margin: 15px;
+  height: auto;
+  background-color: #f5f2dc;
+  border-radius: 25px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  cursor: pointer;
+  position: relative;
+  transform: scale(1);
+  opacity: 1;
   text-align: center;
 }
 
-/* Элементы home */
-.element-list {
-  display: flex; /* Положение */
-  flex-flow: row-reverse wrap;  /* Элементы в строку */ 
-  justify-content: space-between; /* Размещение блоков с промежутками */
+/* Анимация для скрытия карточки */
+.element-item.hiding {
+  transform: scale(0.5); /* Уменьшение */
+  opacity: 0; /* Исчезновение */
+  transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
-/* Каждый элемент */
-.element-item {
-  margin-bottom: 40px; /* Отступ вниз после каждого элемента */
-  box-sizing: border-box; 
-  display: flex; /* Положение */
-  flex-direction: column; /* Элементы друг под другом */
-  align-items: center; /* Орииентация по центру */
-  position: relative; /* Позиция родитель */
-  top: calc(10px * var(--index)); /* Смещение каждого элемента вниз, в зависимости от его индекса */
+/* Анимация для показа карточки */
+.element-item.showing {
+  transform: scale(1); /* Восстановление размера */
+  opacity: 1; /* Возвращение */
+  transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
-/* Элементы слева */
-.element-item:nth-child(odd) {
-  top: 80px; /* Элементы с нечетным индексом остаются на месте */
+/* Для плавности скрытия через display */
+.element-item.hide {
+  display: none;
 }
 
-/* Элементы справа */
-.element-item:nth-child(even) {
-  top: 0; /* Элементы с четным индексом сдвигаются чуть ниже */
+.element-item:hover {
+  transform: scale(1.05); /* Увеличение */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7); /* Тень */
 }
 
-.element-item:nth-child(3) {
-  top: -80px; /* Элементы с четным индексом сдвигаются чуть ниже */
-}
-
-/* Изображение элементов */
-.element-image img {
-  max-width: 400px; /* Максимальный размер */
-  height: auto; /* Длина элемента */
-  border-radius: 45px; /* Скругленные углы для изображения */
-  margin-bottom: 10px; /* Отступ между изображением и текстом */
-}
-
-/* Текстовый блок */
-.element-details {
-  padding-left: 10px;  /* Отступ от левого края */
-  padding-right: 10px; /* Отступ между текстом и изображением */
-}
-
-/* Для нечетных блоков (изображение слева, текст справа) */
-.element-item:nth-child(odd) {
-  flex-direction: row-reverse; /* Положение изображения и текста */
-}
-
-/* Для четных блоков (изображение справа, текст слева) */
-.element-item:nth-child(even) {
-  flex-direction: row; /* Положение изображения и текста */
-  padding-left: 20px; /* Отступ от левого края */
-}
-
-/* Описание в элементах */
 .element-details p {
-  margin: 0 auto; /* Центрирование блока относительно родителя */
-  padding-left: 20px; /* Отступ между текстом и изображением */
-  text-align: justify; /* Выровнять текст по ширине */
-  width: 100%; /* Занять всю доступную ширину */
+  font-size: 12px;
+  color: #555;
+  line-height: 1.5;
 }
 
+.element-details .highlight {
+  font-size: 12px;
+}
+
+.element-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  text-align: center;
+}
+
+.element-image img {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  border-radius: 25px 25px 0 0;
+  object-fit: cover;
+}
+
+.element-image {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.element-details {
+  padding-bottom: 15px;
+}
+
+.active-card {
+  margin-top: 10px;
+  margin-bottom: 60px;
+  border-radius: 25px;
+  justify-content: space-between;
+  align-items: center;
+  height: 600px;
+  background-color: #f5f2dc;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+  position: relative;
+  left: 30%;
+  top: 50%;
+  max-width: 500px;
+  z-index: 1000;
+  transform: scale(0.5); /* Начинаем с уменьшенного размера */
+  opacity: 0; /* Начинаем с прозрачности */
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  display: none;
+}
+
+/* Анимация для активной карточки */
+.active-card.showing {
+  transform: scale(1); /* Увеличение */
+  opacity: 1; /* Появление */
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.active-card.hiding {
+  transform: scale(0.5); /* Уменьшение */
+  opacity: 0; /* Исчезновение */
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.active-card.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+
+}
+
+.active-card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  text-align: center;
+}
+
+.active-card .short-text {
+  display: none;
+}
+
+.full-text {
+  display: none;
+}
+
+.active-card .full-text {
+  display: block;
+}
+
+.active-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+.active-card p {
+  font-size: 16px;
+}
+
+.active-card .highlight {
+  font-size: 16px;
+}
+
+
+.active-card-image img {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  border-radius: 25px 25px 0 0;
+  object-fit: cover;
+}
+
+.active-card-details {
+  flex: 1;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+figcaption {
+  text-align: center;
+  font-size: 14px;
+  color: #777;
+  margin-top: 10px;
+}
+
+.action-link {
+  text-align: end;
+  padding-right: 10px;
+}
 
 /* Градиент для фона секции */
 #categories {

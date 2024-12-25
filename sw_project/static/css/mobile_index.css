@@ -2,34 +2,53 @@
   .contact-buttons .row {
     justify-content: left;
   }
+
+  .element-list {
+    max-width: 80%;
+  }
+
+  .element-item {
+    flex: 1 1 calc(33.33% - 20px); /* 3 карточки в ряд */
+    max-width: calc(33.33% - 20px);
+  }
+
+  .active-card {
+    max-width: 450px;
+    max-height: 550px;
+  }
 }
+
+
 
 @media (width <= 1000px) {
   #home h1 {
     padding-bottom: 60px;
   }
 
-  /* Список элементов */
-  .element-image img {
-    width: 300px;
-    height: 200px;
-    max-width: auto; /* Уменьшаем ширину изображений на мобильных */
+  .active-card {
+    max-width: 350px;
+    max-height: 100%;
+    height: auto;
   }
 
-    /* Элементы слева */
-  .element-item:nth-child(odd) {
-    top: 0; /* Элементы с нечетным индексом остаются на месте */
+  .element-title {
+    font-size: 12px;
   }
 
-  /* Элементы справа */
-  .element-item:nth-child(even) {
-    top: 0; /* Элементы с четным индексом сдвигаются чуть ниже */
+  .active-card-details p {
+    font-size: 14px;
   }
 
-  .element-item:nth-child(3) {
-    top: 0; /* Элементы с четным индексом сдвигаются чуть ниже */
-    padding-bottom: 40px;
+  .active-card .highlight {
+    font-size: 14px;
   }
+
+  .active-card-details figcaption {
+    font-size: 12px;
+    padding-bottom: 10px;
+  }
+
+
 }
 
 @media (width <= 768px) {
@@ -41,14 +60,18 @@
   }
 
   .h2-title {
-    font-size: 26px;
-    padding-top: 25px; /* Отступ сверху вниз */
+    font-size: 26px !important;
+    padding-top: 15px !important; /* Отступ сверху вниз */
   }
 
   /*  Вторая часть заголовка */
   .h1-title {
-    font-size: 36px;
-    padding-bottom: 40px; /* Отступ снизу вверх */
+    font-size: 36px !important;
+    padding-bottom: 20px !important; /* Отступ снизу вверх */
+  }
+
+  .subtitle {
+    font-size: 23px !important;
   }
 
 
@@ -60,44 +83,37 @@
     text-align: center;
   }
 
-  /* Список элементов */
-  .element-list {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Центрирует по вертикали */
-    width: 100%; /* Размер элементов */
+  .active-card {
+    max-width: 90%;
+    top: 0;
+    left: 10px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
   }
 
   .element-item {
-    display: block;
-    top: 0; /* Убираем смещения для всех элементов */
-    margin-bottom: 20px; /* Опционально уменьшаем отступы между элементами */
+    flex: 1 1 100%; /* Карточки занимают 100% ширины */
+    max-width: 100%; /* Максимальная ширина 100% */
   }
 
-  /* Дополнительно, если нужно, для нечетных и четных элементов */
-  .element-item:nth-child(odd), 
-  .element-item:nth-child(even), 
-  .element-item:nth-child(3) {
-      top: 0; /* Убираем все смещения */
-      flex-direction: column;
-      padding-left: 0;
+  #home .active-card p {
+    font-size: 14px;
   }
 
-  /* Изображение элементов */
-  .element-image img {
-    width: 300px;
-    max-width: 100%; /* Уменьшаем ширину изображений на мобильных */
-    height: 200; /* Размер по вертикали */
-    margin: 0  auto; /* Отступ между элементами */
-    display: block; /* Элементы друг под другом */
+  #home .element-item p {
+    font-size: 12px;
   }
 
-  /* Текст элементов */
-  .element-details  {
-    font-size: 16px; /* Уменьшаем размер текста */
-    align-items: center;
-    width: 100%; /* Занять всю доступную ширину */
-    height: auto;
+  .element-item .highlight {
+    font-size: 12px;
+  }
+
+  .active-card.showing {
+    transform: scale(1); /* Увеличение карточки */
+    opacity: 1; /* Видимость */
+  }
+
+  .element-item.hide {
+    display: none; /* Прячем карточки, когда они скрыты */
   }
 }
 

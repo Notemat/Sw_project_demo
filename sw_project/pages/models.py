@@ -25,11 +25,27 @@ class Element(ImageTagMixin, ImageSaveMixin, models.Model):
     description: models.TextField = models.TextField(
         verbose_name='Описание элемента'
     )
+    char_limit: models.PositiveIntegerField = models.PositiveIntegerField(
+        default=100, verbose_name='Количество символов до сокращения')
+
+    is_active: models.BooleanField = models.BooleanField(
+        default=True, verbose_name='Отображать на странице'
+    )
+    action_link: models.TextField = models.TextField(
+        max_length=256, blank=True, verbose_name='Ссылка в конце карточки'
+    )
+    priority: models.IntegerField = models.IntegerField(
+        default=0, verbose_name='Приоритетность'
+    )
 
     class Meta:
-        ordering = ['name']
+        ordering = ['id']
         verbose_name = 'Элемент'
         verbose_name_plural = 'Элементы'
+
+    def get_description(self):
+        """Разделение description на параграфы по переносу строки."""
+        return self.description.split("\n") if self.description else []
 
     def __str__(self):
         return self.name
