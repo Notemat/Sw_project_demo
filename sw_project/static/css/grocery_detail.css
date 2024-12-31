@@ -249,6 +249,10 @@
   margin-bottom: 10px;
 }
 
+.contact-buttons p {
+  margin-left: 0;
+}
+
 
 /* Адаптация под мобильные устройства */
 @media (width <= 1150px) {
