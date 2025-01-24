@@ -1,7 +1,7 @@
 /* Страница отдельной ошибки */
 #content {
   display: flex; /* Элементы по центру */
-  background-color: #ece4a9 !important; /* Фон секции */
+  background-color: var(--errors-background-color) !important; /* Фон секции */
   min-height: 100vh; /* Задает минимальную высоту секции равной высоте окна */
   position: relative; /* Позиция родитель */
   justify-content: center; /* Выравнивание по центру */

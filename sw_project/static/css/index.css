@@ -10,7 +10,7 @@
   top: 0;
   width: 100%;
   height: 25px;
-  background: #f8b400;
+  background: var(--primary-background-color);
   display: block; /* Убедитесь, что псевдоэлемент отображается */
   left: 0;
   z-index: -1; /* Убедитесь, что псевдоэлемент находится за содержимым */
@@ -23,12 +23,12 @@
   left: 0;
   width: 100%;
   height: 25px; /* Высота полоски */
-  background: #f8b400; /* Цвет полоски */
+  background: var(--primary-background-color); /* Цвет полоски */
   z-index: 0; /* Позади содержимого */
 }
 
 #home {
-  background: linear-gradient(to bottom, #ece4a9, #fffacd);
+  background: var(--home-background-color);
   overflow: unset;
   display: flex;
   flex-direction: column;
@@ -58,27 +58,27 @@
   height: auto;
   background-color: #f5f2dc;
   border-radius: 25px;
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-  transition: transform 0.5s ease, opacity 0.5s ease;
+  box-shadow: 0 8px 15px var(--primary-box-shadow-color);
+  transition: var(--home-element-animation-transition);
   cursor: pointer;
   position: relative;
-  transform: scale(1);
+  transform: var(--home-element-animation-transform);
   opacity: 1;
   text-align: center;
 }
 
 /* Анимация для скрытия карточки */
 .element-item.hiding {
-  transform: scale(0.5); /* Уменьшение */
+  transform: var(--home-element-hiding-animation-transform); /* Уменьшение */
   opacity: 0; /* Исчезновение */
-  transition: transform 0.5s ease, opacity 0.5s ease;
+  transition: var(--home-element-animation-transition);
 }
 
 /* Анимация для показа карточки */
 .element-item.showing {
-  transform: scale(1); /* Восстановление размера */
+  transform: var(/* Анимация увеличения карточки в секции */); /* Восстановление размера */
   opacity: 1; /* Возвращение */
-  transition: transform 0.5s ease, opacity 0.5s ease;
+  transition: var(--home-element-animation-transition);
 }
 
 /* Для плавности скрытия через display */
@@ -88,12 +88,12 @@
 
 .element-item:hover {
   transform: scale(1.05); /* Увеличение */
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7); /* Тень */
+  box-shadow: 0 5px 15px var(--primary-box-shadow-color); /* Тень */
 }
 
 .element-details p {
   font-size: 12px;
-  color: #555;
+  color: var(--paragraph-color);
   line-height: 1.5;
 }
 
@@ -133,37 +133,37 @@
   justify-content: space-between;
   align-items: center;
   height: 600px;
-  background-color: #f5f2dc;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+  background-color: var(--home-element-active-background-color);
+  box-shadow: 0 15px 30px var(--primary-box-shadow-color);
   position: relative;
   left: 30%;
   top: 50%;
   max-width: 500px;
   z-index: 1000;
-  transform: scale(0.5); /* Начинаем с уменьшенного размера */
+  transform: var(--home-element-hiding-animation-transform); /* Начинаем с уменьшенного размера */
   opacity: 0; /* Начинаем с прозрачности */
-  transition: transform 0.5s ease, opacity 0.5s ease;
+  transition: var(--home-element-animation-transition);
   display: none;
 }
 
 /* Анимация для активной карточки */
 .active-card.showing {
-  transform: scale(1); /* Увеличение */
+  transform: var(--home-element-animation-transform); /* Увеличение */
   opacity: 1; /* Появление */
-  transition: transform 0.5s ease, opacity 0.5s ease;
+  transition: var(--home-element-animation-transition);
 }
 
 .active-card.hiding {
-  transform: scale(0.5); /* Уменьшение */
+  transform: var(--home-element-hiding-animation-transform); /* Уменьшение */
   opacity: 0; /* Исчезновение */
-  transition: transform 0.5s ease, opacity 0.5s ease;
+  transition: var(--home-element-animation-transition);
 }
 
 .active-card.show {
   display: block;
   opacity: 1;
-  transform: translateY(0);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transform: var(--home-element-show-animation-transform);
+  transition: var(--home-element-animation-transition);
 
 }
 
@@ -188,8 +188,8 @@
 }
 
 .active-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+  transform: var(--home-element-active-hover-animation-transform);
+  box-shadow: 0 12px 25px var(--primary-box-shadow-color);
 }
 
 .active-card p {
@@ -218,7 +218,7 @@
 figcaption {
   text-align: center;
   font-size: 14px;
-  color: #777;
+  color: var(--home-element-figcaption-color);
   margin-top: 10px;
 }
 
@@ -229,14 +229,14 @@ figcaption {
 
 /* Градиент для фона секции */
 #categories {
-  background: linear-gradient(to bottom, #fffacd, #f8e5b2); /* Светлый жёлтый с градиентом */
+  background: var(--category-background-color); /* Светлый жёлтый с градиентом */
   padding: 50px 20px;
 }
 
 /* Текст описания категории */
 .category-description p {
   font-size: 1rem;
-  color: #555;
+  color: var(--paragraph-color);
   line-height: 1.5;
 }
 
@@ -275,21 +275,21 @@ figcaption {
   width: 200px; /* Размер изображения */
   height: 200px; /* Размер по вертикали */
   border-radius: 50%; /* Круглая форма */
-  border: 1px solid #965b0d; /* Рамка */
+  border: 1px solid var(--category-border-color); /* Рамка */
   object-fit: cover;
-  box-shadow: 0 2px 4px black;
-  transition: transform 0.3s ease; /* Анимация при наведении */
+  box-shadow: 0 2px 4px var(--primary-box-shadow-color);
+  transition: var(--category-animation-transition); /* Анимация при наведении */
 }
 
 .category-image picture img:hover {
-  transform: scale(1.05); /* Лёгкое увеличение при наведении */
+  transform: var(--category-animation-transform); /* Лёгкое увеличение при наведении */
 }
 
 /* Заголовок секции продуктов */
 .section-title {
   font-size: 3em; /* Размер элементов заголовка */
   text-align: center; /* Центрирование заголовка */
-  color: #333; /* Цвет заголовка */
+  color: var(--header-color); /* Цвет заголовка */
   margin-bottom: 40px; /* Отступ снизу от элементов */
 }
 
@@ -298,13 +298,13 @@ figcaption {
   font-size: 1.2rem;
   font-weight: 700;
   margin-bottom: 10px;
-  color: #333; /* Стандартный цвет заголовка */
+  color: var(--header-color); /* Стандартный цвет заголовка */
   text-decoration: none; /* Убираем стандартное подчеркивание */
-  transition: color 0.3s ease; /* Плавное изменение цвета */
+  transition: var(--category-animation-title-transition); /* Плавное изменение цвета */
 }
 
 .category-title:hover {
-  color: #f8b400; /* Новый цвет при наведении */
+  color: var(--primary-border-color); /* Новый цвет при наведении */
   text-decoration: none !important; /* Убираем подчеркивание при наведении */
 }
 
@@ -315,25 +315,25 @@ figcaption {
   display: inline-flex;
   align-items: center;
   gap: 8px; /* Расстояние между иконкой и текстом */
-  font-family: 'Dela Gothic One', sans-serif;
+  font-family: var(--header-font-family);
   padding: 10px 20px;
   font-size: 20px;
-  background-color: #25d366; /* Цвет WhatsApp */
-  box-shadow: 0 2px 4px black;
+  background-color: var(--category-bttn-background-color); /* Цвет WhatsApp */
+  box-shadow: 0 2px 4px var(--primary-box-shadow-color);
   border: none;
   border-radius: 5px;
-  color: #fff;
+  color: var(--category-bttn-color);
 }
 
 .btn-primary:hover {
-  background-color: #1dc955; /* Более тёмный оттенок */
-  transform: scale(1.05); /* Лёгкое увеличение при наведении */
+  background-color: var(--category-bttn-hover-background-color); /* Более тёмный оттенок */
+  transform: var(--category-animation-transform); /* Лёгкое увеличение при наведении */
 }
 
 
 /* Стили для секции "О нас" */
 #about {
-  background: linear-gradient(to bottom, #f8e5b2, #f1eaa9); /* Светлый жёлтый с градиентом */
+  background: var(--about-background-color);
 }
 
 /* Контейнер "о нас" */
@@ -381,7 +381,7 @@ figcaption {
 .advantage img {
   width: 50px;
   height: auto;
-  transition: transform 0.3s ease, filter 0.3s ease;
+  transition: var(--about-animation-transition);
 }
 
 .advantage:hover img {
@@ -414,7 +414,7 @@ figcaption {
 
 /* Секция контактов */
 #contact {
-  background: linear-gradient(to bottom, #f1eaa9, #ece4a9); /* Светлый жёлтый с градиентом */
+  background: var(--contact-background-color); /* Светлый жёлтый с градиентом */
   position: relative; /* Позиция родитель */
   z-index: 1; /* Приоритет при отображении */
   display: block;
@@ -422,7 +422,7 @@ figcaption {
 
 /* Текст секции контактов */
 #contact p {
-  color: #666; /* Цвет текста в секции */
+  color: var(--contact-paragraph-color); /* Цвет текста в секции */
 }
 
 #contact .container {
@@ -498,7 +498,7 @@ figcaption {
 
 /* Секция партнеров */
 #partner {
-  background: linear-gradient(to bottom, #ece4a9, #f5efb8); /* Светлый жёлтый с градиентом */
+  background: var(--partner-background-color); /* Светлый жёлтый с градиентом */
   position: relative; /* Позиция - родитель */
   z-index: 1; /* Приоритет при отображении */
   padding-bottom: 75px;
@@ -535,12 +535,12 @@ figcaption {
   max-width: 120px; /* Максимальный размер логотипа */
   height: auto; /* Размер по вертикали */
   object-fit: contain;
-  transition: transform 0.3s ease; /* Плавная анимация */
+  transition: var(--partner-logo-animation-transition); /* Плавная анимация */
 }
 
 /* Логотип при наведении курсором */
 .partner-logos .logo:hover {
-  transform: scale(1.1); /* Увеличение логотипа при наведении */
+  transform: var(--partner-logo-animation-transform); /* Увеличение логотипа при наведении */
 }
 
 /* Уникальная структура для расположения логотипов */
@@ -569,7 +569,7 @@ figcaption {
   height: auto; /* Размер по вертикали */
   position: absolute; /* Позиция фиксированная от родителя */
   left: 50%; /* слева от края */
-  transform: translateX(-50%); 
+  transform: var(--partner-br-animation-transform); 
   z-index: 1;
 }
 

@@ -1,0 +1,118 @@
+:root {
+    /* ======================
+        ГЛОБАЛЬНЫЕ СТИЛИ
+    ====================== */
+
+    /* Цвета */
+    --primary-background-color: #f8b400; /*  Основной цвет фона */
+    --primary-border-color: #f8b400; /* Основной цвет границ страницы */
+    --primary-font-color: #272727; /* Основной цвет текста */
+    --primary-link-color: #3E3E3E; /* Цвет ссылок */
+    --primary-hover-color: #c57d10; /* Цвет ссылки при наведении */
+    --primary-highlight-color: #b36e14cb; /* Цвет выделенного текста */
+    --header-color: #333; /* Цвет заголовков */
+    --paragraph-color: #555; /* Цвет текста */
+    --footer-color: #414040; /* Цвет текста в footer */
+    --footer-hover-color: #fff; /* Цвет текста в footer при наведении */
+    --menu-hover-color: #fff; /* Цвет текста в меню при наведении */
+    --mobile-menu-link-color: rgb(240 180 0 / 50%); /* Цвет меню мобильной версии */
+    --primary-box-shadow-color: black; /* Тени карточки */
+
+    /* Шрифты */
+    --header-font-family: 'Dela Gothic One', sans-serif; /*  Шрифт для заголовков */
+    --paragraph-font-family: 'Roboto', sans-serif; /* Шрифт текста */
+
+    /* Анимация */
+    --primary-animation-scrolling: smooth; /* Анимация прокручивания */
+    --menu-animation-transition: all 0.3s ease; /* Анимация переходов для меню */
+    --mobile-menu-animation-transition: max-hight 0.5s ease-in-out; /* Анимация переходов для меню мобильной версии */
+
+
+    /* === Секция home === */
+
+    /* Цвета */
+    --home-background-color: linear-gradient(to bottom, #ece4a9, #fffacd); /*  Цвет фона */
+    --home-element-active-background-color: #f5f2dc; /* Цвет фона активной карточки */
+    --home-element-figcaption-color: #777; /* Цвет ссылки в карточке */
+
+    /* Анимация */
+    --home-element-animation-transition: transform 0.5s ease, opacity 0.5s ease; /* Общая анимация переходов для карточек в секции */
+    --home-element-animation-transform: scale(1); /* Анимация увеличения карточки в секции */
+    --home-element-hiding-animation-transform: scale(0.5); /* Анимация уменьшения карточки в секции */
+    --home-element-show-animation-transform: translateY(0); /* Анимация появления активной карточки */
+    --home-element-active-hover-animation-transform: scale(1.05); /* Анимация увеличения активной карточки */
+    --home-mobile-element-active-transition: transform 0.3s ease, opacity 0.3s ease; /* Анимация переходов для карточек в мобильной версии */
+
+
+    /* === Секция category === */
+
+    /* Цвета */
+    --category-background-color: linear-gradient(to bottom, #fffacd, #f8e5b2); /*  Цвет фона */
+    --category-border-color: #965b0d; /* Основной цвет рамки категории продукта */
+    --category-bttn-background-color: #25d366; /* Цвет фона кнопки в секции */
+    --category-bttn-hover-background-color: #1dc955; /* Цвет фона кнопки при наведении */
+    --category-bttn-color: #fff; /* Цвет текста кнопки в секции */
+
+    /* Анимация */
+    --category-animation-transition: transform 0.3s ease; /* Анимация переходов елемента категории */
+    --category-animation-title-transition: color 0.3s ease; /* Анимация переходов названия категории */
+    --category-animation-transform: scale(1.05); /* Анимация увеличения категории */
+
+
+    /* === Секция about === */
+
+    /* Цвета */
+    --about-background-color: linear-gradient(to bottom, #f8e5b2, #f1eaa9); /*  Цвет фона */
+
+    /* Анимация */
+    --about-animation-transition: transform 0.3s ease, filter 0.3s ease; /* Общая анимация переходов для карточек в секции */
+
+
+    /* === Секция contact === */
+
+    /* Цвета */
+    --contact-background-color: linear-gradient(to bottom, #f1eaa9, #ece4a9); /*  Цвет фона */
+    --contact-paragraph-color: #666; /* Цвет текста */
+
+
+    /* === Секция partner === */
+
+    /* Цвета */
+    --partner-background-color: linear-gradient(to bottom, #ece4a9, #f5efb8); /*  Цвет фона */
+
+    /* Анимация */
+    --partner-logo-animation-transition: transform 0.3s ease; /* Общая анимация переходов логотипов */
+    --partner-logo-animation-transform: scale(1.1); /* Анимация логотипов при переходе */
+    --partner-br-animation-transform: translateX(-50%); /* Положение логотипа внизу страницы */
+
+    /* === Страница отдельной категории grocery_detail === */
+
+    /* Цвета */
+    --grocery-detail-background-color: linear-gradient(to bottom, #fffacd, #f8e5b2); /*  Цвет фона */
+    --grocery-detail-card-border-color: #5f5b4f; /* Цвет границ карточки продукта */
+    --grocery-detail-card-background-color: #f5f2dc; /*  Цвет фона карточки */
+    --grocery-detail-cartificate-button-background-color: #f8b400; /*  Цвет кнопки сертификата */
+    --grocery-detail-cartificate-button-border-color: #f8b400; /*  Цвет границ кнопки сертификата */
+    --grocery-detail-cartificate-button-color: #fff; /* Цвет текста кнопки в секции */
+    --grocery-detail-cartificate-button-hover-background-color: #e09d00; /*  Цвет кнопки сертификата */
+    --grocery-detail-cartificate-button-border-hover-color: #e09d00; /*  Цвет границ кнопки сертификата */
+    --grocery-detail-category-name-background-color: #f5f2dc; /* Цвет фона названия категории при наведении */
+
+    /* Анимация */
+    --grocery-detail-category-name-animation-transition: opacity 0.3s ease, transform 0.3s ease; /* Анимация окна с названием категории */
+    --grocery-detail-category-name-animation-transform: translateX(-50%); /* Положение окна с названием категории */
+    --grocery-detail-category-image-animation-transition: transform 0.3s ease; /* Анимация изображения категории */
+    --grocery-detail-category-image-hover-animation-transform: scale(1.1); /* Увеличение изображения категории */
+
+
+    /* === Страница ошибки === */
+
+    /* Цвета */
+    --errors-background-color: #ece4a9; /*  Цвет фона */
+
+
+    /* === Страница политики конфиденциальности === */
+
+    /* Цвета */
+    --privacy-background-color: #ece4a9; /*  Цвет фона */
+}

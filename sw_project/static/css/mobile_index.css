@@ -87,7 +87,7 @@
     max-width: 90%;
     top: 0;
     left: 10px;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    transition: var(--home-mobile-element-active-transition);
   }
 
   .element-item {
@@ -108,7 +108,7 @@
   }
 
   .active-card.showing {
-    transform: scale(1); /* Увеличение карточки */
+    transform: var(--home-element-animation-transform); /* Увеличение карточки */
     opacity: 1; /* Видимость */
   }
 
@@ -526,7 +526,7 @@
     position: absolute; /* Фиксированая позиция относительно родителя */
     bottom: -100px; /* Вниз */
     left: 50%; /* Влево */
-    transform: translateX(-50%);
+    transform: var(--partner-br-animation-transform);
   }
 }
 

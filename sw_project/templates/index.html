@@ -2,37 +2,16 @@
 {% load static %}
 {% load custom_filters %}
 {% block head %}
-  <title>ООО«Южный ветер»—оптовые продажи в Сочи: яйцо, мука, крупы, масло.</title>
+  <title>"company_name"</title>
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
   <link rel="stylesheet" href="{% static 'css/index.css' %}">
   <link rel="stylesheet" href="{% static 'css/mobile_index.css' %}" media="screen and (max-width: 1300px)">
-  <meta name="description" content="{% block meta_description %}Южный Ветер – оптовый склад бакалейной продукции в Сочи. Высококачественный ассортимент: яйца, мука, сахар, масла, крупы, макароны, консервация и многое другое. Быстрая и надежная доставка для магазинов, санаториев и кондитерских по Сочи.{% endblock %}">
-  <!-- Yandex.Metrika counter -->
-  <script type="text/javascript" >
-    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-    m[i].l=1*new Date();
-    for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-    ym(99151012, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true,
-        webvisor:true
-    });
-  </script>
-  <noscript><div><img src="https://mc.yandex.ru/watch/99151012" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-  <!-- /Yandex.Metrika counter -->
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1QND4QW85N"></script>
+  <meta name="description" content="{% block meta_description %}company_name{% endblock %}">
+  <!-- Google Analytics -->
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-1QND4QW85N');
+    // Добавьте ваш идентификатор Google Analytics здесь
+    // gtag('config', 'G-XXXXXXXXXX');
   </script>
   {% endblock %}
 {% block content %}
@@ -43,10 +22,10 @@
         Добро пожаловать в компанию
       </h1>
       <h1 class="h1-title" style="font-family: Pacifico, cursive; font-size: 80px; margin: 0 auto; text-align: center;">
-        Южный Ветер
+        "company_name"
       </h1>
       <p class="subtitle" style="font-family: Pacifico, cursive; font-size: 40px; margin: 0 auto; text-align: center; color: #555; margin-top: 30px;">
-        Поставщик бакалейных товаров и продуктов питания в Сочи с более чем 20-летним опытом
+        "company_description"
       </p>
       <div class="element-list">
         {% for element in elements %}
@@ -93,7 +72,7 @@
       <div class="col-12">
         <h1 class="section-title text-center" data-aos="fade-up">Продукты</h1>
         <p class="text-center" data-aos="fade-up">
-          Мы предлагаем широкий ассортимент <strong class="highlight">качественных</strong> товаров бакалейной группы. 
+          Мы предлагаем широкий ассортимент <strong class="highlight">качественных</strong> товаров. 
           В нашем каталоге вы найдете:</p>
       </div>
     </div>
@@ -135,7 +114,7 @@
 
     <div class="col-12 text-center" data-aos="fade-up">
       <p>Хотите узнать актуальные цены? <strong class="highlight">Свяжитесь</strong> с нами любым удобным способом — <strong class="highlight">мы всегда готовы помочь</strong>! Звоните или пишите в WhatsApp прямо сейчас.</p>
-      <a href="https://wa.me/79182000207" onclick="openWhatsAppChat()" target="_blank" data-aos="zoom-in" class="btn btn-primary">
+      <a href="https://wa.me/7999000000" onclick="openWhatsAppChat()" target="_blank" data-aos="zoom-in" class="btn btn-primary">
         <img src="{% static 'img/whatsapp_icon.png' %}" alt="WhatsApp" style="height: 20px; margin-right: 8px;">
         Связаться с нами</a>
     </div>
@@ -146,8 +125,8 @@
   <div class="container">
     <h1 data-aos="fade-up">О нас</h1>
     <p data-aos="fade-up">
-      Наша компания уже более двадцати лет сотрудничает с ведущими <strong class="highlight">птицефабриками, производителями мукомольной промышленности, круп и консервов</strong> .
-      Продукция этих компаний широко востребована в <strong class="highlight">ресторанах, кафе и санаториях города Сочи</strong>. Мы являемся их <strong class="highlight">официальным дистрибьютором</strong> и с гордостью предлагаем её нашим клиентам.
+      Наша компания уже более двадцати лет сотрудничает с ведущими <strong class="highlight">производителями</strong> .
+      Продукция этих компаний широко востребована в <strong class="highlight">ресторанах и кафе города</strong>.
     </p>
     <h2 style="padding-bottom: 50px;" data-aos="fade-up" data-aos-offset="600" data-aos-delay="{{ forloop.counter0|add:100 }}">Преимущества нашей компании</h2>
     <div class="advantages">
@@ -157,8 +136,8 @@
           <img src="{% static 'img/experience.png' %}" alt="Опыт">
         </picture>
         <div>
-          <h3>Большой опыт работы</h3>
-          <p>Более <strong class="highlight">20 лет</strong> на рынке Сочи. Мы знаем, что вам нужно</p>
+          <h3>first_advantage</h3>
+          <p>advantage_description</p>
         </div>
       </div>
       <div class="advantage" data-aos="zoom-in"data-aos-offset="600" data-aos-delay="{{ forloop.counter0|add:100 }}">
@@ -167,8 +146,8 @@
           <img src="{% static 'img/free-delivery.png' %}" alt="Бесплатная доставка">
         </picture>
         <div>
-          <h3>Бесплатная доставка</h3>
-          <p>Осуществляется <strong class="highlight">на следующий день после подачи заявки</strong></p>
+          <h3>second_advantage</h3>
+          <p>advantage_description</p>
         </div>
       </div>
       <div class="advantage"  data-aos="zoom-in"data-aos-offset="600" data-aos-delay="{{ forloop.counter0|add:100 }}">
@@ -177,8 +156,8 @@
           <img src="{% static 'img/modern-vehicles.png' %}" alt="Современные автомобили">
         </picture>
         <div>
-          <h3>Современные автомобили</h3>
-          <p>Оснащены необходимым оборудованием для обеспечения <strong class="highlight">сохранности продукции</strong></p>
+          <h3>third_advantage</h3>
+          <p>advantage_description</p>
         </div>
       </div>
       <div class="advantage" data-aos="zoom-in" data-aos-offset="300" data-aos-delay="{{ forloop.counter0|add:100 }}">
@@ -187,8 +166,8 @@
           <img src="{% static 'img/best-prices.png' %}" alt="Оптовые цены">
         </picture>
         <div>
-          <h3>Оптовые цены</h3>
-          <p><strong class="highlight">Самые выгодные предложения</strong> в городе напрямую от ведущих заводов-производителей</p>
+          <h3>fourth_advantage</h3>
+          <p>advantage_description</p>
         </div>
       </div>
       <div class="advantage" data-aos="zoom-in" data-aos-offset="300" data-aos-delay="{{ forloop.counter0|add:100 }}">
@@ -197,8 +176,8 @@
           <img src="{% static 'img/high-quality.png' %}" alt="Высокое качество">
         </picture>
         <div>
-          <h3>Высокое качество продукции</h3>
-          <p>Гарантия обмена <strong class="highlight">в течение трех дней</strong> при возникновении любых спорных моментов</p>
+          <h3>fifth_advantage</h3>
+          <p>advantage_description</p>
         </div>
       </div>
     </div>
@@ -209,43 +188,30 @@
   <div class="container">
     <div class="contacts">
       <h2 data-aos="fade-up">Контакты</h2>
-      <p data-aos="fade-up">Найти нашу компанию можно найти по адресу<a href="https://go.2gis.com/vjb73"> г.Сочи ул.Кипарисовая д.8В</a>. 
-        Офис расположен в <strong class="highlight">центральном районе города Сочи</strong> в удобной доступности для клиентов. 
-        Если у вас возникнут сложности - <strong class="highlight">звоните</strong> нам и ваc cориентируют. <strong class="highlight">Приходите, мы всегда рады видеть вас!</strong>
+      <p data-aos="fade-up">Найти нашу компанию можно найти по адресу<a href="map_link"> "map_link"</a>. 
+        Офис расположен в удобной доступности для клиентов. 
+        <strong class="highlight">Приходите, мы всегда рады видеть вас!</strong>
       </p>
     </div>
     {% if "mobile" in request.META.HTTP_USER_AGENT|lower %}
       <div class="static-map">
-        <img 
-          src="https://static.maps.2gis.com/1.0?s=880x250&c=43.63236,39.7469&z=16&pt=43.6333,39.7447" 
-          alt="Статичная карта для указания местоположения офиса"
-          style="width: 100%; height: auto;"
-        >
+        <p>Здесь будет статичная карта для мобильных устройств</p>
       </div>
     {% else %}
       <div class="widget-map" data-aos="fade-up">
-        <a class="dg-widget-link" href="http://2gis.ru/sochi/firm/4222652931725170/center/39.7447156906128,43.63355928829732/zoom/16?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=bigMap">Посмотреть на карте Сочи</a>
-        <div class="dg-widget-link">
-          <a href="http://2gis.ru/sochi/firm/4222652931725170/photos/4222652931725170/center/39.7447156906128,43.63355928829732/zoom/17?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=photos">Фотографии компании</a>
-        </div>
-        <div class="dg-widget-link">
-          <a href="http://2gis.ru/sochi/center/39.744722,43.633271/zoom/16/routeTab/rsType/bus/to/39.744722,43.633271╎Южный ветер, оптовая компания?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=route">Найти проезд до Южный ветер, оптовая компания</a>
-        </div>
-        <script charset="utf-8" src="https://widgets.2gis.com/js/DGWidgetLoader.js"></script>
-        <script charset="utf-8">new DGWidgetLoader({"borderColor":"#a3a3a3","pos":{"lat":43.63355928829732,"lon":39.7447156906128,"zoom":16},"opt":{"city":"sochi"},"org":[{"id":"4222652931725170"}]});</script>
-        <noscript style="color:#c00;font-size:16px;font-weight:bold;">Виджет карты использует JavaScript. Включите его в настройках вашего браузера.</noscript>
+        <p>Здесь будет карта компании</p>
       </div>
     {% endif %}
     <div class="working-time">
       <h3 data-aos="fade-up" >Часы работы</h3>
-      <p data-aos="fade-up">Понедельник - Суббота:<strong class="highlight"> 08:00 - 16:30</strong></p>
-      <p data-aos="fade-up">Воскресенье:<strong class="highlight"> Выходной день</strong></p>
+      <p data-aos="fade-up">Понедельник - Пятница:<strong class="highlight"> 00:00 - 00:00</strong></p>
+      <p data-aos="fade-up">Суббота, Воскресенье:<strong class="highlight"> Выходной день</strong></p>
     </div>
     <div class="contacts" data-aos="fade-up">
       <h3>Способы связи</h3>
       <p data-aos="fade-up">
         У вас есть <strong class="highlight">вопросы</strong>? Мы готовы помочь! <strong class="highlight">Напишите</strong> нам на почту, <strong class="highlight">позвоните</strong> или <strong class="highlight">отправьте сообщение</strong> через мессенджер. 
-        Выберите удобный способ связи — и <strong class="highlight">мы обязательно ответим</strong>. Не откладывайте, свяжитесь с нами уже сегодня!
+        Выберите удобный способ связи — и <strong class="highlight">мы обязательно ответим</strong>.
       </p>
       <div class="contact-buttons">
         <div class="row">
@@ -256,30 +222,10 @@
                 <img src="{% static 'img/phone.png' %}" alt="Телефон">
               </picture>
             </a>
-            <p><strong class="highlight">Основной мобильный телефон:</strong><br><a href="tel:+79182000207">+7(918)-200-02-07</a></p>
+            <p><strong class="highlight">Основной мобильный телефон:</strong><br><a href="tel:+79990000000">+7(999)-000-00-00</a></p>
           </li>
           <li>
-            <a href="https://wa.me/79182000207" class="circle-btn whatsapp-btn" title="Написать в WhatsApp">
-              <picture>
-                <source srcset="{% static 'img/whatsapp_icon.webp' %}" type="image/webp">
-                <img src="{% static 'img/whatsapp_icon.png' %}" alt="WhatsApp">
-              </picture>
-            </a>
-            <p><strong class="highlight">Написать в WhatsApp</strong></p>
-          </li>
-        </div>
-        <div class="row">
-          <li>
-            <a href="tel:+79182000207" class="circle-btn phone-btn" title="Позвонить">
-              <picture>
-                <source srcset="{% static 'img/phone.webp' %}" type="image/webp">
-                <img src="{% static 'img/phone.png' %}" alt="Телефон">
-              <picture>
-            </a>
-            <p><strong class="highlight">Дополнительный телефон:</strong><br><a href="tel:+79182000207">+7(918)-304-43-00</a></p>
-          </li>
-          <li>
-            <a href="https://wa.me/79182000207" class="circle-btn whatsapp-btn" title="Написать в WhatsApp">
+            <a href="https://wa.me/79990000000" class="circle-btn whatsapp-btn" title="Написать в WhatsApp">
               <picture>
                 <source srcset="{% static 'img/whatsapp_icon.webp' %}" type="image/webp">
                 <img src="{% static 'img/whatsapp_icon.png' %}" alt="WhatsApp">
@@ -296,7 +242,7 @@
                 <img src="{% static 'img/лого-почта.webp' %}" alt="Эл. почта">
               </picture>
             </a>
-            <p><strong class="highlight">Написать письмо на наш электронный адрес:</strong><br><a href="mailto:swsochi@gmail.ru">office@swsochi.ru</a></p>
+            <p><strong class="highlight">Написать письмо на наш электронный адрес:</strong><br><a href="mailto:example@example.com">example@example.com</a></p>
           </li>
         </div>
         <div class="row">
@@ -307,7 +253,7 @@
                 <img src="{% static 'img/факс.png' %}" alt="Стационарный телефон">
               </picture>
             </a>
-            <p><strong class="highlight">Стационарный телефон-факс:</strong><br><a href="tel:+78622687180">+7(862)-226-71-80<a></a></p>
+            <p><strong class="highlight">Стационарный телефон-факс:</strong><br><a href="tel:+79990000000">+7(999)-000-00-00<a></a></p>
           </li>
         </div>
       </div>
@@ -319,76 +265,37 @@
   <div class="container">
     <h1 data-aos="fade-up">Наши Партнеры</h1>
     <p data-aos="fade-up">
-      Мы гордимся сотрудничеством с ведущими компаниями города Сочи, которые выбирают нашу продукцию для успешного развития своего бизнеса.
-      <strong class="highlight">Надежность</strong>, <strong class="highlight">профессионализм</strong> и <strong class="highlight">внимание к деталям</strong> — 
-      качества, которые делают нашу продукцию <strong class="highlight">незаменимой</strong> для наших партнеров и клиентов.
-      Их <strong class="highlight">доверие</strong> вдохновляет нас <strong class="highlight">развиваться</strong>, 
-      <strong class="highlight">совершенствоваться</strong> и предлагать <strong class="highlight">решения высочайшего уровня</strong>.</p>
+      Мы гордимся сотрудничеством с ведущими компаниями города.</p>
     <div class="partner-logos">
       <div class="row top" data-aos="zoom-in">
         <picture>
-          <source srcset="{% static 'img/partners/аромат_корицы.webp' %}" type="image/webp">
-          <img src="{% static 'img/partners/аромат корицы.png' %}" alt="Партнер 1" class="logo">
+          <p>здесь будет логотип компании-партнера</p>
         </picture>
         <picture>
-          <source srcset="{% static 'img/partners/ваниль.webp' %}" type="image/webp">
-          <img src="{% static 'img/partners/ваниль.png' %}" alt="Партнер 7" class="logo">
+          <p>здесь будет логотип компании-партнера</p>
         </picture>
         <picture>
-          <source srcset="{% static 'img/partners/лаверна.webp' %}" type="image/webp">
-          <img src="{% static 'img/partners/лаверна.png' %}" alt="Партнер 3" class="logo">
+          <p>здесь будет логотип компании-партнера</p>
         </picture>
-        <picture>
-          <source srcset="{% static 'img/partners/лондонъ.webp' %}" type="image/webp">
-          <img src="{% static 'img/partners/лондонъ.png' %}" alt="Партнер 8" class="logo">
-        </picture>
-        <picture>
-          <source srcset="{% static 'img/partners/рутесто.webp' %}" type="image/webp">
-          <img src="{% static 'img/partners/рутесто.png' %}" alt="Партнер 5" class="logo">
         </picture>
       </div>
       <div class="row middle" data-aos="zoom-in">
         <picture>
-          <source srcset="{% static 'img/partners/санторини.webp' %}" type="image/webp">
-          <img src="{% static 'img/partners/санторини.png' %}" alt="Партнер 6" class="logo">
+          <p>здесь будет логотип компании-партнера</p>
         </picture>
         <picture>
-          <source srcset="{% static 'img/partners/магеллан.webp' %}" type="image/webp">
-          <img src="{% static 'img/partners/магеллан.png' %}" alt="Партнер 2" class="logo">
-        </picture>
-        <picture>
-          <source srcset="{% static 'img/partners/ярмарки.webp' %}" type="image/webp">
-          <img src="{% static 'img/partners/ярмарки.png' %}" alt="Партнер 13" class="logo">
-        </picture>
-        <picture>
-          <source srcset="{% static 'img/partners/хлебокамбинат.webp' %}" type="image/webp">
-          <img src="{% static 'img/partners/хлебокамбинат.png' %}" alt="Партнер 9" class="logo">
+          <p>здесь будет логотип компании-партнера</p>
         </picture>
       </div>
       <div class="row bottom" data-aos="zoom-in">
         <picture>
-          <source srcset="{% static 'img/partners/южное_взморье.webp' %}" type="image/webp">
-          <img src="{% static 'img/partners/южное_взморье.png' %}" alt="Партнер 10" class="logo">
+          <p>здесь будет логотип компании-партнера</p>
         </picture>
         <picture>
-          <source srcset="{% static 'img/partners/пекарня_кривоноговых.webp' %}" type="image/webp">
-          <img src="{% static 'img/partners/пекарня_кривоноговых.png' %}" alt="Партнер 11" class="logo">
+          <p>здесь будет логотип компании-партнера</p>
         </picture>
         <picture>
-          <source srcset="{% static 'img/partners/хлебница.webp' %}" type="image/webp">
-          <img src="{% static 'img/partners/хлебница.png' %}" alt="Партнер 12" class="logo">
-        </picture>
-        <picture>
-          <source srcset="{% static 'img/partners/матрешка.webp' %}" type="image/webp">
-          <img src="{% static 'img/partners/матрешка.png' %}" alt="Партнер 4" class="logo">
-        </picture>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-12 text center">
-        <picture>
-          <source srcset="{% static 'img/br.webp' %}" type="image/webp">
-          <img class="custom-br" src="{% static 'img/br.png' %}" alt="Южный Ветер">
+          <p>здесь будет логотип компании-партнера</p>
         </picture>
       </div>
     </div>

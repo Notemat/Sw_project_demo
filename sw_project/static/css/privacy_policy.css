@@ -1,5 +1,5 @@
 #privacy-policy {
-  background-color: #ece4a9; /* Цвет фона секции */
+  background-color: var(--privacy-background-color); /* Цвет фона секции */
   display: block; /* Положение друг под другом */
   min-height: 100vh; /* Задает минимальную высоту секции равной высоте окна */
   position: relative; /* Позиция родителя */

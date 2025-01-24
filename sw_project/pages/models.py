@@ -156,7 +156,7 @@ class GroceryImage(ImageTagMixin, ImageSaveMixin, models.Model):
         verbose_name='Изображение продукта'
     )
     description: models.TextField = models.TextField(
-        default='No description', verbose_name='Описание изображения'
+        default='No description', verbose_name='Описание продукта'
     )
     is_active: models.BooleanField = models.BooleanField(
         default=True, verbose_name='Отображать на странице'

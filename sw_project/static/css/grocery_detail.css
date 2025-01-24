@@ -39,9 +39,9 @@
   margin: 10px; /* Отступы вокруг карточек */
   flex-direction: column; /* Положение элементов в колонке */
   align-items: center; /* Выравнивание элементов по центру */
-  border: 2px solid #5f5b4f; /* Пример обводки для сертификата */
+  border: 2px solid var(--grocery-detail-card-border-color);
   border-radius: 25px; /* Скругление углов */
-  background-color: #f5f2dc; /* Заливка фона карточки */
+  background-color: var(--grocery-detail-card-background-color); /* Заливка фона карточки */
   transition: all; 
   max-width: 300px; /* Максимальный размер карточка */
   height: auto; /* Размер по вертикали */
@@ -74,22 +74,22 @@
 .image-description {
   font-size: 16px; /* Размер шрифта */
   width: 200px; /* Размер блока */
-  color: #555; /* Мягкий цвет текста */
+  color: var(--paragraph-color); /* Мягкий цвет текста */
   font-weight: bold;
   display: inline-flex; /* Положение адаптивно в линию */
 }
 
 /* Кнопка действия (например, "Сертификат дистрибьюции") */
 .button {
-  background-color: #f8b400; /* Цвет заливки кнопки */
-  border-color: #f8b400; /* Цвет границы кнопки */
-  color: #eee; /* Цвет шрифта */
+  background-color: var(--grocery-detail-cartificate-button-background-color); /* Цвет заливки кнопки */
+  border-color: var(--grocery-detail-cartificate-button-border-color0); /* Цвет границы кнопки */
+  color: var(--grocery-detail-cartificate-button-color); /* Цвет шрифта */
   width: 400px; /* Увеличение ширины кнопки */
   height: 65px; /* Увеличение высоты кнопки */
   font-size: 1.5em; /* Увеличение размера шрифта */ /* Отступ от краев страницы */
   text-decoration: none;
   margin-top: 20px; /* Отступ сверху от элементов */
-  font-family: "Dela Gothic One", sans-serif; /* Стиль шрифта */
+  font-family: var(--header-font-family); /* Стиль шрифта */
   border-radius: 10px; /* Радиус границы */
   overflow: auto; /* Включаем прокрутку, если содержимое больше окна */
   padding: 10px; /* Небольшие отступы внутри модального окна */
@@ -98,9 +98,9 @@
 
 /* Изменения при наведении на кнопку действия */
 .button:hover {
-  background-color: #e09d00; /* Цвет заливки кнопки */
-  border-color: #e09d00; /* Цвет границы кнопки */
-  color: white;
+  background-color: var(--grocery-detail-cartificate-button-hover-background-color); /* Цвет заливки кнопки */
+  border-color: var(--grocery-detail-cartificate-button-border-hover-color); /* Цвет границы кнопки */
+  color: var(--grocery-detail-cartificate-button-color);
 }
 
 /* Окно отображения сертификата */
@@ -166,17 +166,17 @@
   position: absolute;
   top: 110%; /* Располагаем под кружком */
   left: 50%;
-  transform: translateX(-50%); /* Центрируем под кружком */
-  background-color: #f5f2dc; /* Светлый фон с лёгкой прозрачностью */
-  color: #333; /* Тёмно-серый текст */
+  transform: var(--grocery-detail-category-name-animation-transform); /* Центрируем под кружком */
+  background-color: var(--grocery-detail-category-name-background-color);
+  color: var(--header-color); /* Тёмно-серый текст */
   font-size: 14px;
   font-weight: bold;
   padding: 5px 10px;
   border-radius: 8px; /* Закруглённые углы */
   white-space: nowrap; /* Отключаем перенос текста */
-  box-shadow: 0 2px 4px black; /* Лёгкая тень */
+  box-shadow: 0 2px 4px var(--primary-box-shadow-color); /* Лёгкая тень */
   opacity: 0; /* Исходное состояние */
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: var(--grocery-detail-category-name-animation-transition);
   z-index: 1;
 }
 
@@ -190,8 +190,8 @@
   height: 120px; /* Размер по вертикали */
   border-radius: 50%; /* Круглые изображения */
   object-fit: cover;
-  transition: transform 0.3s ease; /* Плавный переход */
-  box-shadow: 0 2px 4px black; 
+  transition: var(--grocery-detail-category-image-animation-transition); /* Плавный переход */
+  box-shadow: 0 2px 4px var(--primary-box-shadow-color); 
 }
 
 
@@ -206,7 +206,7 @@
 .order-guide h3 {
   margin-bottom: 1rem;
   font-size: 26px;
-  color: #333;
+  color: var(--header-color);
 }
 
 .order-guide p {
@@ -230,14 +230,14 @@
 }
 
 .category-image:hover img {
-  transform: scale(1.1); /* Увеличение изображения на 10% */
+  transform: var(--grocery-detail-category-image-hover-animation-transform); /* Увеличение изображения на 10% */
 }
 
 .order-guide h4 {
   padding-top: 40px;
   padding-bottom: 10px;
   font-size: 22px;
-  color: #333;
+  color: var(--header-color);
 }
 
 .order-guide ul {
@@ -335,8 +335,8 @@
     flex-direction: column;
     align-items: center;
     padding: 10px;
-    background-color: #f5f2dc; /* Фон карточки */
-    border: 2px solid #5f5b4f;
+    background-color: var(--grocery-detail-card-background-color); /* Фон карточки */
+    border: 2px solid var(--grocery-detail-card-border-color);
     border-radius: 12px;
     box-shadow: 0 4px 8px rgb(0 0 0 / 10%); /* Тень от карточки */
     box-shadow: hover; /* Прозрачность тени */
@@ -354,7 +354,7 @@
 
   .category-name {
     font-size: 12px; /* Размер текста */
-    color: #555; /* Мягкий цвет текста */
+    color: var(--paragraph-color);
     font-weight: bold;
     top: 0;
     left: auto;
@@ -366,7 +366,7 @@
     width: 100%; /* Растянуть по ширине карточки */
     padding: 0;
     display: block;
-    position: relative; /* Чтобы разместить под картинкой */
+    position: relative; /* Разместить под картинкой */
     white-space: normal;
     text-align: center;
     z-index: 1; /* Чтобы текст был поверх фона */

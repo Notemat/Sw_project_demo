@@ -16,9 +16,9 @@ document.addEventListener('DOMContentLoaded', function () {
       // Если это страница продуктов, фиксируем вкладку "Продукция" как активную
       menuLinks.forEach(link => {
         if (link.textContent.trim() === 'Продукция') {
-          link.classList.add('active'); // Добавляем класс active для кнопки Продукты
+          link.classList.add('active');
         } else {
-          link.classList.remove('active'); // Убираем класс active с других ссылок
+          link.classList.remove('active');
         }
       });
       return; // Выходим из функции, так как скроллинг не должен менять активную вкладку
@@ -27,9 +27,9 @@ document.addEventListener('DOMContentLoaded', function () {
       // Если это страница конфиденциальности, фиксируем вкладку "О нас" как активную
       menuLinks.forEach(link => {
         if (link.textContent.trim() === 'О нас') {
-          link.classList.add('active'); // Добавляем класс active для кнопки Продукты
+          link.classList.add('active');
         } else {
-          link.classList.remove('active'); // Убираем класс active с других ссылок
+          link.classList.remove('active');
         }
       });
       return; // Выходим из функции, так как скроллинг не должен менять активную вкладку
@@ -62,16 +62,16 @@ document.addEventListener('DOMContentLoaded', function () {
   // Обработчик клика по логотипу для мобильных устройств
   logo.addEventListener('click', function(event) {
     if (window.innerWidth <= 768) {
-      event.preventDefault(); // Предотвращаем стандартное поведение (переход по ссылке)
-      menu.classList.toggle('open'); // Переключаем класс "open" для меню
+      event.preventDefault(); 
+      menu.classList.toggle('open'); 
     }
   });
 
   // Открытие меню при клике на логотип (для промежуточной ширины)
   logo.addEventListener('click', function (e) {
     if (window.innerWidth < 1360 && window.innerWidth >= 768) {
-      e.preventDefault(); // Предотвращаем стандартное поведение ссылки
-      menu.classList.toggle('open'); // Открываем/закрываем меню
+      e.preventDefault(); 
+      menu.classList.toggle('open');
     }
   });
 
@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Для десктопа логотип ведет на секцию home
   if (window.innerWidth > 1360) {
     logo.addEventListener('click', function() {
-      window.location.href = "#home"; // Переходим к секции "home" при клике на логотип
+      window.location.href = "#home";
     });
   }
 });
@@ -104,3 +104,11 @@ AOS.init({
   once: true,
   easing: 'ease-in-out',
 });
+
+function openWhatsAppChat() {
+  const phoneNumber = "79990000000";
+  const url = `https://wa.me/${phoneNumber}`;
+  window.open(url, "_blank");
+}
+
+document.getElementById("whatsappButton").addEventListener("click", openWhatsAppChat);

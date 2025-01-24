@@ -2,34 +2,13 @@
 {% load static %}
 
 {% block head %}
-  <title>{{ grocery.name }} — купить оптом в Сочи | ООО "Южный Ветер"</title>
+  <title>{{ grocery.name }} — купить | company_name</title>
   <link rel="stylesheet" href="{% static 'css/grocery_detail.css' %}">
-  <meta name="description" content="{{ grocery.name }} оптом купить в Сочи. {{ meta_description }} Удобная доставка от ООО «Южный ветер».">
-  <!-- Yandex.Metrika counter -->
-  <script type="text/javascript" >
-    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-    m[i].l=1*new Date();
-    for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-    ym(99151012, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true,
-        webvisor:true
-    });
-  </script>
-  <noscript><div><img src="https://mc.yandex.ru/watch/99151012" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-  <!-- /Yandex.Metrika counter -->
-   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1QND4QW85N"></script>
+  <meta name="description" content="{{ grocery.name }} оптом купить в Сочи. {{ meta_description }} Удобная доставка от company_name.">
+  <!-- Google Analytics -->
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-1QND4QW85N');
+    // Добавьте ваш идентификатор Google Analytics здесь
+    // gtag('config', 'G-XXXXXXXXXX');
   </script>
   <script type="application/ld+json">
     {
@@ -67,7 +46,7 @@
         {% endfor %}
       ]
     }
-    </script>
+  </script>
 {% endblock %}
 {% block content %}
 <section id="grocery-detail" class="py-5">
@@ -151,19 +130,19 @@
         <h4>Доступные способы связи:</h4>
         <ul>
           <li>
-            <a href="https://wa.me/79182000207" class="circle-btn whatsapp-btn" title="Написать в WhatsApp">
+            <a href="https://wa.me/79990000000" class="circle-btn whatsapp-btn" title="Написать в WhatsApp">
               <img src="{% static 'img/whatsapp_icon.png' %}" alt="WhatsApp">
             </a>
             <p>сообщением или звонком по WhatsApp.</p>
           </li>
           <li>
-              <a href="tel:+79182000207" class="circle-btn phone-btn" title="Позвонить">
+              <a href="tel:+79990000000" class="circle-btn phone-btn" title="Позвонить">
                 <img src="{% static 'img/phone.png' %}" alt="Телефон">
               </a>
               <p>звонком по мобильному телефону.</p>
           </li>
           <li>
-            <a href="mailto:swsochi@gmail.ru" class="circle-btn mail-btn" title="Написать на почту">
+            <a href="mailto:example@example.com" class="circle-btn mail-btn" title="Написать на почту">
               <img src="{% static 'img/лого-почта.webp' %}" alt="Эл. почта">
             </a>
             <p>написав письмо на наш электронный адрес.</p>

@@ -25,60 +25,60 @@
 
 /* Общие стили для body (тело страницы) - цвет текста, цвет фона, семейство шрифтов, межбуквенный интервал и граница вокруг страницы */
 body {
-  color: #272727; /* Цвет текста */
-  background-color: #f8b400; /* Цвет фона страницы */
+  color: var(--primary-font-clolor); /* Цвет текста */
+  background-color: var(--primary-background-color); /* Цвет фона страницы */
   font: 1em / 1.3; /* Шрифты и межстрочный интервал */
-  font-family: Roboto, sans-serif; /* Стиль шрифта */
+  font-family: var(--paragraph-font-family); /* Стиль шрифта */
   letter-spacing: .05em; /* Межбуквенный интервал */
-  border: 10px solid #f8b400; /* Граница вокруг всего body */
+  border: 10px solid var(--primary-border-color); /* Граница вокруг всего body */
   box-sizing: border-box;
 }
 
 /* Стили для ссылок (a) и эффекты при наведении */
 a {
-color: #3E3E3E; /* Цвет ссылок */
+color: var(--primary-link-color); /* Цвет ссылок */
 text-decoration: none; /* Убирает подчеркивание */
 }
 
 a:hover {
-color: #c57d10; /* Изменяет цвет при наведении */
+color: var(--primary-hover-color); /* Изменяет цвет при наведении */
 }
 
 /* Шрифты для заголовков */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Dela Gothic One', sans-serif; /* Шрифт для заголовков */
+  font-family: var(--header-font-family); /* Шрифт для заголовков */
   font-weight: 400; /* Размер шрифта */
   margin-bottom: 20px; /* Отступ снизу от элемента */
 }
 
 /* Стили для заголовков h1, h2, h3 */
 h1 {
-  color: #333;
+  color: var(--header-color);
   font-size: 56px; /* Размер заголовков */
   font-weight: bold; /* Размер по вертикали */
 }
 
 h2 {
-  color: #333;
+  color: var(--header-color);
   font-size: 48px;
   font-weight: bold;
 }
 
 h3 {
-  color: #333;
+  color: var(--header-color);
   font-size: 32px;
   font-weight: normal;
 }
 
 p {
-  color: #555; /* Цвет текста */
+  color: var(--paragraph-color); /* Цвет текста */
   font-size: 19.2px;
   font-weight: normal;
 }
 
 /* Плавная прокрутка по ссылкам на странице */
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: var(--primary-animation-scrolling);
 }
 
 /* Стили для фиксированной шапки сайта */
@@ -119,7 +119,7 @@ header {
   align-items: center; /* Выравнивание элементов по центру */
   list-style: none; /* Стиль списка? */
   flex-direction: column; /* В колонку */
-  font-family: "Dela Gothic One", sans-serif; /* Стиль шрифта */
+  font-family: var(--header-font-family); /* Стиль шрифта */
 }
 
 /* Бургер-меню по умолчанию скрыто */
@@ -181,19 +181,19 @@ header {
 
 /* Стили активных ссылок */
 .menu-link.active {
-  background-color: #f8b400; /* Заливка до боковой стенки */
-  color: #fff; /* Цвет текста при наведении */
+  background-color: var(--primary-border-color);/* Заливка до боковой стенки */
+  color: var(--menu-hover-color); /* Цвет текста при наведении */
   border-radius: 0 20px 20px 0; /* Оставляем округление только с одной стороны */
-  transition: all 0.3s ease; /* Плавная анимация */
+  transition: var(--menu-animation-transition); /* Плавная анимация */
   box-shadow: 0 4px 8px rgb(0 0 0 / 10%); /* Добавляем тень для окна */
 }
 
 /* Стили ссылок при наведении */
 .menu-link:hover {
-  background-color: #f8b400; /* Заливка до боковой стенки */
-  color: #fff; /* Цвет текста при наведении */
+  background-color: var(--primary-border-color); /* Заливка до боковой стенки */
+  color: var(--menu-hover-color); /* Цвет текста при наведении */
   border-radius: 20px; /* Оставляем округление с обеих сторон */
-  transition: all 0.3s ease; /* Плавная анимация */
+  transition: var(--menu-animation-transition) /* Плавная анимация */
 }
 
 /* Скрытая иконка по умолчанию */
@@ -220,22 +220,22 @@ footer .row {
 }
 
 footer p {
-  font-family: Roboto, sans-serif; /* Стиль шрифта */
+  font-family: var(--paragraph-font-family); /* Стиль шрифта */
   line-height: 1;
   margin: 0;
-  color: #414040; /* Цвет текста */
+  color: var(--footer-color); /* Цвет текста */
   font-size: 12px;
 }
 
 .p-link {
-  font-family: Roboto, sans-serif; /* Стиль шрифта */
-  color: #414040; /* Цвет текста */
+  font-family: var(--paragraph-font-family); /* Стиль шрифта */
+  color: var(--footer-color); /* Цвет текста */
   font-weight: normal;
   font-size: 12px;
 }
 
 .p-link:hover {
-  color: white;
+  color: var(--footer-hover-color);
   position: relative;
   z-index: 1000;
 }
@@ -297,7 +297,7 @@ footer p {
   /* Меню навигации */
   .bar-menu {
     display: none;
-    transition: max-hight 0.5s ease-in-out;
+    transition: var(--mobile-menu-animation-transition);
   }
 
   /* Бургер меню */
@@ -317,13 +317,13 @@ footer p {
 
     /* Ссылка внутри меню */
   .bar-menu.open .menu-link {
-    background-color: rgb(240 180 0 / 50%); /* Заливка до боковой стенки */
+    background-color: var(--mobile-menu-link-color); /* Заливка до боковой стенки */
     border-radius: 0 20px 20px 0; /* Оставляем округление только с одной стороны */
   }
 
    /* При нажатии на кнопку */
   .bar-menu.open .menu-link.active {
-    background-color: #f8b400; /* Заливка до боковой стенки */
+    background-color: var(--primary-border-color); /* Заливка до боковой стенки */
   }
 
   /* Скрываем текст */
@@ -342,8 +342,8 @@ section {
 }
 
 .highlight {
-  color: #b36e14cb; /* Яркий цвет для акцента */
-  font-family: Roboto, sans-serif;
+  color: var(--primary-highlight-color); /* Яркий цвет для акцента */
+  font-family: var(--paragraph-font-family);
   font-weight: bold;
   font-size: 18px;
 }
@@ -380,7 +380,7 @@ section {
   height: 60px;
   border-radius: 50%;
   background-color: #f3f3f3;
-  box-shadow: 0 2px 4px black;
+  box-shadow: 0 2px 4px var(--primary-box-shadow-color);
   transition: transform 0.2s, background-color 0.2s;
   margin-right: 15px;
 }
@@ -549,7 +549,7 @@ section {
 
   footer p {
     margin-top: 0;
-    font-family: Roboto, sans-serif; /* Стиль шрифта */
+    font-family: var(--paragraph-font-family); /* Стиль шрифта */
     font-size: 8px;
     text-align: left;
   }
@@ -559,7 +559,7 @@ section {
  }
 
  .p-link {
-    font-family: Roboto, sans-serif; /* Стиль шрифта */
+    font-family: var(--paragraph-font-family); /* Стиль шрифта */
     font-size: 8px;
     text-align: left;
   }

@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import DetailView, TemplateView
 
-from pages.constants import META_GROCERIES, META_TAGS
+from pages.constants import META_GROCERIES
 from pages.models import Element, Grocery
 
 
@@ -31,10 +31,6 @@ class GroceryDetailView(DetailView):
         context['groceries'] = Grocery.objects.all()
 
         meta_description = META_GROCERIES
-        for key, description in META_TAGS.items():
-            if key in self.request.path.lower():
-                meta_description = description
-                break
         context['meta_description'] = meta_description
         return context
 
