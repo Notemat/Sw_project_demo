@@ -43,7 +43,7 @@ python -m venv venv
 ``` 
 source venv/bin/activate
 ``` 
-# для Windows:
+для Windows:
 ``` 
 venv\Scripts\activate
 ``` 
