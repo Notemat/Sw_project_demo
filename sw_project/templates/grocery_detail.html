@@ -83,12 +83,17 @@
   {% endfor %}
   </div>
   {% if grocery.certificate %}
+<<<<<<< HEAD
     <button id="btn-certificate" class="button btn-certificate">Сертификат дистрибуции</button>
+=======
+    <button id="btn-certificate" class="btn btn-certificate">Сертификат дистрибуции</button>
+>>>>>>> 9a18d1ebe03f4cea07380a54c297eea78df7a8db
     <div id="modal" class="modal">
       <img src="{{ grocery.certificate.url }}" alt="Сертификат">
       <span class="close">&times;</span>
     </div>
   {% endif %}
+<<<<<<< HEAD
   </div>
   <div class="other-groceries">
     <h3>Категории продукции</h3>
@@ -153,6 +158,9 @@
     </div>
   </div>
 </section>
+=======
+</div>
+>>>>>>> 9a18d1ebe03f4cea07380a54c297eea78df7a8db
 {% endblock %}
 {% block scripts %}
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>

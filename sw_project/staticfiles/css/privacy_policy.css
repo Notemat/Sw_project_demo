@@ -1,0 +1,22 @@
+#privacy-policy {
+  background-color: #ece4a9; /* Цвет фона секции */
+  display: block; /* Положение друг под другом */
+  min-height: 100vh; /* Задает минимальную высоту секции равной высоте окна */
+  position: relative; /* Позиция родителя */
+  z-index: 1; /* Приоритет при отображении */
+}
+
+#privacy-policy h4 {
+    margin-top: 40px;
+    text-align: justify;
+}
+
+#privacy-policy p {
+    text-align: justify;
+}
+
+@media (width <= 462px) {
+  #privacy-policy h2 {
+    font-size: 18px;
+}
+}
